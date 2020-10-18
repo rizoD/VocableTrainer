@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:VocableTrainer;assembly=VocableTrainer"
+             x:Class="VocableTrainer.SettingsPageDetail"
+             Title="Settings"
+             Appearing="SettingsPageDetail_OnAppearing">
+    <ContentPage.Resources>
+
+    </ContentPage.Resources>
+    <StackLayout>
+        <Label>Language</Label>
+        <Grid BindingContext="{x:Static local:App.Data}" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Picker x:Name="Language" Title="" 
+                    ItemsSource="{Binding Languages}" 
+                    ItemDisplayBinding="{Binding Name}"
+                    SelectedIndexChanged="Language_OnSelectedIndexChanged"/>
+            <Button Grid.Column="1" x:Name="EditLang" Text="&#9997;" Clicked="EditLang_OnClicked" FontSize="28"/>
+        </Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Text="Auto pause" />
+            <Switch x:Name="AutoPause" Grid.Column="1" Toggled="Switch_OnToggled"/>
+        </Grid>
+        <Label>Detail:</Label>
+        <Entry></Entry>
+        <Label>Native:</Label>
+        <Entry></Entry>
+    </StackLayout>
+</ContentPage>

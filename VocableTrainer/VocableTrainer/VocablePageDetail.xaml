@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:VocableTrainer"
+             x:Class="VocableTrainer.VocablePageDetail"
+             Title="Vocables">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <ListView Grid.Row="0" 
+                  BindingContext="{x:Static local:App.Data}" 
+                  ItemsSource="{Binding Vocables}"
+                  SelectedItem="{Binding CurrentVocable}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <!--<ViewCell.ContextActions>
+                                <MenuItem Text="Delete Item" CommandParameter="{Binding .}" />
+                                <MenuItem Text="Edit Item" CommandParameter="{Binding .}" />
+                            </ViewCell.ContextActions>-->
+                        <Grid Padding="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" Text="{Binding Foreign}"/>
+                            <Label Grid.Column="1" Text="{Binding Detail}"/>
+                            <Label Grid.Column="2" Text="{Binding Native}"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <StackLayout Grid.Row="1" Orientation="Horizontal">
+            <Button x:Name="AddBtn" Text="Add New" Clicked="AddBtn_OnClicked"/>
+            <Button x:Name="EditBtn" Text="Edit" Clicked="EditBtn_OnClicked" />
+        </StackLayout>
+    </Grid>
+</ContentPage>
