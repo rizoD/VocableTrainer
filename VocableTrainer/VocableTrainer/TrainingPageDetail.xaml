@@ -9,7 +9,9 @@
             <RowDefinition Height="Auto" />
             <RowDefinition />
             <RowDefinition />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
+        
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
@@ -17,11 +19,20 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <Button Grid.Column="0" Text="&#9198;" FontSize="18"/>
-            <Button Grid.Column="1" Text="&#9199;" FontSize="18"/>
-            <Button Grid.Column="2" Text="&#9197;" FontSize="18"/>
+            <Button x:Name="Prev" Grid.Column="0" Text="&#9198;" FontSize="18" Clicked="Prev_OnClicked"/>
+            <Button x:Name="Play"  Grid.Column="1" Text="&#9199;" FontSize="18" Clicked="Play_OnClicked"/>
+            <Button x:Name="Next"  Grid.Column="2" Text="&#9197;" FontSize="18" Clicked="Next_OnClicked"/>
         </Grid>
-        <Button Grid.Row="1" FontSize="28" Text="{Binding CurrentTraining.Foreign}"/>
-        <Button Grid.Row="2" Text="{Binding CurrentTraining.Native}" FontSize="28"/>
+        <Button Grid.Row="1" FontSize="28" Text="{Binding CurrentTraining.Foreign}" x:Name="Foreign" Clicked="Foreign_OnClicked" />
+        <Button Grid.Row="2" Text="{Binding CurrentTraining.Native}" FontSize="28" x:Name="Native" Clicked="Native_OnClicked"/>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="Edit" Grid.Column="0" Text="Edit" FontSize="18" Clicked="Edit_OnClicked"/>
+        </Grid>
     </Grid>
 </ContentPage>

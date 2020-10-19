@@ -16,5 +16,36 @@ namespace VocableTrainer
 		{
 			InitializeComponent();
 		}
+
+		private void Prev_OnClicked(object sender, EventArgs e)
+		{
+			App.Prev();
+		}
+
+
+		private void Play_OnClicked(object sender, EventArgs e)
+		{
+			App.PlayPause();
+		}
+
+		private void Next_OnClicked(object sender, EventArgs e)
+		{
+			App.Next();
+		}
+
+		private void Foreign_OnClicked(object sender, EventArgs e)
+		{
+			App.Play(Sound.Lang.Foreign);
+		}
+
+		private void Native_OnClicked(object sender, EventArgs e)
+		{
+			App.Play(Sound.Lang.Native);
+		}
+
+		private void Edit_OnClicked(object sender, EventArgs e)
+		{
+			Navigation.PushModalAsync(new EditVocablePage());
+		}
 	}
 }

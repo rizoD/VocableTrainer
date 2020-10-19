@@ -1,0 +1,4238 @@
+[
+		{
+			ID: '1',
+			front: '1',
+			back: '一',
+			hint: 'いち'
+		},
+		{
+			ID: '2',
+			front: '2',
+			back: '二',
+			hint: 'に'
+		},
+		{
+			ID: '3',
+			front: '3',
+			back: '三',
+			hint: 'さん'
+		},
+		{
+			ID: '4',
+			front: '4',
+			back: '四',
+			hint: 'よん'
+		},
+		{
+			ID: '5',
+			front: '5',
+			back: '五',
+			hint: 'ご'
+		},
+		{
+			ID: '6',
+			front: '6',
+			back: '六',
+			hint: 'ろく'
+		},
+		{
+			ID: '7',
+			front: '7',
+			back: '七',
+			hint: 'なな'
+		},
+		{
+			ID: '8',
+			front: '8',
+			back: '八',
+			hint: 'はち'
+		},
+		{
+			ID: '9',
+			front: '9',
+			back: '九',
+			hint: 'きゅう'
+		},
+		{
+			ID: '10',
+			front: '10',
+			back: '十',
+			hint: 'じゅう'
+		},
+		{
+			ID: '11',
+			front: '1 ding',
+			back: '一つ',
+			hint: ''
+		},
+		{
+			ID: '12',
+			front: '2 dinge',
+			back: '二つ',
+			hint: ''
+		},
+		{
+			ID: '13',
+			front: '3 dinge',
+			back: '三つ',
+			hint: ''
+		},
+		{
+			ID: '14',
+			front: '4 dinge',
+			back: '四つ',
+			hint: ''
+		},
+		{
+			ID: '15',
+			front: '5 dinge',
+			back: '五つ',
+			hint: ''
+		},
+		{
+			ID: '16',
+			front: '6 dinge',
+			back: '六つ',
+			hint: ''
+		},
+		{
+			ID: '17',
+			front: '7 dinge',
+			back: '七つ',
+			hint: ''
+		},
+		{
+			ID: '18',
+			front: '8 dinge',
+			back: '八つ',
+			hint: ''
+		},
+		{
+			ID: '19',
+			front: '9 dinge',
+			back: '九つ',
+			hint: ''
+		},
+		{
+			ID: '20',
+			front: '10 dinge',
+			back: '十つ',
+			hint: ''
+		},
+		{
+			ID: '21',
+			front: 'Guten morgen',
+			back: 'おはよう',
+			hint: 'おはよう'
+		},
+		{
+			ID: '22',
+			front: 'Ja',
+			back: 'はい',
+			hint: ''
+		},
+		{
+			ID: '23',
+			front: 'rot',
+			back: 'あか',
+			hint: ''
+		},
+		{
+			ID: '24',
+			front: 'weiß',
+			back: 'しろ',
+			hint: ''
+		},
+		{
+			ID: '25',
+			front: 'blau',
+			back: 'あお',
+			hint: ''
+		},
+		{
+			ID: '26',
+			front: 'lesen',
+			back: 'よむ',
+			hint: ''
+		},
+		{
+			ID: '27',
+			front: 'Nacht',
+			back: 'よる',
+			hint: ''
+		},
+		{
+			ID: '28',
+			front: 'tragen',
+			back: 'きる',
+			hint: ''
+		},
+		{
+			ID: '29',
+			front: 'Alkohol',
+			back: 'おさけ',
+			hint: ''
+		},
+		{
+			ID: '30',
+			front: 'Gemüse',
+			back: '野菜',
+			hint: 'やさい'
+		},
+		{
+			ID: '31',
+			front: 'trinken',
+			back: '飲み',
+			hint: 'のむ'
+		},
+		{
+			ID: '32',
+			front: 'schmutzig',
+			back: 'きたない',
+			hint: ''
+		},
+		{
+			ID: '33',
+			front: 'wollen',
+			back: 'ほしい',
+			hint: ''
+		},
+		{
+			ID: '34',
+			front: 'ich',
+			back: '私',
+			hint: 'わたし'
+		},
+		{
+			ID: '35',
+			front: 'Hallo',
+			back: 'こんにちは',
+			hint: ''
+		},
+		{
+			ID: '36',
+			front: 'auf wiedersehen',
+			back: 'さようなら',
+			hint: ''
+		},
+		{
+			ID: '37',
+			front: 'Vogel',
+			back: '鳥',
+			hint: 'とり'
+		},
+		{
+			ID: '38',
+			front: 'Katze',
+			back: '猫',
+			hint: 'ねこ'
+		},
+		{
+			ID: '39',
+			front: 'Hund',
+			back: '犬',
+			hint: 'いぬ'
+		},
+		{
+			ID: '40',
+			front: 'Ohr',
+			back: 'みみ',
+			hint: ''
+		},
+		{
+			ID: '41',
+			front: 'Auge',
+			back: 'め',
+			hint: ''
+		},
+		{
+			ID: '42',
+			front: 'Rücken',
+			back: 'せなか',
+			hint: ''
+		},
+		{
+			ID: '43',
+			front: 'Winter',
+			back: '冬',
+			hint: 'ふゆ'
+		},
+		{
+			ID: '44',
+			front: 'Sommer',
+			back: '夏',
+			hint: 'なつ'
+		},
+		{
+			ID: '45',
+			front: 'wockig',
+			back: 'くもり',
+			hint: ''
+		},
+		{
+			ID: '46',
+			front: 'sonnig',
+			back: 'はれ',
+			hint: ''
+		},
+		{
+			ID: '47',
+			front: 'Tageszeit',
+			back: 'ひる',
+			hint: ''
+		},
+		{
+			ID: '48',
+			front: 'Haus',
+			back: '家',
+			hint: 'いえ'
+		},
+		{
+			ID: '49',
+			front: 'draussen',
+			back: '外',
+			hint: 'そと'
+		},
+		{
+			ID: '50',
+			front: 'Raum',
+			back: '部屋',
+			hint: 'へや'
+		},
+		{
+			ID: '51',
+			front: 'Bank',
+			back: 'ぎんこう',
+			hint: 'ぎんこう'
+		},
+		{
+			ID: '52',
+			front: 'Karte',
+			back: '地図',
+			hint: 'ちず'
+		},
+		{
+			ID: '53',
+			front: 'Wind',
+			back: 'かぜ',
+			hint: ''
+		},
+		{
+			ID: '54',
+			front: 'Obst',
+			back: 'くだもの',
+			hint: ''
+		},
+		{
+			ID: '55',
+			front: 'Telefon',
+			back: 'でんわ',
+			hint: ''
+		},
+		{
+			ID: '56',
+			front: 'Tasche',
+			back: 'かばん',
+			hint: ''
+		},
+		{
+			ID: '57',
+			front: 'Bleistift',
+			back: 'えんぴつ',
+			hint: ''
+		},
+		{
+			ID: '58',
+			front: 'Tee',
+			back: 'お茶',
+			hint: 'おちゃ'
+		},
+		{
+			ID: '59',
+			front: 'richtig',
+			back: 'そう',
+			hint: ''
+		},
+		{
+			ID: '60',
+			front: 'Ticket',
+			back: 'きっぷ',
+			hint: ''
+		},
+		{
+			ID: '61',
+			front: 'Person',
+			back: '人',
+			hint: 'じん'
+		},
+		{
+			ID: '62',
+			front: 'Schön dich kennenzulernen',
+			back: 'はじめまして',
+			hint: ''
+		},
+		{
+			ID: '63',
+			front: 'Japan',
+			back: '日本',
+			hint: 'にほん'
+		},
+		{
+			ID: '64',
+			front: 'China',
+			back: '中国',
+			hint: 'ちゅうごく'
+		},
+		{
+			ID: '65',
+			front: 'mein name ist',
+			back: 'と言います',
+			hint: 'といいます'
+		},
+		{
+			ID: '66',
+			front: 'Name',
+			back: '名前',
+			hint: 'なまえ'
+		},
+		{
+			ID: '67',
+			front: 'Schüler',
+			back: '学生',
+			hint: 'がくせい'
+		},
+		{
+			ID: '68',
+			front: 'Nein',
+			back: 'いいえ',
+			hint: ''
+		},
+		{
+			ID: '69',
+			front: 'Lehrer',
+			back: '先生',
+			hint: 'せんせい'
+		},
+		{
+			ID: '70',
+			front: 'ist nicht',
+			back: 'ではありません',
+			hint: ''
+		},
+		{
+			ID: '71',
+			front: 'Englisch',
+			back: '英語',
+			hint: 'えいご'
+		},
+		{
+			ID: '72',
+			front: 'Kann sprechen',
+			back: '話せ',
+			hint: 'はなせ'
+		},
+		{
+			ID: '73',
+			front: 'und',
+			back: 'と',
+			hint: ''
+		},
+		{
+			ID: '74',
+			front: 'England',
+			back: 'イギリス',
+			hint: 'イギリス'
+		},
+		{
+			ID: '75',
+			front: 'na sicher',
+			back: 'もちろん',
+			hint: 'もちろん'
+		},
+		{
+			ID: '76',
+			front: 'was',
+			back: '何',
+			hint: 'なに'
+		},
+		{
+			ID: '77',
+			front: 'ja',
+			back: 'ええ',
+			hint: ''
+		},
+		{
+			ID: '78',
+			front: 'wohl fühlen',
+			back: '元気',
+			hint: 'げんき'
+		},
+		{
+			ID: '79',
+			front: 'komme aus, Herkunft',
+			back: '出身',
+			hint: 'しゅっしん'
+		},
+		{
+			ID: '80',
+			front: 'machen',
+			back: 'します',
+			hint: 'します'
+		},
+		{
+			ID: '81',
+			front: 'ich',
+			back: '僕',
+			hint: 'ぼく'
+		},
+		{
+			ID: '82',
+			front: 'mein',
+			back: '僕の',
+			hint: 'ぼくの'
+		},
+		{
+			ID: '83',
+			front: 'Das dort',
+			back: 'それ',
+			hint: ''
+		},
+		{
+			ID: '84',
+			front: 'Das dort drüben',
+			back: 'あれ',
+			hint: ''
+		},
+		{
+			ID: '85',
+			front: 'Dieses',
+			back: 'これ',
+			hint: ''
+		},
+		{
+			ID: '86',
+			front: 'Na dann',
+			back: 'では',
+			hint: ''
+		},
+		{
+			ID: '87',
+			front: 'Tschüss',
+			back: 'またね',
+			hint: ''
+		},
+		{
+			ID: '88',
+			front: 'Guten abend',
+			back: 'こんばんは',
+			hint: ''
+		},
+		{
+			ID: '89',
+			front: 'Gleichfalls',
+			back: 'こちらこそ',
+			hint: ''
+		},
+		{
+			ID: '90',
+			front: 'Gute nacht',
+			back: 'おやすみなさい',
+			hint: ''
+		},
+		{
+			ID: '91',
+			front: 'Na dann',
+			back: 'じゃ',
+			hint: ''
+		},
+		{
+			ID: '92',
+			front: 'Tut mir leid',
+			back: 'ごめんなさい',
+			hint: ''
+		},
+		{
+			ID: '93',
+			front: 'Großartig',
+			back: 'ごさい',
+			hint: ''
+		},
+		{
+			ID: '94',
+			front: 'Nett dich kennenzulernen',
+			back: 'よろしくね。',
+			hint: '。'
+		},
+		{
+			ID: '95',
+			front: 'Bitteschön',
+			back: 'どうぞ',
+			hint: ''
+		},
+		{
+			ID: '96',
+			front: 'Gerne geschehen',
+			back: 'どういたしまして',
+			hint: ''
+		},
+		{
+			ID: '97',
+			front: 'Bitte',
+			back: 'おねがいします',
+			hint: ''
+		},
+		{
+			ID: '98',
+			front: 'Entschuldigung',
+			back: 'すみません',
+			hint: ''
+		},
+		{
+			ID: '99',
+			front: 'Auch',
+			back: 'も',
+			hint: ''
+		},
+		{
+			ID: '100',
+			front: 'Dieses',
+			back: 'あれを',
+			hint: ''
+		},
+		{
+			ID: '101',
+			front: 'Haben',
+			back: 'を',
+			hint: ''
+		},
+		{
+			ID: '102',
+			front: 'Bitte',
+			back: 'ください',
+			hint: ''
+		},
+		{
+			ID: '103',
+			front: 'Reis',
+			back: 'ご飯',
+			hint: 'ごはん'
+		},
+		{
+			ID: '104',
+			front: 'Wasser',
+			back: '水',
+			hint: 'みず'
+		},
+		{
+			ID: '105',
+			front: 'Essen',
+			back: '食べ',
+			hint: 'たべ'
+		},
+		{
+			ID: '106',
+			front: 'Nicht machen',
+			back: 'ません',
+			hint: ''
+		},
+		{
+			ID: '107',
+			front: 'Welches',
+			back: 'どれ',
+			hint: ''
+		},
+		{
+			ID: '108',
+			front: 'Fisch',
+			back: '魚',
+			hint: 'さかな'
+		},
+		{
+			ID: '109',
+			front: 'Fleisch',
+			back: '肉',
+			hint: 'にく'
+		},
+		{
+			ID: '110',
+			front: 'Wo',
+			back: 'どこ',
+			hint: ''
+		},
+		{
+			ID: '111',
+			front: 'Apfel',
+			back: 'りんご',
+			hint: ''
+		},
+		{
+			ID: '112',
+			front: 'Brot',
+			back: 'パン',
+			hint: ''
+		},
+		{
+			ID: '113',
+			front: 'Danke für das Essen',
+			back: 'ごちそうさまでした',
+			hint: ''
+		},
+		{
+			ID: '114',
+			front: 'Lasst uns essen',
+			back: 'いただきます',
+			hint: ''
+		},
+		{
+			ID: '115',
+			front: 'Jetzt',
+			back: '今',
+			hint: 'いま'
+		},
+		{
+			ID: '116',
+			front: 'Wie spät',
+			back: '何時',
+			hint: '何時'
+		},
+		{
+			ID: '117',
+			front: 'Minute',
+			back: '分',
+			hint: 'ぶん'
+		},
+		{
+			ID: '118',
+			front: 'Uhr, Zeit',
+			back: '時',
+			hint: 'じ'
+		},
+		{
+			ID: '119',
+			front: 'Ich verstehe',
+			back: 'わかります',
+			hint: ''
+		},
+		{
+			ID: '120',
+			front: 'Ich verstehe nicht',
+			back: 'わかりません',
+			hint: ''
+		},
+		{
+			ID: '121',
+			front: 'Das ist richtig',
+			back: 'そぅですね',
+			hint: ''
+		},
+		{
+			ID: '122',
+			front: 'Die meisten',
+			back: 'いちばん',
+			hint: ''
+		},
+		{
+			ID: '123',
+			front: 'Aber',
+			back: 'でも',
+			hint: ''
+		},
+		{
+			ID: '124',
+			front: 'Jeder',
+			back: 'みな',
+			hint: '皆'
+		},
+		{
+			ID: '125',
+			front: 'Wirklich',
+			back: 'ほんと',
+			hint: ''
+		},
+		{
+			ID: '126',
+			front: 'Gut',
+			back: 'もいい',
+			hint: ''
+		},
+		{
+			ID: '127',
+			front: 'Nicht',
+			back: 'ちゃない',
+			hint: ''
+		},
+		{
+			ID: '128',
+			front: 'Oder',
+			back: 'それとも',
+			hint: ''
+		},
+		{
+			ID: '129',
+			front: 'um/gegen',
+			back: 'ごろ',
+			hint: ''
+		},
+		{
+			ID: '130',
+			front: 'Lernen',
+			back: '学',
+			hint: 'がく'
+		},
+		{
+			ID: '131',
+			front: 'Halb',
+			back: '半',
+			hint: 'はん'
+		},
+		{
+			ID: '132',
+			front: 'Nachher',
+			back: '後',
+			hint: 'あと'
+		},
+		{
+			ID: '133',
+			front: 'Mittag',
+			back: '午',
+			hint: 'うま'
+		},
+		{
+			ID: '134',
+			front: 'Schule',
+			back: '学校',
+			hint: 'がっこう'
+		},
+		{
+			ID: '135',
+			front: 'Gehen',
+			back: '行き',
+			hint: 'いき'
+		},
+		{
+			ID: '136',
+			front: 'Genau',
+			back: 'ちょうど',
+			hint: 'ちょうど'
+		},
+		{
+			ID: '137',
+			front: 'Nachmittag',
+			back: '午後',
+			hint: 'ごご'
+		},
+		{
+			ID: '138',
+			front: 'Schlaf',
+			back: '寝',
+			hint: 'ね'
+		},
+		{
+			ID: '139',
+			front: 'Firma',
+			back: '会社',
+			hint: 'かいしゃ'
+		},
+		{
+			ID: '140',
+			front: 'Vormittag',
+			back: '午前',
+			hint: 'ごぜん'
+		},
+		{
+			ID: '141',
+			front: 'Starten',
+			back: '起',
+			hint: 'おこし'
+		},
+		{
+			ID: '142',
+			front: 'Aufstehen',
+			back: '起き',
+			hint: 'おき'
+		},
+		{
+			ID: '143',
+			front: 'Null',
+			back: '零',
+			hint: 'れい'
+		},
+		{
+			ID: '144',
+			front: 'Nicht gut',
+			back: '良くない',
+			hint: 'よくない'
+		},
+		{
+			ID: '145',
+			front: 'Musik',
+			back: '音楽',
+			hint: 'おんがく'
+		},
+		{
+			ID: '146',
+			front: 'So-So ( ist ok)',
+			back: 'まあまあ',
+			hint: ''
+		},
+		{
+			ID: '147',
+			front: 'Immer',
+			back: 'いつも',
+			hint: ''
+		},
+		{
+			ID: '148',
+			front: 'Sehr gerne',
+			back: 'たいへん',
+			hint: ''
+		},
+		{
+			ID: '149',
+			front: 'Nicht',
+			back: 'ではない',
+			hint: ''
+		},
+		{
+			ID: '150',
+			front: 'Essen',
+			back: '食',
+			hint: 'しょく'
+		},
+		{
+			ID: '151',
+			front: 'WC',
+			back: 'トイレ',
+			hint: ''
+		},
+		{
+			ID: '152',
+			front: 'Haustier',
+			back: 'ペット',
+			hint: ''
+		},
+		{
+			ID: '153',
+			front: 'Leben',
+			back: '住んで',
+			hint: 'すんでい'
+		},
+		{
+			ID: '154',
+			front: 'Pool',
+			back: 'プール',
+			hint: ''
+		},
+		{
+			ID: '155',
+			front: 'Tisch',
+			back: 'テーブル',
+			hint: ''
+		},
+		{
+			ID: '156',
+			front: 'Badewanne',
+			back: '風呂',
+			hint: 'ふろ'
+		},
+		{
+			ID: '157',
+			front: 'Schlafzimmer',
+			back: '寝室',
+			hint: 'しんしつ'
+		},
+		{
+			ID: '158',
+			front: 'Küche',
+			back: '台所',
+			hint: 'だいところ'
+		},
+		{
+			ID: '159',
+			front: 'Da ist (Ding)',
+			back: 'あります',
+			hint: 'あります'
+		},
+		{
+			ID: '160',
+			front: 'Da ist (Lebendig)',
+			back: 'います',
+			hint: 'います'
+		},
+		{
+			ID: '161',
+			front: 'Fenster',
+			back: '窓',
+			hint: 'まど'
+		},
+		{
+			ID: '162',
+			front: 'Garten',
+			back: '庭',
+			hint: 'にわ'
+		},
+		{
+			ID: '163',
+			front: 'Dort drüben',
+			back: 'あそこ',
+			hint: ''
+		},
+		{
+			ID: '164',
+			front: 'Dort',
+			back: 'そこ',
+			hint: ''
+		},
+		{
+			ID: '165',
+			front: 'Kind',
+			back: '仔',
+			hint: 'こ'
+		},
+		{
+			ID: '166',
+			front: 'Tisch',
+			back: '机',
+			hint: 'つくえ'
+		},
+		{
+			ID: '167',
+			front: 'Sessel',
+			back: '椅子',
+			hint: 'いす'
+		},
+		{
+			ID: '168',
+			front: 'Bis morgen',
+			back: 'またあした',
+			hint: ''
+		},
+		{
+			ID: '169',
+			front: 'Ein bisschen',
+			back: 'ちょと',
+			hint: ''
+		},
+		{
+			ID: '170',
+			front: 'Warten',
+			back: 'まって',
+			hint: ''
+		},
+		{
+			ID: '171',
+			front: 'Frühstück',
+			back: '朝食',
+			hint: 'ちょうしょく'
+		},
+		{
+			ID: '172',
+			front: 'Morgen (der)',
+			back: '朝',
+			hint: 'あさ'
+		},
+		{
+			ID: '173',
+			front: 'Ausländer',
+			back: '外国人',
+			hint: 'がいごくじん'
+		},
+		{
+			ID: '174',
+			front: 'Austausch Schüler',
+			back: '留学生',
+			hint: 'りゅうがくせい'
+		},
+		{
+			ID: '175',
+			front: 'Erzähl',
+			back: '申し',
+			hint: 'もうし'
+		},
+		{
+			ID: '176',
+			front: 'Jahre alt',
+			back: '歳',
+			hint: 'とし'
+		},
+		{
+			ID: '177',
+			front: 'Schwierig',
+			back: '難しい',
+			hint: 'むずかし'
+		},
+		{
+			ID: '178',
+			front: 'Ehm',
+			back: 'あの',
+			hint: ''
+		},
+		{
+			ID: '179',
+			front: 'ist es nicht so',
+			back: 'よね',
+			hint: ''
+		},
+		{
+			ID: '180',
+			front: 'Grundschule',
+			back: '小学',
+			hint: 'しょうがく'
+		},
+		{
+			ID: '181',
+			front: 'Klassenstufe',
+			back: '年生',
+			hint: 'ねんせい'
+		},
+		{
+			ID: '182',
+			front: 'Feder',
+			back: '羽',
+			hint: 'はね'
+		},
+		{
+			ID: '183',
+			front: 'Universität',
+			back: '大学',
+			hint: 'だいがく'
+		},
+		{
+			ID: '184',
+			front: 'Mittelschule',
+			back: '中学',
+			hint: 'ちゅうがく'
+		},
+		{
+			ID: '185',
+			front: 'Unterschied',
+			back: '違い',
+			hint: 'ちがい'
+		},
+		{
+			ID: '186',
+			front: 'Hase',
+			back: '兎',
+			hint: 'うさぎ'
+		},
+		{
+			ID: '187',
+			front: 'hier',
+			back: 'ここ',
+			hint: ''
+		},
+		{
+			ID: '188',
+			front: 'Eingang',
+			back: '入り口',
+			hint: 'いりぐち'
+		},
+		{
+			ID: '189',
+			front: 'Gymnasium',
+			back: '高校',
+			hint: 'こうこう'
+		},
+		{
+			ID: '190',
+			front: 'Personen mehrzahl',
+			back: 'たち',
+			hint: ''
+		},
+		{
+			ID: '191',
+			front: 'Ich heiße',
+			back: 'と申します',
+			hint: 'と申します'
+		},
+		{
+			ID: '192',
+			front: 'Ich erzähle dir',
+			back: '申します',
+			hint: '申します'
+		},
+		{
+			ID: '193',
+			front: 'Platz',
+			back: '所',
+			hint: 'ところ'
+		},
+		{
+			ID: '194',
+			front: 'Stehen',
+			back: '台',
+			hint: 'だい'
+		},
+		{
+			ID: '195',
+			front: 'Über',
+			back: 'ついて',
+			hint: ''
+		},
+		{
+			ID: '196',
+			front: 'Wie viel',
+			back: 'どのくらい',
+			hint: ''
+		},
+		{
+			ID: '197',
+			front: 'Nenn mich Rizo',
+			back: 'Rizoてよんてください',
+			hint: ''
+		},
+		{
+			ID: '198',
+			front: 'Wie darf ich dich nennen',
+			back: 'なんてべばいいですか',
+			hint: ''
+		},
+		{
+			ID: '199',
+			front: 'Was war es',
+			back: 'なんでしたっけ',
+			hint: ''
+		},
+		{
+			ID: '200',
+			front: 'Ich gehe fort',
+			back: '行ってきます',
+			hint: 'いってきます'
+		},
+		{
+			ID: '201',
+			front: 'Ich bin zuhause',
+			back: 'ただいま',
+			hint: ''
+		},
+		{
+			ID: '202',
+			front: 'Pass auf dich auf',
+			back: '行ってらっしゃい',
+			hint: 'いってらっしゃい'
+		},
+		{
+			ID: '203',
+			front: 'Willkommen zurück',
+			back: 'おかえりなさい',
+			hint: ''
+		},
+		{
+			ID: '204',
+			front: 'Sie',
+			back: '彼女',
+			hint: 'かのじょ'
+		},
+		{
+			ID: '205',
+			front: 'Er',
+			back: '彼',
+			hint: 'かれ'
+		},
+		{
+			ID: '206',
+			front: 'Wer',
+			back: '誰',
+			hint: 'だれ'
+		},
+		{
+			ID: '207',
+			front: '100',
+			back: '百',
+			hint: 'ひゃく'
+		},
+		{
+			ID: '208',
+			front: '1000',
+			back: '千',
+			hint: 'せん'
+		},
+		{
+			ID: '209',
+			front: '10000',
+			back: '万',
+			hint: 'まん'
+		},
+		{
+			ID: '210',
+			front: 'süß',
+			back: '甘い',
+			hint: 'あまい'
+		},
+		{
+			ID: '211',
+			front: 'abend',
+			back: '晩',
+			hint: 'ばん'
+		},
+		{
+			ID: '212',
+			front: 'Älterer Bruder',
+			back: '兄',
+			hint: 'あに'
+		},
+		{
+			ID: '213',
+			front: 'Ältere Schwester',
+			back: '姉',
+			hint: 'あね'
+		},
+		{
+			ID: '214',
+			front: 'Jüngerer Bruder',
+			back: '弟',
+			hint: 'おとうと'
+		},
+		{
+			ID: '215',
+			front: 'Jüngere Schwester',
+			back: '妹',
+			hint: 'いもうと'
+		},
+		{
+			ID: '216',
+			front: 'Kind',
+			back: '子',
+			hint: 'こども'
+		},
+		{
+			ID: '217',
+			front: 'Eltern',
+			back: '両親',
+			hint: 'りょうしん'
+		},
+		{
+			ID: '218',
+			front: 'Vater',
+			back: '父',
+			hint: 'ちち'
+		},
+		{
+			ID: '219',
+			front: 'Mutter',
+			back: '母',
+			hint: 'はは'
+		},
+		{
+			ID: '220',
+			front: 'Großvater',
+			back: '祖父',
+			hint: 'そふ'
+		},
+		{
+			ID: '221',
+			front: 'Großmutter',
+			back: '祖母',
+			hint: 'そぼ'
+		},
+		{
+			ID: '222',
+			front: 'älterer Onkel',
+			back: '伯父',
+			hint: 'おじ'
+		},
+		{
+			ID: '223',
+			front: 'Ältere Tante',
+			back: '伯母',
+			hint: 'おば'
+		},
+		{
+			ID: '224',
+			front: 'Jüngerer Onkel',
+			back: '叔父',
+			hint: 'おじ'
+		},
+		{
+			ID: '225',
+			front: 'Jüngere Tante',
+			back: '叔母',
+			hint: 'おば'
+		},
+		{
+			ID: '226',
+			front: 'Ehemann',
+			back: '夫',
+			hint: 'おっと'
+		},
+		{
+			ID: '227',
+			front: 'Ehefrau',
+			back: '妻',
+			hint: 'つま'
+		},
+		{
+			ID: '228',
+			front: 'Familie',
+			back: '家族',
+			hint: 'かぞく'
+		},
+		{
+			ID: '229',
+			front: 'Mutter',
+			back: 'お母さん',
+			hint: 'おかあさん'
+		},
+		{
+			ID: '230',
+			front: 'Vater',
+			back: 'お父さん',
+			hint: 'おっとさん'
+		},
+		{
+			ID: '231',
+			front: 'Dieses',
+			back: 'この',
+			hint: ''
+		},
+		{
+			ID: '232',
+			front: 'Dieses bei dir',
+			back: 'その',
+			hint: ''
+		},
+		{
+			ID: '233',
+			front: 'Dieses dort drüben',
+			back: 'あの',
+			hint: ''
+		},
+		{
+			ID: '234',
+			front: 'Welches',
+			back: 'どの',
+			hint: ''
+		},
+		{
+			ID: '235',
+			front: 'Köstlich',
+			back: 'おいしい',
+			hint: ''
+		},
+		{
+			ID: '236',
+			front: 'Kantine',
+			back: '食堂',
+			hint: 'しょくどう'
+		},
+		{
+			ID: '237',
+			front: 'Wie viel (kostet)',
+			back: 'いくら',
+			hint: ''
+		},
+		{
+			ID: '238',
+			front: 'Empfehlung',
+			back: 'おすすめ',
+			hint: ''
+		},
+		{
+			ID: '239',
+			front: 'Rechnung',
+			back: 'お勘定',
+			hint: 'おかんじょ'
+		},
+		{
+			ID: '240',
+			front: 'Schmeckt schlecht',
+			back: 'まずい',
+			hint: ''
+		},
+		{
+			ID: '241',
+			front: 'Mögen',
+			back: '好き',
+			hint: 'すき'
+		},
+		{
+			ID: '242',
+			front: 'kalt',
+			back: '冷たい',
+			hint: 'つめたい'
+		},
+		{
+			ID: '243',
+			front: 'Heiß',
+			back: '熱い',
+			hint: 'あつい'
+		},
+		{
+			ID: '244',
+			front: 'Sie (mehrzahl)',
+			back: '彼ら',
+			hint: '彼ら'
+		},
+		{
+			ID: '245',
+			front: 'Schwestern',
+			back: '姉妹',
+			hint: 'しまい'
+		},
+		{
+			ID: '246',
+			front: 'Du',
+			back: 'あなた',
+			hint: ''
+		},
+		{
+			ID: '247',
+			front: 'Brüder',
+			back: '兄弟',
+			hint: 'きょうだい'
+		},
+		{
+			ID: '248',
+			front: 'Nicht mögen',
+			back: '嫌い',
+			hint: 'きらい'
+		},
+		{
+			ID: '249',
+			front: 'Scharf',
+			back: 'からい',
+			hint: 'からい'
+		},
+		{
+			ID: '250',
+			front: 'Billig',
+			back: '安い',
+			hint: 'やすい'
+		},
+		{
+			ID: '251',
+			front: 'Teuer',
+			back: '高い',
+			hint: 'たかい'
+		},
+		{
+			ID: '252',
+			front: 'Sohn',
+			back: '息子',
+			hint: 'むすこ'
+		},
+		{
+			ID: '253',
+			front: 'Tochter',
+			back: '娘',
+			hint: 'むすめ'
+		},
+		{
+			ID: '254',
+			front: 'Verwandt',
+			back: '親戚',
+			hint: 'しんせき'
+		},
+		{
+			ID: '255',
+			front: 'Enkel',
+			back: '孫',
+			hint: 'まご'
+		},
+		{
+			ID: '256',
+			front: 'Enkelsohn',
+			back: '孫息子',
+			hint: 'まごむすこ'
+		},
+		{
+			ID: '257',
+			front: 'Enkelin',
+			back: '孫娘',
+			hint: 'まごむすめ'
+		},
+		{
+			ID: '258',
+			front: 'Zeit',
+			back: '時間',
+			hint: 'じかん'
+		},
+		{
+			ID: '259',
+			front: 'arbeiten',
+			back: '働き',
+			hint: 'はたらく'
+		},
+		{
+			ID: '260',
+			front: 'kommen',
+			back: '来',
+			hint: 'き'
+		},
+		{
+			ID: '261',
+			front: 'Wann',
+			back: 'いつ',
+			hint: ''
+		},
+		{
+			ID: '262',
+			front: 'Arbeit',
+			back: '仕事',
+			hint: 'しごと'
+		},
+		{
+			ID: '263',
+			front: 'Kaufen',
+			back: '買い',
+			hint: 'かい'
+		},
+		{
+			ID: '264',
+			front: 'Was arbeitest du',
+			back: 'お仕事は',
+			hint: 'おしごとは'
+		},
+		{
+			ID: '265',
+			front: 'Studieren',
+			back: '勉強',
+			hint: 'べんきょう'
+		},
+		{
+			ID: '266',
+			front: 'Gestern',
+			back: '昨日',
+			hint: 'きのう'
+		},
+		{
+			ID: '267',
+			front: 'Heute',
+			back: '今日',
+			hint: 'きよう'
+		},
+		{
+			ID: '268',
+			front: 'Tag (Woche)',
+			back: '曜日',
+			hint: 'よぅび'
+		},
+		{
+			ID: '269',
+			front: 'Freunde',
+			back: '友達',
+			hint: 'ともだち'
+		},
+		{
+			ID: '270',
+			front: 'Morgen',
+			back: '明日',
+			hint: 'あした'
+		},
+		{
+			ID: '271',
+			front: 'Montag',
+			back: '月曜日',
+			hint: 'げつようび'
+		},
+		{
+			ID: '272',
+			front: 'Dienstag',
+			back: '火曜日',
+			hint: 'かようび'
+		},
+		{
+			ID: '273',
+			front: 'Mittwoch',
+			back: '水曜日',
+			hint: 'すよび'
+		},
+		{
+			ID: '274',
+			front: 'Donnerstag',
+			back: '木曜日',
+			hint: 'もくようび'
+		},
+		{
+			ID: '275',
+			front: 'Freitag',
+			back: '金曜日',
+			hint: 'きにんうび'
+		},
+		{
+			ID: '276',
+			front: 'Samstag',
+			back: '土曜日',
+			hint: 'どようび'
+		},
+		{
+			ID: '277',
+			front: 'Sonntag',
+			back: '日曜日',
+			hint: 'にちよび'
+		},
+		{
+			ID: '278',
+			front: 'Beschäftigt',
+			back: '忙しい',
+			hint: 'いそがしい'
+		},
+		{
+			ID: '279',
+			front: 'Gestern',
+			back: '昨日',
+			hint: 'きんおう'
+		},
+		{
+			ID: '280',
+			front: 'Übermorgen',
+			back: '明後日',
+			hint: 'あさって'
+		},
+		{
+			ID: '281',
+			front: 'Wochentag',
+			back: '平日',
+			hint: 'へいじつ'
+		},
+		{
+			ID: '282',
+			front: 'Wochenende',
+			back: '週末',
+			hint: 'しゅうまつ'
+		},
+		{
+			ID: '283',
+			front: 'Vorgestern',
+			back: '一昨日',
+			hint: 'おととい'
+		},
+		{
+			ID: '284',
+			front: 'Von, durch, wegen',
+			back: 'から',
+			hint: 'から'
+		},
+		{
+			ID: '285',
+			front: 'Bis, mit',
+			back: 'まで',
+			hint: 'まで'
+		},
+		{
+			ID: '286',
+			front: 'Boden, Dreck',
+			back: '土',
+			hint: 'ど / つち'
+		},
+		{
+			ID: '287',
+			front: 'Monat, Mond',
+			back: '月',
+			hint: 'げつ'
+		},
+		{
+			ID: '288',
+			front: 'Tag',
+			back: '日',
+			hint: 'にち'
+		},
+		{
+			ID: '289',
+			front: 'Wir, zuhause',
+			back: 'うち',
+			hint: ''
+		},
+		{
+			ID: '290',
+			front: 'Buch zähler',
+			back: '冊',
+			hint: 'さつ'
+		},
+		{
+			ID: '291',
+			front: 'Klein',
+			back: '小さい',
+			hint: 'ちいさい'
+		},
+		{
+			ID: '292',
+			front: 'Buch',
+			back: '本',
+			hint: 'ほん'
+		},
+		{
+			ID: '293',
+			front: 'Bücherregal',
+			back: '本棚',
+			hint: 'ほんだな'
+		},
+		{
+			ID: '294',
+			front: 'Oben',
+			back: '上',
+			hint: 'うえ'
+		},
+		{
+			ID: '295',
+			front: 'Groß',
+			back: '大きい',
+			hint: 'おきい'
+		},
+		{
+			ID: '296',
+			front: 'Nebenan, neben',
+			back: '隣',
+			hint: 'となり'
+		},
+		{
+			ID: '297',
+			front: 'Zwischen',
+			back: '間',
+			hint: 'ま'
+		},
+		{
+			ID: '298',
+			front: 'In, im, mitte, während',
+			back: '中',
+			hint: 'なか'
+		},
+		{
+			ID: '299',
+			front: 'Rechts',
+			back: '右',
+			hint: 'みぎ'
+		},
+		{
+			ID: '300',
+			front: 'Links',
+			back: '左',
+			hint: 'ひだり'
+		},
+		{
+			ID: '301',
+			front: 'Unten, unter',
+			back: '下',
+			hint: 'げ / した'
+		},
+		{
+			ID: '302',
+			front: 'Lang',
+			back: '長い',
+			hint: 'ながい'
+		},
+		{
+			ID: '303',
+			front: 'Eck',
+			back: 'すみ',
+			hint: 'すみ'
+		},
+		{
+			ID: '304',
+			front: 'Futon',
+			back: '布団',
+			hint: 'ふとん'
+		},
+		{
+			ID: '305',
+			front: 'Ecke',
+			back: '片すみ',
+			hint: '片すみ'
+		},
+		{
+			ID: '306',
+			front: 'Neu',
+			back: '新しい',
+			hint: 'あたらしい'
+		},
+		{
+			ID: '307',
+			front: 'Schwach, nieder',
+			back: '低い',
+			hint: 'ひくい'
+		},
+		{
+			ID: '308',
+			front: 'Ein bisschen',
+			back: 'ちょっと',
+			hint: 'ちょっと'
+		},
+		{
+			ID: '309',
+			front: 'Futon',
+			back: '布団',
+			hint: 'ふとん'
+		},
+		{
+			ID: '310',
+			front: 'Kühlschrank',
+			back: '冷蔵庫',
+			hint: 'れいぞく'
+		},
+		{
+			ID: '311',
+			front: 'Spiegel',
+			back: '鏡',
+			hint: 'かがみ'
+		},
+		{
+			ID: '312',
+			front: 'Niedrig',
+			back: '低い',
+			hint: 'ひくい'
+		},
+		{
+			ID: '313',
+			front: 'Alt',
+			back: '古い',
+			hint: 'ふるい'
+		},
+		{
+			ID: '314',
+			front: 'Neben',
+			back: '横',
+			hint: 'よこ'
+		},
+		{
+			ID: '315',
+			front: 'Viele',
+			back: 'たくさん',
+			hint: 'たく'
+		},
+		{
+			ID: '316',
+			front: 'Hinter',
+			back: '後ろ',
+			hint: 'うしろ'
+		},
+		{
+			ID: '317',
+			front: 'Vor',
+			back: '前',
+			hint: 'まえ'
+		},
+		{
+			ID: '318',
+			front: 'Stattdessen, Austausch',
+			back: 'お代わり',
+			hint: 'おかわり'
+		},
+		{
+			ID: '319',
+			front: 'Unsere',
+			back: 'うちの',
+			hint: 'うちの'
+		},
+		{
+			ID: '320',
+			front: 'Film',
+			back: '映画',
+			hint: 'えいが'
+		},
+		{
+			ID: '321',
+			front: 'Sehen',
+			back: '見る',
+			hint: 'みる'
+		},
+		{
+			ID: '322',
+			front: 'Schreiben',
+			back: '書き',
+			hint: 'かき'
+		},
+		{
+			ID: '323',
+			front: 'Brief',
+			back: '手紙',
+			hint: 'てがみ'
+		},
+		{
+			ID: '324',
+			front: 'Lesen',
+			back: '読み',
+			hint: 'よみ'
+		},
+		{
+			ID: '325',
+			front: 'Lied',
+			back: '歌',
+			hint: 'うた'
+		},
+		{
+			ID: '326',
+			front: 'Spazieren',
+			back: '散歩',
+			hint: 'さんぽ'
+		},
+		{
+			ID: '327',
+			front: 'Bild',
+			back: '絵',
+			hint: 'え'
+		},
+		{
+			ID: '328',
+			front: 'Mahlen',
+			back: '描く',
+			hint: 'えがく'
+		},
+		{
+			ID: '329',
+			front: 'Schwimmen',
+			back: '泳ぎ',
+			hint: 'およぎ'
+		},
+		{
+			ID: '330',
+			front: 'Laufen',
+			back: '走り',
+			hint: 'はしり'
+		},
+		{
+			ID: '331',
+			front: 'Viel',
+			back: 'あまり',
+			hint: ''
+		},
+		{
+			ID: '332',
+			front: 'Lernen',
+			back: '習い',
+			hint: 'ならい'
+		},
+		{
+			ID: '333',
+			front: 'Hören',
+			back: '聞き',
+			hint: 'きき'
+		},
+		{
+			ID: '334',
+			front: 'Spielen',
+			back: '遊び',
+			hint: 'あそび'
+		},
+		{
+			ID: '335',
+			front: 'Foto',
+			back: '写真',
+			hint: 'しゃしん'
+		},
+		{
+			ID: '336',
+			front: 'Oft, besser',
+			back: 'よく',
+			hint: ''
+		},
+		{
+			ID: '337',
+			front: 'Papier Zähler',
+			back: '枚',
+			hint: 'まい'
+		},
+		{
+			ID: '338',
+			front: 'Machen, nehmen',
+			back: '撮り',
+			hint: 'とり'
+		},
+		{
+			ID: '339',
+			front: 'Reisen',
+			back: '旅行',
+			hint: 'りょこう'
+		},
+		{
+			ID: '340',
+			front: '1 person',
+			back: '一人',
+			hint: 'かすと'
+		},
+		{
+			ID: '341',
+			front: 'Manchmal',
+			back: '時々',
+			hint: 'ときどき'
+		},
+		{
+			ID: '342',
+			front: '2 Personen',
+			back: '二人',
+			hint: 'ふだり'
+		},
+		{
+			ID: '343',
+			front: '3 Personen',
+			back: '三人',
+			hint: 'さんにん'
+		},
+		{
+			ID: '344',
+			front: '4 Personen',
+			back: '四人',
+			hint: 'よにん'
+		},
+		{
+			ID: '345',
+			front: 'U-Bahn',
+			back: '地下鉄',
+			hint: 'ちかてつ'
+		},
+		{
+			ID: '346',
+			front: 'Auto',
+			back: '車',
+			hint: 'くるま'
+		},
+		{
+			ID: '347',
+			front: 'Taxi',
+			back: 'タクシー',
+			hint: 'タクシー'
+		},
+		{
+			ID: '348',
+			front: 'Fahre, reiten',
+			back: '乗り',
+			hint: 'のり'
+		},
+		{
+			ID: '349',
+			front: 'Flughafen',
+			back: '空港',
+			hint: 'くうこう'
+		},
+		{
+			ID: '350',
+			front: 'Benutzen',
+			back: '使い',
+			hint: 'つかい'
+		},
+		{
+			ID: '351',
+			front: 'Fahrrad',
+			back: '自転車',
+			hint: 'じてんしゃ'
+		},
+		{
+			ID: '352',
+			front: 'Station (Bahn)',
+			back: '駅',
+			hint: 'えき'
+		},
+		{
+			ID: '353',
+			front: 'Zug',
+			back: '電車',
+			hint: 'でんしゃ'
+		},
+		{
+			ID: '354',
+			front: 'Burg',
+			back: 'お城',
+			hint: 'おしろ'
+		},
+		{
+			ID: '355',
+			front: 'Interessant',
+			back: '面白い',
+			hint: 'おもしろい'
+		},
+		{
+			ID: '356',
+			front: 'Flieger',
+			back: '飛行機',
+			hint: 'ひこうき'
+		},
+		{
+			ID: '357',
+			front: 'weit',
+			back: '遠い',
+			hint: 'とい'
+		},
+		{
+			ID: '358',
+			front: 'langsam',
+			back: '遅い',
+			hint: 'おそい'
+		},
+		{
+			ID: '359',
+			front: 'Von hier',
+			back: 'ここから',
+			hint: 'ここから'
+		},
+		{
+			ID: '360',
+			front: 'Nahe',
+			back: '近い',
+			hint: 'ちかい'
+		},
+		{
+			ID: '361',
+			front: 'schnell',
+			back: '速い',
+			hint: 'はやい'
+		},
+		{
+			ID: '362',
+			front: 'Wie viel',
+			back: 'どれくらい',
+			hint: 'どれくらい'
+		},
+		{
+			ID: '363',
+			front: 'Es dauert',
+			back: 'かかります',
+			hint: 'かかります'
+		},
+		{
+			ID: '364',
+			front: 'Singen',
+			back: '歌い',
+			hint: 'うたい'
+		},
+		{
+			ID: '365',
+			front: 'Schön, ordentlich',
+			back: '綺麗',
+			hint: 'きれい'
+		},
+		{
+			ID: '366',
+			front: 'Niemals, lüge',
+			back: '嘘',
+			hint: 'うそ'
+		},
+		{
+			ID: '367',
+			front: 'Das beste',
+			back: '最高',
+			hint: 'さいこ'
+		},
+		{
+			ID: '368',
+			front: 'Winzig',
+			back: 'ちっちゃい',
+			hint: 'ちっちゃい'
+		},
+		{
+			ID: '369',
+			front: 'Nostalgisch',
+			back: '懐かしい',
+			hint: 'なつかしい'
+		},
+		{
+			ID: '370',
+			front: 'Ich verhungere',
+			back: 'お腹空いた',
+			hint: 'おなかすいた'
+		},
+		{
+			ID: '371',
+			front: 'Riesig',
+			back: 'でかい',
+			hint: 'でかい'
+		},
+		{
+			ID: '372',
+			front: 'Köstlich',
+			back: 'うまい',
+			hint: 'うまい'
+		},
+		{
+			ID: '373',
+			front: 'Selten',
+			back: '珍しい',
+			hint: 'めずらし'
+		},
+		{
+			ID: '374',
+			front: 'Müde',
+			back: '眠い',
+			hint: 'ねむい'
+		},
+		{
+			ID: '375',
+			front: 'Schmerzhaft',
+			back: '痛い',
+			hint: 'いたい'
+		},
+		{
+			ID: '376',
+			front: 'Laut, nervig',
+			back: 'うるさい',
+			hint: 'うるさい'
+		},
+		{
+			ID: '377',
+			front: 'Erstaunlich, großartig',
+			back: '凄い',
+			hint: 'すごい'
+		},
+		{
+			ID: '378',
+			front: 'Erschöpft',
+			back: '疲れた',
+			hint: 'つかれた'
+		},
+		{
+			ID: '379',
+			front: 'Gehen',
+			back: '歩き',
+			hint: 'あるき'
+		},
+		{
+			ID: '380',
+			front: 'Fast',
+			back: '殆ど',
+			hint: 'ほとんど'
+		},
+		{
+			ID: '381',
+			front: 'Ungefähr',
+			back: '約',
+			hint: 'やく'
+		},
+		{
+			ID: '382',
+			front: 'Mantel',
+			back: 'コート',
+			hint: 'こぅと'
+		},
+		{
+			ID: '383',
+			front: 'Weiss',
+			back: '白い',
+			hint: 'しろい'
+		},
+		{
+			ID: '384',
+			front: 'Rot',
+			back: 'あかい',
+			hint: ''
+		},
+		{
+			ID: '385',
+			front: 'Shirt',
+			back: 'シャツ',
+			hint: ''
+		},
+		{
+			ID: '386',
+			front: 'Über, ca.',
+			back: 'くらい',
+			hint: ''
+		},
+		{
+			ID: '387',
+			front: 'Gelb',
+			back: '黄色い',
+			hint: 'きろい'
+		},
+		{
+			ID: '388',
+			front: 'Blau',
+			back: '青い',
+			hint: 'あおい'
+		},
+		{
+			ID: '389',
+			front: 'Tragen',
+			back: '着ます',
+			hint: 'きます'
+		},
+		{
+			ID: '390',
+			front: 'Rock',
+			back: 'スカート',
+			hint: 'スカート'
+		},
+		{
+			ID: '391',
+			front: 'Schuhe',
+			back: '靴',
+			hint: 'くつ'
+		},
+		{
+			ID: '392',
+			front: 'Orange',
+			back: 'オレンジ色',
+			hint: 'オレンジ色'
+		},
+		{
+			ID: '393',
+			front: 'Unterhosen',
+			back: 'パンツ',
+			hint: ''
+		},
+		{
+			ID: '394',
+			front: 'Hose',
+			back: 'ズボン',
+			hint: ''
+		},
+		{
+			ID: '395',
+			front: 'Tragen (ab Gürtel)',
+			back: '履き',
+			hint: 'はき'
+		},
+		{
+			ID: '396',
+			front: 'Braun',
+			back: '茶色',
+			hint: 'ちやいろ'
+		},
+		{
+			ID: '397',
+			front: 'Schwarz',
+			back: '黒い',
+			hint: 'くろい'
+		},
+		{
+			ID: '398',
+			front: 'Kleidung',
+			back: '服',
+			hint: 'ふく'
+		},
+		{
+			ID: '399',
+			front: 'Pink',
+			back: 'ピンク色',
+			hint: 'ピンク色'
+		},
+		{
+			ID: '400',
+			front: 'Waschen',
+			back: '洗い',
+			hint: 'あらい'
+		},
+		{
+			ID: '401',
+			front: 'Hut',
+			back: '帽子',
+			hint: 'ぼうし'
+		},
+		{
+			ID: '402',
+			front: 'Wollen',
+			back: '欲しい',
+			hint: 'ほしい'
+		},
+		{
+			ID: '403',
+			front: 'Tragen (kopf)',
+			back: '被り',
+			hint: 'かぶり'
+		},
+		{
+			ID: '404',
+			front: 'Winter',
+			back: '冬',
+			hint: 'ふゆ'
+		},
+		{
+			ID: '405',
+			front: 'Sommer',
+			back: '夏',
+			hint: 'なつ'
+		},
+		{
+			ID: '406',
+			front: 'Frühling',
+			back: '春',
+			hint: 'はる'
+		},
+		{
+			ID: '407',
+			front: 'Herbst',
+			back: 'あき',
+			hint: 'あき'
+		},
+		{
+			ID: '408',
+			front: 'Lose',
+			back: '緩い',
+			hint: 'ゆるい'
+		},
+		{
+			ID: '409',
+			front: 'Farbe',
+			back: '色',
+			hint: 'いろ'
+		},
+		{
+			ID: '410',
+			front: 'Ausziehen',
+			back: '脱ぎ',
+			hint: 'ぬぎ'
+		},
+		{
+			ID: '411',
+			front: 'Ich überlasse es ihnen',
+			back: 'おまかせで',
+			hint: ''
+		},
+		{
+			ID: '412',
+			front: 'Innerhalb von',
+			back: '以内で',
+			hint: 'いないで'
+		},
+		{
+			ID: '413',
+			front: 'Frage',
+			back: '質問',
+			hint: 'しつもん'
+		},
+		{
+			ID: '414',
+			front: 'Diese Woche',
+			back: '今週',
+			hint: 'こんしゅ'
+		},
+		{
+			ID: '415',
+			front: 'Gemeinsam, zusammen',
+			back: '一緒',
+			hint: 'いっしょ'
+		},
+		{
+			ID: '416',
+			front: 'Park',
+			back: '公園',
+			hint: 'こうえん'
+		},
+		{
+			ID: '417',
+			front: 'Kino',
+			back: '映画館',
+			hint: 'えいがかん'
+		},
+		{
+			ID: '418',
+			front: 'Treffen',
+			back: '会います',
+			hint: 'あいます'
+		},
+		{
+			ID: '419',
+			front: 'Lass uns',
+			back: 'ましょう',
+			hint: ''
+		},
+		{
+			ID: '420',
+			front: 'Nächste woche',
+			back: '来週',
+			hint: 'らいしゅ'
+		},
+		{
+			ID: '421',
+			front: 'Nun, komm',
+			back: 'さあ',
+			hint: ''
+		},
+		{
+			ID: '422',
+			front: 'Anrufen',
+			back: '電話をかけ',
+			hint: 'でんわをかけ'
+		},
+		{
+			ID: '423',
+			front: 'Spielen',
+			back: '弾き',
+			hint: 'ひき'
+		},
+		{
+			ID: '424',
+			front: 'Letzte woche',
+			back: '先週',
+			hint: 'せんしゅう'
+		},
+		{
+			ID: '425',
+			front: 'Übernächste woche',
+			back: '再来週',
+			hint: 'さらいしゅう'
+		},
+		{
+			ID: '426',
+			front: 'Üben',
+			back: '練習',
+			hint: 'れんしゆ'
+		},
+		{
+			ID: '427',
+			front: 'Lehren',
+			back: '教え',
+			hint: 'おしえ'
+		},
+		{
+			ID: '428',
+			front: 'Computer',
+			back: 'パソコン',
+			hint: ''
+		},
+		{
+			ID: '429',
+			front: 'Herstellen',
+			back: '作り',
+			hint: 'つくり'
+		},
+		{
+			ID: '430',
+			front: 'Kochen',
+			back: '料理',
+			hint: 'りょうり'
+		},
+		{
+			ID: '431',
+			front: 'Nummer',
+			back: '番号',
+			hint: 'ばんごう'
+		},
+		{
+			ID: '432',
+			front: 'Zeitung',
+			back: '新聞',
+			hint: 'しんぶん'
+		},
+		{
+			ID: '433',
+			front: 'Ist ok',
+			back: '大丈夫',
+			hint: 'だいじょうぶ'
+		},
+		{
+			ID: '434',
+			front: 'Stark',
+			back: '強い',
+			hint: 'つよい'
+		},
+		{
+			ID: '435',
+			front: 'Schwach',
+			back: '弱い',
+			hint: 'よわい'
+		},
+		{
+			ID: '436',
+			front: 'schlecht',
+			back: '悪い',
+			hint: 'わるい'
+		},
+		{
+			ID: '437',
+			front: 'wetter',
+			back: '天気',
+			hint: 'てんき'
+		},
+		{
+			ID: '438',
+			front: 'Na klar',
+			back: 'いいよ',
+			hint: ''
+		},
+		{
+			ID: '439',
+			front: 'Wie lange dauert es',
+			back: 'どれくらいかかりますか',
+			hint: ''
+		},
+		{
+			ID: '440',
+			front: 'Himmel',
+			back: '空',
+			hint: 'そら'
+		},
+		{
+			ID: '441',
+			front: 'Sinken, fallen',
+			back: '降る',
+			hint: 'ふる'
+		},
+		{
+			ID: '442',
+			front: 'Regen',
+			back: '雨',
+			hint: 'あめ'
+		},
+		{
+			ID: '443',
+			front: 'Nochmals',
+			back: 'また',
+			hint: ''
+		},
+		{
+			ID: '444',
+			front: 'Schnee',
+			back: '雪',
+			hint: 'ゆき'
+		},
+		{
+			ID: '445',
+			front: 'Hell',
+			back: '明るい',
+			hint: 'あかるい'
+		},
+		{
+			ID: '446',
+			front: 'Dieser morgen',
+			back: '今朝',
+			hint: 'けさ'
+		},
+		{
+			ID: '447',
+			front: 'Dieser abend',
+			back: '今晩',
+			hint: 'こんばん'
+		},
+		{
+			ID: '448',
+			front: 'Letzte nacht',
+			back: '夕べ',
+			hint: 'ゆうべ'
+		},
+		{
+			ID: '449',
+			front: 'Finster',
+			back: '暗い',
+			hint: 'くらい'
+		},
+		{
+			ID: '450',
+			front: 'Abend',
+			back: '夕方',
+			hint: 'ゆうかた'
+		},
+		{
+			ID: '451',
+			front: 'Anruf',
+			back: 'お電話',
+			hint: 'おてんわ'
+		},
+		{
+			ID: '452',
+			front: 'Da ist nichts',
+			back: '何もありません',
+			hint: '何もありません'
+		},
+		{
+			ID: '453',
+			front: 'Blasen, wehen',
+			back: 'ふき',
+			hint: ''
+		},
+		{
+			ID: '454',
+			front: 'Kalt',
+			back: '寒い',
+			hint: 'さむい'
+		},
+		{
+			ID: '455',
+			front: 'Heute abend',
+			back: '今夜',
+			hint: 'こんや'
+		},
+		{
+			ID: '456',
+			front: 'Warm',
+			back: '暖かい',
+			hint: 'あたたかい'
+		},
+		{
+			ID: '457',
+			front: 'jedoch',
+			back: 'しかし',
+			hint: ''
+		},
+		{
+			ID: '458',
+			front: 'Kühl',
+			back: '涼しく',
+			hint: 'すずしい'
+		},
+		{
+			ID: '459',
+			front: 'Nicht unbedingt',
+			back: 'はない',
+			hint: ''
+		},
+		{
+			ID: '460',
+			front: 'Lunchbox',
+			back: '弁当',
+			hint: 'べんと'
+		},
+		{
+			ID: '461',
+			front: 'Abend essen',
+			back: '夕飯',
+			hint: 'ゆうはん'
+		},
+		{
+			ID: '462',
+			front: 'Überhaupt',
+			back: '全然',
+			hint: 'ぜんぜん'
+		},
+		{
+			ID: '463',
+			front: 'überhaupt',
+			back: '全く',
+			hint: 'まったく'
+		},
+		{
+			ID: '464',
+			front: 'Nahrung',
+			back: '食べ物',
+			hint: '食べもの'
+		},
+		{
+			ID: '465',
+			front: 'Alles',
+			back: '全部',
+			hint: 'ぜんぶ'
+		},
+		{
+			ID: '466',
+			front: 'Salz',
+			back: '塩',
+			hint: 'しお'
+		},
+		{
+			ID: '467',
+			front: 'Willst du?',
+			back: 'いかがですか',
+			hint: ''
+		},
+		{
+			ID: '468',
+			front: 'Eine menge',
+			back: '多い',
+			hint: 'おおい'
+		},
+		{
+			ID: '469',
+			front: 'Sojasauce',
+			back: '醤油',
+			hint: 'しょうゆ'
+		},
+		{
+			ID: '470',
+			front: 'Zucker',
+			back: '砂糖',
+			hint: 'さとう'
+		},
+		{
+			ID: '471',
+			front: 'Gut, ziehmlich',
+			back: '結構',
+			hint: 'けっこう'
+		},
+		{
+			ID: '472',
+			front: 'Schwarzer Tee',
+			back: '紅茶',
+			hint: 'こうちゃ'
+		},
+		{
+			ID: '473',
+			front: 'Sake',
+			back: '酒',
+			hint: 'さけ'
+		},
+		{
+			ID: '474',
+			front: 'Milch',
+			back: '牛乳',
+			hint: 'ぎゅうにゅう'
+		},
+		{
+			ID: '475',
+			front: 'Wenig',
+			back: '少ない',
+			hint: 'すくない'
+		},
+		{
+			ID: '476',
+			front: 'total',
+			back: 'とでも',
+			hint: ''
+		},
+		{
+			ID: '477',
+			front: 'Richtig, nicht wahr',
+			back: 'だろう',
+			hint: ''
+		},
+		{
+			ID: '478',
+			front: 'Sehr',
+			back: '大変',
+			hint: 'たいへん'
+		},
+		{
+			ID: '479',
+			front: 'Gebäude',
+			back: '建物',
+			hint: 'たてもの'
+		},
+		{
+			ID: '480',
+			front: 'Ausgang',
+			back: '出口',
+			hint: 'てくち'
+		},
+		{
+			ID: '481',
+			front: 'Bank',
+			back: '銀行',
+			hint: 'ぎんこう'
+		},
+		{
+			ID: '482',
+			front: 'Hospital',
+			back: '病院',
+			hint: 'びょういん'
+		},
+		{
+			ID: '483',
+			front: 'Wie',
+			back: 'どうやって',
+			hint: ''
+		},
+		{
+			ID: '484',
+			front: 'Wie ist es',
+			back: 'いかがですか',
+			hint: ''
+		},
+		{
+			ID: '485',
+			front: 'Laden',
+			back: '店',
+			hint: 'みせ'
+		},
+		{
+			ID: '486',
+			front: 'Dort drüben, andere seite',
+			back: '向こう',
+			hint: 'むこう'
+		},
+		{
+			ID: '487',
+			front: 'Straße, Weg',
+			back: '道',
+			hint: 'みち'
+		},
+		{
+			ID: '488',
+			front: 'Verlassen',
+			back: '出る',
+			hint: 'でる'
+		},
+		{
+			ID: '489',
+			front: 'Norden',
+			back: '北',
+			hint: 'きた'
+		},
+		{
+			ID: '490',
+			front: 'Süden',
+			back: '南',
+			hint: 'みなみ'
+		},
+		{
+			ID: '491',
+			front: 'Osten',
+			back: '東',
+			hint: 'ひがし'
+		},
+		{
+			ID: '492',
+			front: 'Westen',
+			back: '西',
+			hint: 'にし'
+		},
+		{
+			ID: '493',
+			front: 'NordOsten',
+			back: '東北',
+			hint: 'とうほく'
+		},
+		{
+			ID: '494',
+			front: 'Nordwesten',
+			back: '北西',
+			hint: 'ほくせい'
+		},
+		{
+			ID: '495',
+			front: 'Südosten',
+			back: '南東',
+			hint: 'なんとう'
+		},
+		{
+			ID: '496',
+			front: 'Südwesten',
+			back: '南西',
+			hint: 'なんせい'
+		},
+		{
+			ID: '497',
+			front: 'Aussteigen',
+			back: '降り',
+			hint: 'おり'
+		},
+		{
+			ID: '498',
+			front: 'Ersten, start',
+			back: 'はじめに',
+			hint: ''
+		},
+		{
+			ID: '499',
+			front: 'Bei, in der nähe',
+			back: 'のそば',
+			hint: ''
+		},
+		{
+			ID: '500',
+			front: 'Groß, geräumig',
+			back: '広い',
+			hint: 'ひろい'
+		},
+		{
+			ID: '501',
+			front: 'Nächste',
+			back: '次',
+			hint: 'つぎ'
+		},
+		{
+			ID: '502',
+			front: 'Schmal, eng',
+			back: '狭い',
+			hint: 'せまい'
+		},
+		{
+			ID: '503',
+			front: 'Gerade',
+			back: 'まっすぐ',
+			hint: ''
+		},
+		{
+			ID: '504',
+			front: 'Weiter machen, gehen',
+			back: '進み',
+			hint: 'すすみ'
+		},
+		{
+			ID: '505',
+			front: 'Da (entlang)',
+			back: 'そちら',
+			hint: ''
+		},
+		{
+			ID: '506',
+			front: 'Ecke, Kurve',
+			back: '角',
+			hint: 'つの, かど'
+		},
+		{
+			ID: '507',
+			front: 'Abbiegen',
+			back: '曲がる',
+			hint: 'まがる'
+		},
+		{
+			ID: '508',
+			front: 'Bad (WC)',
+			back: 'お手洗い',
+			hint: 'おてあらい'
+		},
+		{
+			ID: '509',
+			front: 'Raucher',
+			back: '喫煙',
+			hint: 'きつえん'
+		},
+		{
+			ID: '510',
+			front: 'Nichtraucher',
+			back: '禁煙',
+			hint: 'きんえん'
+		},
+		{
+			ID: '511',
+			front: 'Nutzlos',
+			back: 'だめ',
+			hint: ''
+		},
+		{
+			ID: '512',
+			front: 'Was machst du?',
+			back: '何だまえですか',
+			hint: ''
+		},
+		{
+			ID: '513',
+			front: 'Teller',
+			back: '皿',
+			hint: 'さら'
+		},
+		{
+			ID: '514',
+			front: 'Stäbchen',
+			back: 'お箸',
+			hint: 'おはし'
+		},
+		{
+			ID: '515',
+			front: 'Hungrig',
+			back: 'お腹',
+			hint: 'おなか'
+		},
+		{
+			ID: '516',
+			front: 'Glas',
+			back: 'コップ',
+			hint: ''
+		},
+		{
+			ID: '517',
+			front: 'Lieblingsessen',
+			back: '好物',
+			hint: 'こうぶつ'
+		},
+		{
+			ID: '518',
+			front: 'Trauben',
+			back: 'ふどう',
+			hint: ''
+		},
+		{
+			ID: '519',
+			front: 'Sauer',
+			back: 'すっぱい',
+			hint: ''
+		},
+		{
+			ID: '520',
+			front: 'Salzig',
+			back: '塩ぱい',
+			hint: 'しよぱい'
+		},
+		{
+			ID: '521',
+			front: 'Dann, Danach',
+			back: 'それから',
+			hint: ''
+		},
+		{
+			ID: '522',
+			front: 'Jeder/jeden',
+			back: '毎',
+			hint: 'まい'
+		},
+		{
+			ID: '523',
+			front: 'Brauchen, benötigen',
+			back: '必要',
+			hint: 'ひつよ'
+		},
+		{
+			ID: '524',
+			front: 'Bist du hungrig',
+			back: 'お腹がすきましたか',
+			hint: ''
+		},
+		{
+			ID: '525',
+			front: 'Boss',
+			back: '親分',
+			hint: 'おやぶん'
+		},
+		{
+			ID: '526',
+			front: 'Wie nennt man das',
+			back: 'どうやってこれを呼ぶの。',
+			hint: 'どうやってこれをよぶの。'
+		},
+		{
+			ID: '527',
+			front: 'Was möchtest du',
+			back: '何にしますか',
+			hint: 'なににしますか'
+		},
+		{
+			ID: '528',
+			front: 'In richtung, mehr',
+			back: 'ほう',
+			hint: ''
+		},
+		{
+			ID: '529',
+			front: 'Von, als',
+			back: 'より',
+			hint: ''
+		},
+		{
+			ID: '530',
+			front: 'Mein hobby ist',
+			back: '趣味は',
+			hint: 'しゅみは'
+		},
+		{
+			ID: '531',
+			front: 'Ernsthaft',
+			back: 'マジで',
+			hint: ''
+		},
+		{
+			ID: '532',
+			front: 'Kann nicht helfen',
+			back: 'しょうがない',
+			hint: ''
+		},
+		{
+			ID: '533',
+			front: 'Bitte nochmal',
+			back: 'もいちどおねがいします',
+			hint: ''
+		},
+		{
+			ID: '534',
+			front: 'Was ist es',
+			back: '何だっけ',
+			hint: 'なんだっけ'
+		},
+		{
+			ID: '535',
+			front: 'Ding (greifbar)',
+			back: 'もの',
+			hint: ''
+		},
+		{
+			ID: '536',
+			front: 'Ding (nicht greifbar)',
+			back: 'こと',
+			hint: ''
+		},
+		{
+			ID: '537',
+			front: 'Zustand',
+			back: '状態',
+			hint: 'じょうたい'
+		},
+		{
+			ID: '538',
+			front: 'gefährlich',
+			back: '危ない',
+			hint: 'あぶない'
+		},
+		{
+			ID: '539',
+			front: 'Stop',
+			back: 'やめなさい',
+			hint: ''
+		},
+		{
+			ID: '540',
+			front: 'Danke für die harte Arbeit',
+			back: 'お疲れ様でした',
+			hint: 'おつかれかさまでした'
+		},
+		{
+			ID: '541',
+			front: 'Bestellung',
+			back: '注文',
+			hint: 'ちゅうもん'
+		},
+		{
+			ID: '542',
+			front: 'Hurra',
+			back: 'やった',
+			hint: ''
+		},
+		{
+			ID: '543',
+			front: 'Nach langer Zeit',
+			back: 'お久しぶり',
+			hint: 'おひさしぶり'
+		},
+		{
+			ID: '544',
+			front: 'Blöd',
+			back: 'くだらない',
+			hint: ''
+		},
+		{
+			ID: '545',
+			front: '１. Tag',
+			back: '一日',
+			hint: 'ついたち'
+		},
+		{
+			ID: '546',
+			front: '２. Tag',
+			back: '二日',
+			hint: 'ふつか'
+		},
+		{
+			ID: '547',
+			front: '３. Tag',
+			back: '三日',
+			hint: 'みっか'
+		},
+		{
+			ID: '548',
+			front: '４. Tag',
+			back: '四日',
+			hint: 'よっか'
+		},
+		{
+			ID: '549',
+			front: '５. Tag',
+			back: '五日',
+			hint: 'いつか'
+		},
+		{
+			ID: '550',
+			front: '６. Tag',
+			back: '六日',
+			hint: 'むいか'
+		},
+		{
+			ID: '551',
+			front: '７. Tag',
+			back: '七日',
+			hint: 'なのか'
+		},
+		{
+			ID: '552',
+			front: '８. Tag',
+			back: '八日',
+			hint: 'ようか'
+		},
+		{
+			ID: '553',
+			front: '９. Tag',
+			back: '九日',
+			hint: 'ここのか'
+		},
+		{
+			ID: '554',
+			front: '１０. Tag',
+			back: '十日',
+			hint: 'とおか'
+		},
+		{
+			ID: '555',
+			front: '２０. Tag',
+			back: '二十日',
+			hint: 'はつか'
+		},
+		{
+			ID: '556',
+			front: 'Jannuar',
+			back: '一月',
+			hint: 'いちがつ'
+		},
+		{
+			ID: '557',
+			front: 'Februar',
+			back: '二月',
+			hint: 'にがつ'
+		},
+		{
+			ID: '558',
+			front: 'März',
+			back: '三月',
+			hint: 'さんがつ'
+		},
+		{
+			ID: '559',
+			front: 'April',
+			back: '四月',
+			hint: 'しがつ'
+		},
+		{
+			ID: '560',
+			front: 'Mai',
+			back: '五月',
+			hint: 'ごがつ'
+		},
+		{
+			ID: '561',
+			front: 'Juni',
+			back: '六月',
+			hint: 'ろくがつ'
+		},
+		{
+			ID: '562',
+			front: 'Juli',
+			back: '七月',
+			hint: 'しちがつ'
+		},
+		{
+			ID: '563',
+			front: 'August',
+			back: '八月',
+			hint: 'はちがつ'
+		},
+		{
+			ID: '564',
+			front: 'September',
+			back: '九月',
+			hint: 'くがつ'
+		},
+		{
+			ID: '565',
+			front: 'Oktober',
+			back: '十月',
+			hint: 'じゅうがつ'
+		},
+		{
+			ID: '566',
+			front: 'November',
+			back: '十一月',
+			hint: 'じゅういちがつ'
+		},
+		{
+			ID: '567',
+			front: 'Dezember',
+			back: '十二月',
+			hint: 'じゅうにがつ'
+		},
+		{
+			ID: '568',
+			front: '1 Monat',
+			back: '一ヶ月',
+			hint: 'いちかげつ'
+		},
+		{
+			ID: '569',
+			front: '2 Monate',
+			back: '二ヶ月',
+			hint: 'にかげつ'
+		},
+		{
+			ID: '570',
+			front: '3 Monate',
+			back: '三ヶ月',
+			hint: 'さんかげつ'
+		},
+		{
+			ID: '571',
+			front: 'Jahr',
+			back: '年',
+			hint: 'ねん'
+		},
+		{
+			ID: '572',
+			front: 'Letztes jahr',
+			back: '去年',
+			hint: 'きょねん'
+		},
+		{
+			ID: '573',
+			front: 'Geburtstag',
+			back: '誕生日',
+			hint: 'たんじょうび'
+		},
+		{
+			ID: '574',
+			front: 'Sommerurlaub',
+			back: '休み',
+			hint: 'やすみ'
+		},
+		{
+			ID: '575',
+			front: 'Gratulation',
+			back: 'おめでとう',
+			hint: ''
+		},
+		{
+			ID: '576',
+			front: 'vorbeigehen',
+			back: '通り',
+			hint: 'とおり'
+		},
+		{
+			ID: '577',
+			front: 'Ein wenig',
+			back: '少し',
+			hint: 'すこし'
+		},
+		{
+			ID: '578',
+			front: 'Die Hälfte',
+			back: '半分',
+			hint: 'はんぶん'
+		},
+		{
+			ID: '579',
+			front: 'Reis Schüssel',
+			back: '茶碗',
+			hint: 'ちゃわん'
+		},
+		{
+			ID: '580',
+			front: 'Rausgehen',
+			back: '出かけ',
+			hint: 'とかけ'
+		},
+		{
+			ID: '581',
+			front: 'Mann',
+			back: '男',
+			hint: 'おとこ'
+		},
+		{
+			ID: '582',
+			front: 'Frau',
+			back: '女',
+			hint: 'おんな'
+		},
+		{
+			ID: '583',
+			front: 'Zuhaues',
+			back: '在宅',
+			hint: 'ざいたく'
+		},
+		{
+			ID: '584',
+			front: 'Geschenk/Souvenier',
+			back: '土産',
+			hint: 'みやげ'
+		},
+		{
+			ID: '585',
+			front: 'ähnlich',
+			back: '似て',
+			hint: 'にて'
+		},
+		{
+			ID: '586',
+			front: 'Cousin',
+			back: 'いとこ',
+			hint: ''
+		},
+		{
+			ID: '587',
+			front: 'Dann, weiter',
+			back: '続いて',
+			hint: 'つついて'
+		},
+		{
+			ID: '588',
+			front: 'Duft',
+			back: '香り',
+			hint: 'かおり'
+		},
+		{
+			ID: '589',
+			front: 'Verschiedene',
+			back: '様々',
+			hint: 'さまざま'
+		},
+		{
+			ID: '590',
+			front: 'Willkommen',
+			back: 'ようこそ',
+			hint: ''
+		},
+		{
+			ID: '591',
+			front: 'Frau',
+			back: '奥さん',
+			hint: 'おくさん'
+		},
+		{
+			ID: '592',
+			front: 'Zuhaue',
+			back: '在宅',
+			hint: 'ざいたく'
+		},
+		{
+			ID: '593',
+			front: 'Sei Vorsichtig',
+			back: '気をつけて',
+			hint: 'きをつけて'
+		},
+		{
+			ID: '594',
+			front: 'Versuchen',
+			back: '試し',
+			hint: 'ためし'
+		},
+		{
+			ID: '595',
+			front: 'Wunderschön',
+			back: '美しい',
+			hint: 'うつくしい'
+		},
+		{
+			ID: '596',
+			front: 'Zum Beispiel',
+			back: '例えば',
+			hint: 'たとえば'
+		},
+		{
+			ID: '597',
+			front: 'Geld',
+			back: 'お金',
+			hint: 'おかね'
+		},
+		{
+			ID: '598',
+			front: 'Uhr',
+			back: '時計',
+			hint: 'とけい'
+		},
+		{
+			ID: '599',
+			front: 'Armbanduhr',
+			back: '腕時計',
+			hint: 'うでどけい'
+		},
+		{
+			ID: '600',
+			front: 'Gepäck',
+			back: '荷物',
+			hint: 'にもつ'
+		},
+		{
+			ID: '601',
+			front: 'Welcher Art',
+			back: 'どんな',
+			hint: ''
+		},
+		{
+			ID: '602',
+			front: 'Geldbörse',
+			back: '財布',
+			hint: 'さいふ'
+		},
+		{
+			ID: '603',
+			front: 'Andere anderes',
+			back: '他に',
+			hint: 'ほかに'
+		},
+		{
+			ID: '604',
+			front: 'Wie das /so wie',
+			back: 'こんな',
+			hint: ''
+		},
+		{
+			ID: '605',
+			front: 'Schwer',
+			back: '重い',
+			hint: 'おもい'
+		},
+		{
+			ID: '606',
+			front: 'Leicht',
+			back: '軽い',
+			hint: 'かるい'
+		},
+		{
+			ID: '607',
+			front: 'Robust',
+			back: '丈夫',
+			hint: 'じようぶ'
+		},
+		{
+			ID: '608',
+			front: 'Verschiedene',
+			back: '色々',
+			hint: 'いろいろ'
+		},
+		{
+			ID: '609',
+			front: 'Erhalten',
+			back: 'にもらい',
+			hint: ''
+		},
+		{
+			ID: '610',
+			front: 'Wichtig',
+			back: '大切',
+			hint: 'だいせつ'
+		},
+		{
+			ID: '611',
+			front: 'Für',
+			back: 'とって',
+			hint: ''
+		},
+		{
+			ID: '612',
+			front: 'Mit- herausnehmen',
+			back: '出します',
+			hint: 'たします'
+		},
+		{
+			ID: '613',
+			front: 'Geben',
+			back: 'あげ',
+			hint: ''
+		},
+		{
+			ID: '614',
+			front: 'Selbe/gleich',
+			back: '同じ',
+			hint: 'おなじ'
+		},
+		{
+			ID: '615',
+			front: 'Tragen, haben',
+			back: '持ち',
+			hint: 'もち'
+		},
+		{
+			ID: '616',
+			front: 'Andere',
+			back: 'ほか',
+			hint: ''
+		},
+		{
+			ID: '617',
+			front: 'Nicht brauchen',
+			back: '要りません',
+			hint: 'いりません'
+		},
+		{
+			ID: '618',
+			front: 'Verkaufen',
+			back: '売り',
+			hint: 'うり'
+		},
+		{
+			ID: '619',
+			front: 'Kinder',
+			back: 'お子さん',
+			hint: 'おこさん'
+		},
+		{
+			ID: '620',
+			front: 'Blume',
+			back: '花',
+			hint: 'はな'
+		},
+		{
+			ID: '621',
+			front: 'Peinlich',
+			back: '恥ずかしい',
+			hint: 'はずかしい'
+		},
+		{
+			ID: '622',
+			front: 'Geruch/Gestank',
+			back: '臭い',
+			hint: 'くさい'
+		},
+		{
+			ID: '623',
+			front: 'Neu starten',
+			back: '再開',
+			hint: 'さいかい'
+		},
+		{
+			ID: '624',
+			front: 'Erschrocken',
+			back: '怖い',
+			hint: 'こわい'
+		},
+		{
+			ID: '625',
+			front: 'Diesmal',
+			back: '今回',
+			hint: 'こんかい'
+		},
+		{
+			ID: '626',
+			front: 'Letztendlich',
+			back: 'やっぱり',
+			hint: ''
+		},
+		{
+			ID: '627',
+			front: 'Fein, toll',
+			back: '立派',
+			hint: 'りぱ'
+		},
+		{
+			ID: '628',
+			front: 'Viele Leute',
+			back: '大勢の人',
+			hint: 'たいせいのひと'
+		},
+		{
+			ID: '629',
+			front: 'Rufen',
+			back: '呼び',
+			hint: 'よび'
+		},
+		{
+			ID: '630',
+			front: 'Jung',
+			back: '若い',
+			hint: 'わかい'
+		},
+		{
+			ID: '631',
+			front: 'Heirat',
+			back: '結婚',
+			hint: 'けっこん'
+		},
+		{
+			ID: '632',
+			front: 'Noch',
+			back: 'まだ',
+			hint: ''
+		},
+		{
+			ID: '633',
+			front: 'Berühmt',
+			back: '有名',
+			hint: 'ゆうめい'
+		},
+		{
+			ID: '634',
+			front: 'Erwachsen',
+			back: '大人',
+			hint: 'おとな'
+		},
+		{
+			ID: '635',
+			front: 'Baby',
+			back: '赤ちゃん',
+			hint: 'あかちゃん'
+		},
+		{
+			ID: '636',
+			front: 'Scheidung',
+			back: '離婚',
+			hint: 'りこん'
+		},
+		{
+			ID: '637',
+			front: 'Geburt',
+			back: '生まれ',
+			hint: 'うまれ'
+		},
+		{
+			ID: '638',
+			front: 'Sterben',
+			back: '死に',
+			hint: 'しに'
+		},
+		{
+			ID: '639',
+			front: 'Ist geboren',
+			back: '亡くし',
+			hint: 'なくし'
+		},
+		{
+			ID: '640',
+			front: 'Freund',
+			back: '彼氏',
+			hint: 'かれし'
+		},
+		{
+			ID: '641',
+			front: 'Beenden, abschied',
+			back: '別れ',
+			hint: 'わかれ'
+		},
+		{
+			ID: '642',
+			front: 'Single',
+			back: '独身',
+			hint: 'どくしん'
+		},
+		{
+			ID: '643',
+			front: 'Sauber machen',
+			back: '掃除して',
+			hint: 'そおじして'
+		},
+		{
+			ID: '644',
+			front: 'Heimkehren',
+			back: '帰って',
+			hint: 'かえって'
+		},
+		{
+			ID: '645',
+			front: 'Demnächst',
+			back: 'すぐに',
+			hint: ''
+		},
+		{
+			ID: '646',
+			front: 'Nach alldem',
+			back: 'やっぱり',
+			hint: ''
+		},
+		{
+			ID: '647',
+			front: 'Machen',
+			back: 'やる',
+			hint: ''
+		},
+		{
+			ID: '648',
+			front: 'Wundervoll',
+			back: '素晴らしい',
+			hint: 'すばらし'
+		},
+		{
+			ID: '649',
+			front: 'Heimgehen',
+			back: '帰る',
+			hint: 'かえる'
+		},
+		{
+			ID: '650',
+			front: 'Hinsetzen',
+			back: '座り',
+			hint: 'すわり'
+		},
+		{
+			ID: '651',
+			front: 'Öffnen',
+			back: '開け',
+			hint: 'あけ'
+		},
+		{
+			ID: '652',
+			front: 'Aufstehen',
+			back: '立って',
+			hint: 'たって'
+		},
+		{
+			ID: '653',
+			front: 'Schließen',
+			back: '閉める',
+			hint: 'しめる'
+		},
+		{
+			ID: '654',
+			front: 'Nicht einschalten',
+			back: 'つけません',
+			hint: ''
+		},
+		{
+			ID: '655',
+			front: 'Warten',
+			back: '待ち',
+			hint: 'まち'
+		},
+		{
+			ID: '656',
+			front: 'Löschen',
+			back: '消して',
+			hint: 'けして'
+		},
+		{
+			ID: '657',
+			front: 'Und',
+			back: 'そして',
+			hint: ''
+		},
+		{
+			ID: '658',
+			front: 'Wäsche',
+			back: '洗濯',
+			hint: 'せんたく'
+		},
+		{
+			ID: '659',
+			front: 'Arbeitet',
+			back: '勤め',
+			hint: 'つとめ'
+		},
+		{
+			ID: '660',
+			front: 'Smartphone',
+			back: '携帯電話',
+			hint: 'けいたいでんわ'
+		},
+		{
+			ID: '661',
+			front: 'Haben',
+			back: '持って',
+			hint: 'もって'
+		},
+		{
+			ID: '662',
+			front: 'Sprechen',
+			back: '話',
+			hint: 'はなし'
+		},
+		{
+			ID: '663',
+			front: 'Langsam',
+			back: 'ゆっくり',
+			hint: ''
+		},
+		{
+			ID: '664',
+			front: 'Baum',
+			back: '木',
+			hint: 'き'
+		},
+		{
+			ID: '665',
+			front: 'Berg',
+			back: '山',
+			hint: 'やま'
+		},
+		{
+			ID: '666',
+			front: 'Klettern',
+			back: '登り',
+			hint: 'のぼり'
+		},
+		{
+			ID: '667',
+			front: 'Vase',
+			back: '花瓶',
+			hint: 'かびん'
+		},
+		{
+			ID: '668',
+			front: 'Meer',
+			back: '海',
+			hint: 'うみ'
+		},
+		{
+			ID: '669',
+			front: 'Fluss',
+			back: '川',
+			hint: 'かわ'
+		},
+		{
+			ID: '670',
+			front: 'Teich',
+			back: '池',
+			hint: 'いけ'
+		},
+		{
+			ID: '671',
+			front: 'Lebhaft, Geschäftig',
+			back: '賑やか',
+			hint: 'にぎやか'
+		},
+		{
+			ID: '672',
+			front: 'Stimme',
+			back: '声',
+			hint: 'こえ'
+		},
+		{
+			ID: '673',
+			front: 'Schreien',
+			back: '鳴きます',
+			hint: 'なきます'
+		},
+		{
+			ID: '674',
+			front: 'Gefühl',
+			back: '気持ち',
+			hint: 'きもち'
+		},
+		{
+			ID: '675',
+			front: 'Tiere',
+			back: '動物',
+			hint: 'どうぶつ'
+		},
+		{
+			ID: '676',
+			front: 'Zähler für kleine Tiere',
+			back: '匹',
+			hint: 'ひき'
+		},
+		{
+			ID: '677',
+			front: 'Fliegen',
+			back: '飛び',
+			hint: 'とび'
+		},
+		{
+			ID: '678',
+			front: 'Regenschirm',
+			back: '傘',
+			hint: 'かさ'
+		},
+		{
+			ID: '679',
+			front: 'Blühen',
+			back: '咲き',
+			hint: 'さき'
+		},
+		{
+			ID: '680',
+			front: 'Einfügen',
+			back: '差します',
+			hint: 'さします'
+		},
+		{
+			ID: '681',
+			front: 'Bär',
+			back: 'くま',
+			hint: ''
+		},
+		{
+			ID: '682',
+			front: 'Zoo',
+			back: '動物園',
+			hint: 'どうぶつえ'
+		},
+		{
+			ID: '683',
+			front: 'Leise, Still',
+			back: '静か',
+			hint: 'しすか'
+		},
+		{
+			ID: '684',
+			front: 'Hirsch',
+			back: '鹿',
+			hint: 'しか'
+		},
+		{
+			ID: '685',
+			front: 'Kuh',
+			back: '牛',
+			hint: 'うし'
+		},
+		{
+			ID: '686',
+			front: 'Pferd',
+			back: '馬',
+			hint: 'うま'
+		},
+		{
+			ID: '687',
+			front: 'Affe',
+			back: '猿',
+			hint: 'さる'
+		},
+		{
+			ID: '688',
+			front: 'Fuchs',
+			back: '狐',
+			hint: 'きつね'
+		},
+		{
+			ID: '689',
+			front: 'Taube',
+			back: '鳩',
+			hint: 'はと'
+		},
+		{
+			ID: '690',
+			front: 'Weinen/singen',
+			back: '鳴いて',
+			hint: 'ないて'
+		},
+		{
+			ID: '691',
+			front: 'Ist gestorben',
+			back: '亡くなり',
+			hint: 'なくなり'
+		},
+		{
+			ID: '692',
+			front: 'Beginnen, starten',
+			back: '始まる',
+			hint: 'はじまる'
+		},
+		{
+			ID: '693',
+			front: 'Jetzt, schon',
+			back: 'まうすぐ',
+			hint: ''
+		},
+		{
+			ID: '694',
+			front: 'Bereits',
+			back: 'も',
+			hint: ''
+		},
+		{
+			ID: '695',
+			front: 'Hausaufgaben',
+			back: '宿題',
+			hint: 'しゅくだい'
+		},
+		{
+			ID: '696',
+			front: 'Enden, vorbei sein',
+			back: '終わり',
+			hint: 'おわり'
+		},
+		{
+			ID: '697',
+			front: 'Klasse',
+			back: '授業',
+			hint: 'じゅぎょう'
+		},
+		{
+			ID: '698',
+			front: 'Einfach',
+			back: '易しい',
+			hint: 'やさしい'
+		},
+		{
+			ID: '699',
+			front: 'Textbuch',
+			back: '教科書',
+			hint: 'きようかしょ'
+		},
+		{
+			ID: '700',
+			front: 'Kann nicht',
+			back: 'はいけません',
+			hint: ''
+		},
+		{
+			ID: '701',
+			front: 'Wie',
+			back: 'どう',
+			hint: ''
+		},
+		{
+			ID: '702',
+			front: 'So, wie das',
+			back: 'こ',
+			hint: ''
+		},
+		{
+			ID: '703',
+			front: 'merken',
+			back: '覚え',
+			hint: 'おぼえ'
+		},
+		{
+			ID: '704',
+			front: 'Wort',
+			back: '言葉',
+			hint: 'ことば'
+		},
+		{
+			ID: '705',
+			front: 'Bedeutung',
+			back: '意味',
+			hint: 'いみ'
+		},
+		{
+			ID: '706',
+			front: 'hoch halten',
+			back: '差し',
+			hint: 'さし'
+		}
+]

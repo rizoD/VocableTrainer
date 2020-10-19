@@ -13,6 +13,13 @@ namespace VocableTrainer
 			_database = new SQLiteAsyncConnection(dbPath);
 			_database.CreateTableAsync<Vocable>().Wait();
 			_database.CreateTableAsync<Language>().Wait();
+			_database.CreateTableAsync<Sound>().Wait();
+		}
+
+
+		public Task<List<Sound>> GetSoundsAsync()
+		{
+			return _database.Table<Sound>().ToListAsync();
 		}
 
 		public Task<List<Language>> GetLanguagesAsync()
@@ -32,37 +39,61 @@ namespace VocableTrainer
 				.FirstOrDefaultAsync();
 		}
 
-		public Task<int> SaveLanguageAsync(Language lang)
+		public Task<Sound> GetSoundAsync(int Vocableid, Sound.Lang type)
 		{
-			if (lang.Id != 0)
+			return _database.Table<Sound>()
+				.Where(i => i.VocableId == Vocableid && i.Type == type)
+				.FirstOrDefaultAsync();
+		}
+
+		public Task<int> SaveSoundAsync(Sound item)
+		{
+			if (item.Id != 0)
 			{
-				return _database.UpdateAsync(lang);
+				return _database.UpdateAsync(item);
 			}
 			else
 			{
-				return _database.InsertAsync(lang);
+				return _database.InsertAsync(item);
 			}
 		}
 
-		public Task<int> SaveVocableAsync(Vocable vocable)
+		public Task<int> SaveLanguageAsync(Language item)
 		{
-			if (vocable.Id != 0)
+			if (item.Id != 0)
 			{
-				return _database.UpdateAsync(vocable);
+				return _database.UpdateAsync(item);
 			}
 			else
 			{
-				return _database.InsertAsync(vocable);
+				return _database.InsertAsync(item);
 			}
 		}
-		public Task<int> DeleteLanguageAsync(Language lang)
+
+		public Task<int> SaveVocableAsync(Vocable item)
 		{
-			return _database.DeleteAsync(lang);
+			if (item.Id != 0)
+			{
+				return _database.UpdateAsync(item);
+			}
+			else
+			{
+				return _database.InsertAsync(item);
+			}
+		}
+		public Task<int> DeleteLanguageAsync(Sound item)
+		{
+			return _database.DeleteAsync(item);
 		}
 
-		public Task<int> DeleteVocableAsync(Vocable vocable)
+		public Task<int> DeleteLanguageAsync(Language item)
 		{
-			return _database.DeleteAsync(vocable);
+			return _database.DeleteAsync(item);
+		}
+
+		public Task<int> DeleteVocableAsync(Vocable item)
+		{
+			return _database.DeleteAsync(item);
 		}
 	}
 }

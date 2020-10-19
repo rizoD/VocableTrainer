@@ -4,8 +4,10 @@
              x:Class="VocableTrainer.EditLangPage">
     <ContentPage.Content>
         <StackLayout Grid.Row="0">
-            <Label>Language:</Label>
+            <Label>Language</Label>
             <Entry x:Name="LangText" />
+            <Label>Voice</Label>
+            <Entry x:Name="LangVoice" />
             <StackLayout Orientation="Horizontal">
                 <Button x:Name="DelBtn" Text="Delete" Clicked="DelBtn_OnClicked" />
                 <Button x:Name="CancelBtn" Text="Cancel" Clicked="CancelBtn_OnClicked" />

@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "DBCreateer": {
+      "commandName": "Project",
+      "commandLineArgs": "VocableTraining.db3 jsonImport.txt"
+    }
+  }
+}

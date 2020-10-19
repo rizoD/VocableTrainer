@@ -16,12 +16,13 @@ namespace VocableTrainer
 		public EditLangPage()
 		{
 			InitializeComponent();
-			selectedLanguage = App.Data.Languages.FirstOrDefault(item => item.Id == Settings.CurrentLanguage);
+			selectedLanguage = App.Data.CurrentLanguage;
 			if (selectedLanguage == null || selectedLanguage.Id == 0)
 			{
 				selectedLanguage = new Language();
 			}
 			LangText.Text = selectedLanguage.Name;
+			LangVoice.Text = selectedLanguage.Voice;
 			LangText.Focus();
 		}
 
@@ -46,7 +47,8 @@ namespace VocableTrainer
 
 		private void OKBtn_OnClicked(object sender, EventArgs e)
 		{
-			selectedLanguage.Name = LangText.Text; 
+			selectedLanguage.Name = LangText.Text;
+			selectedLanguage.Voice = LangVoice.Text;
 			App.Data.SaveLang(selectedLanguage);
 			Navigation.PopModalAsync();
 		}

@@ -14,7 +14,11 @@ namespace VocableTrainer
 		{
 			get { return CrossSettings.Current; }
 		}
-
+		public static string FilePath
+		{
+			get => AppSettings.GetValueOrDefault(nameof(FilePath), string.Empty);
+			set => AppSettings.AddOrUpdateValue(nameof(FilePath), value);
+		}
 		public static int CurrentLanguage
 		{
 			get => AppSettings.GetValueOrDefault(nameof(CurrentLanguage), 0);
@@ -30,6 +34,12 @@ namespace VocableTrainer
 		{
 			get => AppSettings.GetValueOrDefault(nameof(PlayAnswer), true);
 			set => AppSettings.AddOrUpdateValue(nameof(PlayAnswer), value);
+		}
+
+		public static string NativeVoice
+		{
+			get => AppSettings.GetValueOrDefault(nameof(NativeVoice), string.Empty);
+			set => AppSettings.AddOrUpdateValue(nameof(NativeVoice), value);
 		}
 
 		public static void ClearAllData()

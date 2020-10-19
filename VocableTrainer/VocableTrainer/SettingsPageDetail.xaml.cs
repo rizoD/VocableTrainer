@@ -1,5 +1,8 @@
 ﻿using System;
+using System.IO;
 using System.Linq;
+using Plugin.FilePicker;
+using Plugin.FilePicker.Abstractions;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -12,16 +15,23 @@ namespace VocableTrainer
 		public SettingsPageDetail()
 		{
 			InitializeComponent();
+			Update();
+		}
+
+		private void Update()
+		{
 			AutoPause.IsToggled = Settings.PlayAnswer;
+			NativeVoice.Text = Settings.NativeVoice;
+			Storage.SelectedItem = App.Data.DataStores.FirstOrDefault(item => item.Item2 == Settings.FilePath);
 			UpdateSelected();
 		}
 
 		private void UpdateSelected()
 		{
-			Language.SelectedItem = App.Data.Languages.FirstOrDefault(item => item.Id == Settings.CurrentLanguage);
-			if (Language.SelectedItem == null)
+			App.Data.CurrentLanguage = App.Data.Languages.FirstOrDefault(item => item.Id == Settings.CurrentLanguage);
+			if (App.Data.CurrentLanguage == null)
 			{
-				Language.SelectedItem = App.Data.Languages.First();
+				App.Data.CurrentLanguage = App.Data.Languages.First();
 			}
 		}
 
@@ -47,6 +57,23 @@ namespace VocableTrainer
 		private void SettingsPageDetail_OnAppearing(object sender, EventArgs e)
 		{
 			UpdateSelected();
+		}
+
+		private void NativeVoice_OnTextChanged(object sender, TextChangedEventArgs e)
+		{
+			Settings.NativeVoice = e.NewTextValue;
+		}
+
+		private void Storage_OnSelectedIndexChanged(object sender, EventArgs e)
+		{
+			var tmp = Storage.SelectedItem as Tuple<string, string>;
+			if (tmp != null)
+			{
+				Settings.FilePath = tmp.Item2;
+				App.Data.LoadFile(Settings.FilePath);
+				Update();
+			}
+			
 		}
 	}
 }

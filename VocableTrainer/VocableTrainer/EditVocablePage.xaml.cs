@@ -28,7 +28,7 @@ namespace VocableTrainer
 			App.Data.CurrentVocable.Native = Native.Text;
 			App.Data.CurrentVocable.Detail = Detail.Text;
 			App.Data.CurrentVocable.Foreign = Foreign.Text;
-			App.Data.CurrentVocable.Lang = Settings.CurrentLanguage;
+			App.Data.CurrentVocable.Lang = App.Data.CurrentLanguage.Id;
 			App.Data.SaveVocable(App.Data.CurrentVocable);
 			Navigation.PopModalAsync();
 		}

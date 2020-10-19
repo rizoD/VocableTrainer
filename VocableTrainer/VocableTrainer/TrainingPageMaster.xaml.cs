@@ -37,7 +37,7 @@ namespace VocableTrainer
 					new TrainingPageMasterMenuItem { Id = 0, Title = "Training" , TargetType = typeof(TrainingPageDetail)},
 					new TrainingPageMasterMenuItem { Id = 1, Title = "Vocables" , TargetType = typeof(VocablePageDetail)},
 					new TrainingPageMasterMenuItem { Id = 2, Title = "Settings" , TargetType = typeof(SettingsPageDetail)},
-				});
+					});
 			}
 
 			#region INotifyPropertyChanged Implementation
