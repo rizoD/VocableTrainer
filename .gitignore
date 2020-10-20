@@ -35,14 +35,6 @@ bld/
 #GeneratedTestData
 *_generated/
 TestData/**/*_generated/
-*/CodeGeneration.Embedded.CodeGenerator.Tests/TestData/*
-
-
-#CodeGeneration.Embedded.CodeGenerator.Tests/TestData/
-src/CodeGeneration.Embedded.CodeGenerator.Tests/TestData/**
-
-#CodeGeneration.Embedded.CodeGenerator.Tests/TestData/
-src/CodeGeneration.Embedded.CodeGenerator.Tests/TestData/**
 
 # Visual Studio 2015 cache/options directory
 .vs/

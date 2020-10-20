@@ -24,7 +24,9 @@ namespace VocableTrainer
 
 		private void OKBtn_OnClicked(object sender, EventArgs e)
 		{
-			
+			App.Data.CheckSounds(Native.Text, Sound.Lang.Native);
+			App.Data.CheckSounds(Foreign.Text, Sound.Lang.Foreign);
+
 			App.Data.CurrentVocable.Native = Native.Text;
 			App.Data.CurrentVocable.Detail = Detail.Text;
 			App.Data.CurrentVocable.Foreign = Foreign.Text;
@@ -41,6 +43,12 @@ namespace VocableTrainer
 				App.Data.DeleteVocable(App.Data.CurrentVocable);
 				Navigation.PopModalAsync();
 			}
+		}
+
+		private void SoundBtn_OnClicked(object sender, EventArgs e)
+		{
+			App.Data.UpdateCurrentSound(Sound.Lang.Native);
+			App.Data.UpdateCurrentSound(Sound.Lang.Foreign);
 		}
 	}
 }

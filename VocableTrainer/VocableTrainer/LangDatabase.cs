@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using SQLite;
 
@@ -94,6 +95,18 @@ namespace VocableTrainer
 		public Task<int> DeleteVocableAsync(Vocable item)
 		{
 			return _database.DeleteAsync(item);
+		}
+
+		public async void DeleteSoundAsync(Vocable item, Sound.Lang type)
+		{
+			var sound = _database.Table<Sound>()
+						.Where(i => i.VocableId == item.Id && i.Type == type)
+						.FirstOrDefaultAsync();
+			sound.Wait();
+			if (sound.Result != null)
+			{
+				_database.DeleteAsync(sound.Result);
+			}
 		}
 	}
 }

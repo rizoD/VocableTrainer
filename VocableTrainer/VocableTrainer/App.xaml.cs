@@ -45,11 +45,7 @@ namespace VocableTrainer
 				Sound sound = await Data.Database.GetSoundAsync(Data.CurrentTraining.Id, type);
 				if (sound == null)
 				{
-					sound = SoundManager.CreateSound(Data.CurrentVocable, type);
-					if (sound != null)
-					{
-						Data.SaveSound(sound);
-					}
+					Data.UpdateCurrentSound(type);
 				}
 
 				if (sound != null)

@@ -25,12 +25,13 @@ namespace VocableTrainer
 				text = vocable.Foreign;
 			}
 
-			var bits = DownloadSoundAsync(text, voice).Result;
-			if (bits != null)
+			var bits = DownloadSoundAsync(text, voice);
+			bits.Wait();
+			if (bits.Result != null)
 			{
 				return new Sound()
 				{
-					Data = bits,
+					Data = bits.Result,
 					Type = type,
 					VocableId = vocable.Id
 				};

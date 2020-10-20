@@ -9,6 +9,7 @@ using System.Net.Http;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using Android.Icu.Text;
 using Newtonsoft.Json;
 
 namespace VocableTrainer
@@ -171,6 +172,44 @@ namespace VocableTrainer
 			if (isNew)
 			{
 				Settings.CurrentLanguage = Languages.LastOrDefault().Id;
+			}
+		}
+
+
+		public async void UpdateCurrentSound(Sound.Lang type)
+		{
+			Sound sound = await Database.GetSoundAsync(CurrentTraining.Id, type);
+			if (sound != null)
+			{
+				Database.DeleteSoundAsync(CurrentVocable, type);
+			}
+
+			sound = SoundManager.CreateSound(CurrentVocable, type);
+			if (sound != null)
+			{
+				SaveSound(sound);
+			}
+		}
+
+		public void CheckSounds(string text, Sound.Lang type)
+		{
+			switch (type)
+			{
+				case Sound.Lang.Native:
+					if (CurrentVocable.Native == text)
+					{
+						Database.DeleteSoundAsync(CurrentVocable, type);
+					}
+
+					break;
+				case Sound.Lang.Foreign:
+					if (CurrentVocable.Foreign == text)
+					{
+						Database.DeleteSoundAsync(CurrentVocable, type);
+					}
+					break;
+				default:
+					break;
 			}
 
 		}
