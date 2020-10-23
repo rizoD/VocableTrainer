@@ -10,6 +10,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using Android.Icu.Text;
+using Android.Widget;
 using Newtonsoft.Json;
 
 namespace VocableTrainer
@@ -17,31 +18,21 @@ namespace VocableTrainer
 	public class ViewModel : INotifyPropertyChanged
 	{
 		private Vocable _CurrentVocable;
-		private Vocable _CurrentTraining;
 		private Language _CurrentLanguage;
+		private List<Vocable> vocables;
 		private ObservableCollection<Vocable> _Vocables;
 		private ObservableCollection<Language> _Languages;
 		private ObservableCollection<Vocable> _Trainings;
-		private ObservableCollection<Tuple<string, string>> _dataStores;
+		private string _SearchText = string.Empty;
 
 
-
-		public const string DBFile = "VocableTraining.db3";
+		public readonly static string DBFile = "VocableTraining.db3";
+		public readonly string DBPath = Path.Combine(Environment.GetFolderPath(System.Environment.SpecialFolder.Personal),
+			DBFile);
 
 		public LangDatabase Database;
 		public event PropertyChangedEventHandler PropertyChanged = delegate { };
 
-
-		public ObservableCollection<Tuple<string, string>> DataStores
-		{
-			get => _dataStores;
-
-			set
-			{
-				_dataStores = value;
-				PropertyChanged(this, new PropertyChangedEventArgs(nameof(DataStores)));
-			}
-		}
 		public ObservableCollection<Vocable> Vocables
 		{
 			get => _Vocables;
@@ -84,17 +75,6 @@ namespace VocableTrainer
 			}
 		}
 
-		public Vocable CurrentTraining
-		{
-			get => _CurrentTraining;
-
-			set
-			{
-				_CurrentTraining = value;
-				PropertyChanged(this, new PropertyChangedEventArgs(nameof(CurrentTraining)));
-			}
-		}
-
 		public Vocable CurrentVocable
 		{
 			get => _CurrentVocable;
@@ -106,43 +86,52 @@ namespace VocableTrainer
 			}
 		}
 
-		public ViewModel()
+		public string SearchText
 		{
-			DataStores = new ObservableCollection<Tuple<string, string>>()
+			get => _SearchText;
+
+			set
 			{
-				new Tuple<string, string>("Download", Android.OS.Environment.GetExternalStoragePublicDirectory(Android.OS.Environment.DirectoryDownloads).AbsolutePath),
-				new Tuple<string, string>("Documents", Android.OS.Environment.GetExternalStoragePublicDirectory(Android.OS.Environment.DirectoryDownloads).AbsolutePath),
-				new Tuple<string, string>("App Internal", Environment.GetFolderPath(System.Environment.SpecialFolder.Personal)),
-			};
-			LoadFile(Settings.FilePath);
+				_SearchText = value;
+				Vocables = new ObservableCollection<Vocable>(vocables.Where(item => 
+					item.Native.ToLower().Contains(value.ToLower()) || 
+					item.Detail.ToLower().Contains(value.ToLower()) || 
+					item.Foreign.ToLower().Contains(value.ToLower())));
+				PropertyChanged(this, new PropertyChangedEventArgs(nameof(SearchText)));
+			}
 		}
 
-		public void LoadFile(string folder)
+		public ViewModel()
 		{
-			try
-			{
-				Database = new LangDatabase(Path.Combine(folder, DBFile));
-			}
-			catch (Exception ex)
-			{
-				LoadFile(Environment.GetFolderPath(Environment.SpecialFolder.Personal));
-			}
+			LoadFile();
+		}
+
+		public void LoadFile()
+		{
+			Database = new LangDatabase(DBPath);
 			LoadLang();
 			LoadVocables();
 		}
 
-		private void LoadVocables()
+		private void LoadVocables(Vocable vocable = null)
 		{
-			Vocables = new ObservableCollection<Vocable>(Database.GetVocablesAsync().Result);
-			Trainings = new ObservableCollection<Vocable>(Database.GetVocablesAsync().Result);
+			vocables = Database.GetVocablesAsync();
+			Vocables = new ObservableCollection<Vocable>(vocables);
+			Trainings = new ObservableCollection<Vocable>(vocables);
 
 			Trainings = Vocables;
-			CurrentVocable = Trainings.LastOrDefault();
-			CurrentTraining = Trainings.LastOrDefault();
+			if (vocable != null)
+			{
+				CurrentVocable = Trainings.LastOrDefault(item => item.Id == vocable.Id);
+			}
+			else
+			{
+				CurrentVocable = Trainings.LastOrDefault();
+			}
 		}
 		private void LoadLang()
 		{
-			Languages = new ObservableCollection<Language>(Database.GetLanguagesAsync().Result);
+			Languages = new ObservableCollection<Language>(Database.GetLanguagesAsync());
 
 			Languages.Insert(0, new Language()
 			{
@@ -178,7 +167,7 @@ namespace VocableTrainer
 
 		public async void UpdateCurrentSound(Sound.Lang type)
 		{
-			Sound sound = await Database.GetSoundAsync(CurrentTraining.Id, type);
+			Sound sound = Database.GetSoundAsync(CurrentVocable.Id, type);
 			if (sound != null)
 			{
 				Database.DeleteSoundAsync(CurrentVocable, type);
@@ -196,14 +185,14 @@ namespace VocableTrainer
 			switch (type)
 			{
 				case Sound.Lang.Native:
-					if (CurrentVocable.Native == text)
+					if (CurrentVocable.Native != text)
 					{
 						Database.DeleteSoundAsync(CurrentVocable, type);
 					}
 
 					break;
 				case Sound.Lang.Foreign:
-					if (CurrentVocable.Foreign == text)
+					if (CurrentVocable.Foreign != text)
 					{
 						Database.DeleteSoundAsync(CurrentVocable, type);
 					}
@@ -217,7 +206,7 @@ namespace VocableTrainer
 		public void SaveVocable(Vocable item)
 		{
 			Database.SaveVocableAsync(item);
-			LoadVocables();
+			LoadVocables(item);
 		}
 
 
@@ -226,6 +215,6 @@ namespace VocableTrainer
 			Database.SaveSoundAsync(item);
 		}
 
-		
+
 	}
 }

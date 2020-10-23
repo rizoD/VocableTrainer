@@ -4,13 +4,15 @@
              xmlns:local="clr-namespace:VocableTrainer"
              x:Class="VocableTrainer.VocablePageDetail"
              Title="Vocables">
-    <Grid>
+    <Grid BindingContext="{x:Static local:App.Data}" >
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <ListView Grid.Row="0" 
-                  BindingContext="{x:Static local:App.Data}" 
+        <SearchBar Grid.Row="0" Placeholder="Search items.." Text="{Binding SearchText}"/>
+
+        <ListView Grid.Row="1" 
                   ItemsSource="{Binding Vocables}"
                   SelectedItem="{Binding CurrentVocable}">
             <ListView.ItemTemplate>
@@ -34,7 +36,7 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <StackLayout Grid.Row="1" Orientation="Horizontal">
+        <StackLayout Grid.Row="2" Orientation="Horizontal">
             <Button x:Name="AddBtn" Text="Add New" Clicked="AddBtn_OnClicked"/>
             <Button x:Name="EditBtn" Text="Edit" Clicked="EditBtn_OnClicked" />
         </StackLayout>

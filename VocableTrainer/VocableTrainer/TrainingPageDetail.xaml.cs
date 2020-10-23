@@ -15,6 +15,10 @@ namespace VocableTrainer
 		public TrainingPageDetail()
 		{
 			InitializeComponent();
+			if (App.Data.CurrentVocable == null)
+			{
+				App.Data.CurrentVocable = App.Data.Vocables.LastOrDefault();
+			}
 		}
 
 		private void Prev_OnClicked(object sender, EventArgs e)

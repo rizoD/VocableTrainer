@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Java.IO;
 using SQLite;
+using File = System.IO.File;
+using IOException = System.IO.IOException;
 
 namespace VocableTrainer
 {
@@ -11,6 +14,7 @@ namespace VocableTrainer
 
 		public LangDatabase(string dbPath)
 		{
+
 			_database = new SQLiteAsyncConnection(dbPath);
 			_database.CreateTableAsync<Vocable>().Wait();
 			_database.CreateTableAsync<Language>().Wait();
@@ -18,94 +22,88 @@ namespace VocableTrainer
 		}
 
 
-		public Task<List<Sound>> GetSoundsAsync()
+
+		public List<Sound> GetSoundsAsync()
 		{
-			return _database.Table<Sound>().ToListAsync();
+			return App.GetResult(_database.Table<Sound>().ToListAsync());
 		}
 
-		public Task<List<Language>> GetLanguagesAsync()
+		public List<Language> GetLanguagesAsync()
 		{
-			return _database.Table<Language>().ToListAsync();
+			return App.GetResult(_database.Table<Language>().ToListAsync());
 		}
 
-		public Task<List<Vocable>> GetVocablesAsync()
+		public List<Vocable> GetVocablesAsync()
 		{
-			return _database.Table<Vocable>().ToListAsync();
+			return App.GetResult(_database.Table<Vocable>().ToListAsync());
 		}
 
-		public Task<Vocable> GetVocableAsync(int id)
+		public Vocable GetVocableAsync(int id)
 		{
-			return _database.Table<Vocable>()
+			return App.GetResult(_database.Table<Vocable>()
 				.Where(i => i.Id == id)
-				.FirstOrDefaultAsync();
+				.FirstOrDefaultAsync());
 		}
 
-		public Task<Sound> GetSoundAsync(int Vocableid, Sound.Lang type)
+		public Sound GetSoundAsync(int Vocableid, Sound.Lang type)
 		{
-			return _database.Table<Sound>()
+			return App.GetResult(_database.Table<Sound>()
 				.Where(i => i.VocableId == Vocableid && i.Type == type)
-				.FirstOrDefaultAsync();
+				.FirstOrDefaultAsync());
 		}
 
-		public Task<int> SaveSoundAsync(Sound item)
+		public int SaveSoundAsync(Sound item)
 		{
 			if (item.Id != 0)
 			{
-				return _database.UpdateAsync(item);
+				return App.GetResult(_database.UpdateAsync(item));
 			}
-			else
-			{
-				return _database.InsertAsync(item);
-			}
+			return App.GetResult(_database.InsertAsync(item));
+
 		}
 
-		public Task<int> SaveLanguageAsync(Language item)
+		public int SaveLanguageAsync(Language item)
 		{
 			if (item.Id != 0)
 			{
-				return _database.UpdateAsync(item);
+				return App.GetResult(_database.UpdateAsync(item));
 			}
-			else
-			{
-				return _database.InsertAsync(item);
-			}
+			return App.GetResult(_database.InsertAsync(item));
 		}
 
-		public Task<int> SaveVocableAsync(Vocable item)
+		public int SaveVocableAsync(Vocable item)
 		{
 			if (item.Id != 0)
 			{
-				return _database.UpdateAsync(item);
+				return App.GetResult(_database.UpdateAsync(item));
 			}
-			else
-			{
-				return _database.InsertAsync(item);
-			}
+
+			return App.GetResult(_database.InsertAsync(item));
+
 		}
-		public Task<int> DeleteLanguageAsync(Sound item)
+		public int DeleteLanguageAsync(Sound item)
 		{
-			return _database.DeleteAsync(item);
+			return App.GetResult(_database.DeleteAsync(item));
 		}
 
-		public Task<int> DeleteLanguageAsync(Language item)
+		public int DeleteLanguageAsync(Language item)
 		{
-			return _database.DeleteAsync(item);
+			return App.GetResult(_database.DeleteAsync(item));
 		}
 
-		public Task<int> DeleteVocableAsync(Vocable item)
+		public int DeleteVocableAsync(Vocable item)
 		{
-			return _database.DeleteAsync(item);
+			return App.GetResult(_database.DeleteAsync(item));
 		}
 
-		public async void DeleteSoundAsync(Vocable item, Sound.Lang type)
+		public void DeleteSoundAsync(Vocable item, Sound.Lang type)
 		{
-			var sound = _database.Table<Sound>()
+			var sound = App.GetResult(_database.Table<Sound>()
 						.Where(i => i.VocableId == item.Id && i.Type == type)
-						.FirstOrDefaultAsync();
-			sound.Wait();
-			if (sound.Result != null)
+						.FirstOrDefaultAsync());
+			if (sound != null)
 			{
-				_database.DeleteAsync(sound.Result);
+				_database.DeleteAsync(sound);
 			}
 		}
 	}

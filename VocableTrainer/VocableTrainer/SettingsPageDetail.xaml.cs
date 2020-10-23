@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
+using Android.Widget;
 using Plugin.FilePicker;
 using Plugin.FilePicker.Abstractions;
 using Xamarin.Essentials;
@@ -22,7 +23,6 @@ namespace VocableTrainer
 		{
 			AutoPause.IsToggled = Settings.PlayAnswer;
 			NativeVoice.Text = Settings.NativeVoice;
-			Storage.SelectedItem = App.Data.DataStores.FirstOrDefault(item => item.Item2 == Settings.FilePath);
 			UpdateSelected();
 		}
 
@@ -64,16 +64,35 @@ namespace VocableTrainer
 			Settings.NativeVoice = e.NewTextValue;
 		}
 
-		private void Storage_OnSelectedIndexChanged(object sender, EventArgs e)
+
+		private async void ImportBtn_OnClicked(object sender, EventArgs e)
 		{
-			var tmp = Storage.SelectedItem as Tuple<string, string>;
-			if (tmp != null)
+			var file = await CrossFilePicker.Current.PickFile();
+
+			if (file != null)
 			{
-				Settings.FilePath = tmp.Item2;
-				App.Data.LoadFile(Settings.FilePath);
-				Update();
+				using (Stream fileStream = File.OpenWrite(App.Data.DBPath))
+				{
+					file.GetStream().CopyTo(fileStream);
+				}
+				App.Data.LoadFile();
 			}
-			
+		}
+
+		private async void ExportBtn_OnClickedBtn_OnClicked(object sender, EventArgs e)
+		{
+			try
+			{
+				var bytes = System.IO.File.ReadAllBytes(App.Data.DBPath);
+				var fileCopyName = $"{ViewModel.DBFile}_{System.DateTime.Now:yyyy-MM-dd_HH-mm}.db3";
+				var download = Android.OS.Environment.GetExternalStoragePublicDirectory(Android.OS.Environment.DirectoryDownloads).AbsolutePath;
+				string path = Path.Combine(download, fileCopyName);
+				System.IO.File.WriteAllBytes(path, bytes);
+			}
+			catch (Exception ex)
+			{
+				DisplayAlert("Error", ex.Message, "OK");
+			}
 		}
 	}
 }

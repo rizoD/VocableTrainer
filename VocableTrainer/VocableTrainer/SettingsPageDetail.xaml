@@ -8,11 +8,10 @@
     <StackLayout BindingContext="{x:Static local:App.Data}" >
 
         <Label>Vocable database</Label>
-        <Picker x:Name="Storage" Title="" 
-                ItemsSource="{Binding DataStores}" 
-                ItemDisplayBinding="{Binding Item1}"
-                SelectedIndexChanged="Storage_OnSelectedIndexChanged"/>
-
+        <StackLayout Orientation="Horizontal">
+            <Button x:Name="ImportBtn" Text="Import" Clicked="ImportBtn_OnClicked" />
+            <Button x:Name="ExportBtn" Text="Export" Clicked="ExportBtn_OnClickedBtn_OnClicked" />
+        </StackLayout>
         <Label>Language</Label>
         <Grid >
             <Grid.ColumnDefinitions>

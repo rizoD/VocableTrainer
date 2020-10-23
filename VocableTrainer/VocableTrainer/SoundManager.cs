@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Dalvik.Annotation;
 using Newtonsoft.Json;
+using Encoding = System.Text.Encoding;
 
 namespace VocableTrainer
 {
@@ -70,24 +71,29 @@ namespace VocableTrainer
 			{
 				text = text.Replace("&", "and");
 				var userid = string.Empty; // "&user=198529";
-				var content = new StringContent($"msg={text}&lang={voice}&source=ttsmp3{userid}", System.Text.Encoding.Default, "application/json");
-				content = new StringContent("");
+				string parameters = $"msg={text}&lang={voice}&source=ttsmp3{userid}";
+				var content = new StringContent(parameters, Encoding.Default, "application/x-www-form-urlencoded");
 				TTSState state = null;
-				using (var httpResponse = await client.PostAsync(URL, content))
+				using (var httpResponse = client.PostAsync(URL, content))
 				{
-					if (httpResponse.StatusCode == HttpStatusCode.OK)
+					httpResponse.Wait(TimeSpan.FromSeconds(10));
+					if (httpResponse.Result != null &&
+					    httpResponse.Result.StatusCode == HttpStatusCode.OK)
 					{
-						var json = await httpResponse.Content.ReadAsStringAsync();
+						var json = await httpResponse.Result.Content.ReadAsStringAsync();
 						state = JsonConvert.DeserializeObject<TTSState>(json);
 					}
 				}
 				if (state != null && state.Error == 0)
 				{
-					using (var httpResponse = await client.GetAsync(state.URL))
+					string url = $"https://ttsmp3.com/dlmp3.php?mp3={state.MP3}&location={state.tasktype}";
+					using (var httpResponse = client.GetAsync(url))
 					{
-						if (httpResponse.StatusCode == HttpStatusCode.OK)
+						httpResponse.Wait(TimeSpan.FromSeconds(10));
+						if (httpResponse.Result != null &&
+						    httpResponse.Result.StatusCode == HttpStatusCode.OK)
 						{
-							return await httpResponse.Content.ReadAsByteArrayAsync();
+							return await httpResponse.Result.Content.ReadAsByteArrayAsync();
 						}
 					}
 				}

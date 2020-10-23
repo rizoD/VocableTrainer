@@ -14,11 +14,7 @@ namespace VocableTrainer
 		{
 			get { return CrossSettings.Current; }
 		}
-		public static string FilePath
-		{
-			get => AppSettings.GetValueOrDefault(nameof(FilePath), string.Empty);
-			set => AppSettings.AddOrUpdateValue(nameof(FilePath), value);
-		}
+
 		public static int CurrentLanguage
 		{
 			get => AppSettings.GetValueOrDefault(nameof(CurrentLanguage), 0);

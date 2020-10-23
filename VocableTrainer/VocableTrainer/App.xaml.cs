@@ -38,11 +38,11 @@ namespace VocableTrainer
 		{
 		}
 
-		public static async void Play(Sound.Lang type)
+		public static void Play(Sound.Lang type)
 		{
-			if (Data.CurrentTraining != null)
+			if (Data.CurrentVocable != null)
 			{
-				Sound sound = await Data.Database.GetSoundAsync(Data.CurrentTraining.Id, type);
+				Sound sound = Data.Database.GetSoundAsync(Data.CurrentVocable.Id, type);
 				if (sound == null)
 				{
 					Data.UpdateCurrentSound(type);
@@ -63,9 +63,8 @@ namespace VocableTrainer
 		{
 			if (Data.Trainings.Count > 0)
 			{
-				int i = (Data.Trainings.IndexOf(Data.CurrentTraining) + 1) % Data.Trainings.Count;
-				Data.CurrentTraining = Data.Trainings[i];
-				Data.CurrentVocable = Data.CurrentTraining;
+				int i = (Data.Trainings.IndexOf(Data.CurrentVocable) + 1) % Data.Trainings.Count;
+				Data.CurrentVocable = Data.Trainings[i];
 			}
 		}
 
@@ -73,15 +72,20 @@ namespace VocableTrainer
 		{
 			if (Data.Trainings.Count > 0)
 			{
-				int i = Data.Trainings.IndexOf(Data.CurrentTraining) - 1;
+				int i = Data.Trainings.IndexOf(Data.CurrentVocable) - 1;
 				if (i < 0)
 				{
 					i = Data.Trainings.Count - 1;
 				}
 
-				Data.CurrentTraining = Data.Trainings[i];
-				Data.CurrentVocable = Data.CurrentTraining;
+				Data.CurrentVocable = Data.Trainings[i];
 			}
+		}
+
+		public static T GetResult<T>(Task<T> task)
+		{
+			task.Wait(TimeSpan.FromSeconds(5));
+			return task.Result;
 		}
 
 	}

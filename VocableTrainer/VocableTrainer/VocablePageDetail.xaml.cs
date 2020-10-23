@@ -22,5 +22,10 @@ namespace VocableTrainer
 		{
 			Navigation.PushModalAsync(new EditVocablePage());
 		}
+
+		private void InputView_OnTextChanged(object sender, TextChangedEventArgs e)
+		{
+			throw new NotImplementedException();
+		}
 	}
 }
