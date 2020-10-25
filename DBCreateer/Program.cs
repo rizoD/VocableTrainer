@@ -41,12 +41,12 @@ namespace DBCreateer
 					Detail = import.hint,
 					Native = import.front,
 					Foreign = import.back,
-					Lang = lang.Id
+					LangId = lang.Id
 				};
 				db.SaveVocable(voc);
 			}
 
-			var vocables = db.GetVocables();
+			var vocables = db.GetVocables(lang.Id);
 			foreach (var vocable in vocables)
 			{
 				var id = imports.FirstOrDefault(item => item.front == vocable.Native

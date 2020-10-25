@@ -4,8 +4,10 @@ using System.ComponentModel;
 using System.IO;
 using System.Threading.Tasks;
 using Android.Content;
+using Android.Media.Audiofx;
 using Google.Apis.Drive.v3;
 using Plugin.FilePicker.Abstractions;
+using VocableTrainer.Data;
 using Xamarin.Forms;
 using Uri = Android.Net.Uri;
 
@@ -38,11 +40,17 @@ namespace VocableTrainer
 		{
 		}
 
-		public static void Play(Sound.Lang type)
+		public static void TrainingFlag()
+		{
+			Data.CurrentVocable.Flag |= Flags.Training;
+			Data.SaveVocable(Data.CurrentVocable);
+		}
+
+		public static void PlaySound(Sound.Lang type)
 		{
 			if (Data.CurrentVocable != null)
 			{
-				Sound sound = Data.Database.GetSoundAsync(Data.CurrentVocable.Id, type);
+				Sound sound = Data.Database.GetSound(Data.CurrentVocable.Id, type);
 				if (sound == null)
 				{
 					Data.UpdateCurrentSound(type);
@@ -55,7 +63,17 @@ namespace VocableTrainer
 			}
 		}
 
-		public static void PlayPause()
+		public static void Play()
+		{
+			Data.SaveTrainingState();
+		}
+
+		public static void Restart()
+		{
+			Data.SaveTrainingState();
+		}
+
+		public static void Pause()
 		{
 		}
 
@@ -65,6 +83,7 @@ namespace VocableTrainer
 			{
 				int i = (Data.Trainings.IndexOf(Data.CurrentVocable) + 1) % Data.Trainings.Count;
 				Data.CurrentVocable = Data.Trainings[i];
+				Settings.LastTraining = i;
 			}
 		}
 
@@ -79,6 +98,7 @@ namespace VocableTrainer
 				}
 
 				Data.CurrentVocable = Data.Trainings[i];
+				Settings.LastTraining = i;
 			}
 		}
 

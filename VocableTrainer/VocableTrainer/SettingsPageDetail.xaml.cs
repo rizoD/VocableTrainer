@@ -21,7 +21,6 @@ namespace VocableTrainer
 
 		private void Update()
 		{
-			AutoPause.IsToggled = Settings.PlayAnswer;
 			NativeVoice.Text = Settings.NativeVoice;
 			UpdateSelected();
 		}
@@ -33,11 +32,6 @@ namespace VocableTrainer
 			{
 				App.Data.CurrentLanguage = App.Data.Languages.First();
 			}
-		}
-
-		private void Switch_OnToggled(object sender, ToggledEventArgs e)
-		{
-			Settings.PlayAnswer = e.Value;
 		}
 
 		private async void EditLang_OnClicked(object sender, EventArgs e)

@@ -25,14 +25,7 @@
                     SelectedIndexChanged="Language_OnSelectedIndexChanged"/>
             <Button Grid.Column="1" x:Name="EditLang" Text="&#9997;" Clicked="EditLang_OnClicked" FontSize="28"/>
         </Grid>
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="Auto"/>
-            </Grid.ColumnDefinitions>
-            <Label Grid.Column="0" Text="Auto pause" />
-            <Switch x:Name="AutoPause" Grid.Column="1" Toggled="Switch_OnToggled"/>
-        </Grid>
+       
         <Label>Native voice</Label>
         <Entry x:Name="NativeVoice" TextChanged="NativeVoice_OnTextChanged"/>
         

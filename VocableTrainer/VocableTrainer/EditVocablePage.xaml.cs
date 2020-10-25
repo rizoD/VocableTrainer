@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using VocableTrainer.Data;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -27,10 +28,11 @@ namespace VocableTrainer
 			App.Data.CheckSounds(Native.Text, Sound.Lang.Native);
 			App.Data.CheckSounds(Foreign.Text, Sound.Lang.Foreign);
 
+			App.Data.CurrentVocable.Flag = Flags.None;
 			App.Data.CurrentVocable.Native = Native.Text;
 			App.Data.CurrentVocable.Detail = Detail.Text;
 			App.Data.CurrentVocable.Foreign = Foreign.Text;
-			App.Data.CurrentVocable.Lang = App.Data.CurrentLanguage.Id;
+			App.Data.CurrentVocable.LangId = App.Data.CurrentLanguage.Id;
 			App.Data.SaveVocable(App.Data.CurrentVocable);
 			Navigation.PopModalAsync();
 		}
