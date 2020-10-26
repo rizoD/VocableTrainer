@@ -285,11 +285,11 @@ namespace VocableTrainer
 		}
 
 
-		public void SuffleTraining(int mostRecent)
+		public void ShuffleTraining()
 		{
 			var train = vocables.OrderByDescending(item => item.Id);
-			var first = train.Take(mostRecent).OrderBy(item => Guid.NewGuid());
-			var last = train.Skip(mostRecent).OrderBy(item => Guid.NewGuid());
+			var first = train.Take(CurrentTraining.MostRecent).OrderBy(item => Guid.NewGuid());
+			var last = train.Skip(CurrentTraining.MostRecent).OrderBy(item => Guid.NewGuid());
 			Trainings = new ObservableCollection<Vocable>(first.Concat(last));
 		}
 

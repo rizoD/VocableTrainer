@@ -65,16 +65,20 @@ namespace VocableTrainer
 
 		public static void Play()
 		{
+			Data.State = PlayState.Playing;
 			Data.SaveTrainingState();
 		}
 
 		public static void Restart()
 		{
+			Data.State = PlayState.Playing;
+			Data.ShuffleTraining();
 			Data.SaveTrainingState();
 		}
 
 		public static void Pause()
 		{
+			Data.State = PlayState.Pause;
 		}
 
 		public static void Next()
