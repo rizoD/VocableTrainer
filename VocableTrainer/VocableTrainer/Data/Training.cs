@@ -13,6 +13,7 @@ namespace VocableTrainer
 	{
 		public event PropertyChangedEventHandler PropertyChanged = delegate { };
 		public bool _autoPlay = false;
+		public bool _PlayAnswer = false;
 
 		public int _pause = 4;
 		public int _mostRecent = 30;
@@ -54,6 +55,16 @@ namespace VocableTrainer
 			}
 		}
 
+		public bool PlayAnswer
+		{
+			get => _PlayAnswer;
+			set
+			{
+				_PlayAnswer = value;
+				PropertyChanged(this, new PropertyChangedEventArgs(nameof(PlayAnswer)));
+			}
+		}
+
 		public byte[] Sorting { get; set; }
 		
 		public Training()
@@ -82,10 +93,9 @@ namespace VocableTrainer
 			if (list != null && Sorting != null)
 			{
 				int idx = 0;
-				var sortinglist = GetList(Sorting).Select(item => new { ID = item, Idx = idx++ });
-				return list
-					.Where(item => item.LangId == LangId && sortinglist.Any(sitem => item.Id == sitem.ID)) // filter only element available during trainging start
-					.OrderBy(item => sortinglist.FirstOrDefault(sitem => sitem.ID == item.Id)?.Idx); // order do reflect last training session
+				// order to reflect last training session
+				var sortedList = GetList(Sorting).Select(vocID => list.FirstOrDefault(item => item.Id == vocID));
+				return sortedList.Where(item => item != null); // filter only element available during training start
 			}
 			return list;
 		}

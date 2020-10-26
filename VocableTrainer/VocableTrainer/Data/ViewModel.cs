@@ -23,7 +23,7 @@ namespace VocableTrainer
 		private Training _Training;
 		private Vocable _CurrentVocable;
 		private Language _CurrentLanguage;
-		
+
 
 		private ObservableCollection<Vocable> _Vocables;
 		private ObservableCollection<Language> _Languages;
@@ -38,6 +38,8 @@ namespace VocableTrainer
 
 		public LangDatabase Database;
 		public event PropertyChangedEventHandler PropertyChanged = delegate { };
+
+		public List<Sound.Lang> TrainingSound { get; set; }
 
 		public bool NotPlaying
 		{
@@ -151,6 +153,7 @@ namespace VocableTrainer
 
 		public ViewModel()
 		{
+			TrainingSound = new List<Sound.Lang>();
 			LoadFile();
 		}
 
@@ -291,6 +294,9 @@ namespace VocableTrainer
 			var first = train.Take(CurrentTraining.MostRecent).OrderBy(item => Guid.NewGuid());
 			var last = train.Skip(CurrentTraining.MostRecent).OrderBy(item => Guid.NewGuid());
 			Trainings = new ObservableCollection<Vocable>(first.Concat(last));
+			CurrentVocable = Trainings.FirstOrDefault();
+			Settings.LastTraining = CurrentVocable.Id;
+
 		}
 
 		public void SaveTrainingState()

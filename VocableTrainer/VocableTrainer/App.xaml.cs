@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 using Android.Content;
 using Android.Media.Audiofx;
@@ -65,19 +66,25 @@ namespace VocableTrainer
 
 		public static void Play()
 		{
-			Data.State = PlayState.Playing;
 			Data.SaveTrainingState();
+			Data.TrainingSound.Add(Sound.Lang.Native);
+			Data.TrainingSound.Add(Sound.Lang.Foreign);
+			Data.State = PlayState.Playing;
 		}
 
 		public static void Restart()
 		{
-			Data.State = PlayState.Playing;
 			Data.ShuffleTraining();
 			Data.SaveTrainingState();
+			Data.TrainingSound.Add(Sound.Lang.Native);
+			Data.TrainingSound.Add(Sound.Lang.Foreign);
+			Data.State = PlayState.Playing;
+
 		}
 
 		public static void Pause()
 		{
+			Data.TrainingSound.Clear();
 			Data.State = PlayState.Pause;
 		}
 
@@ -87,8 +94,17 @@ namespace VocableTrainer
 			{
 				int i = (Data.Trainings.IndexOf(Data.CurrentVocable) + 1) % Data.Trainings.Count;
 				Data.CurrentVocable = Data.Trainings[i];
-				Settings.LastTraining = i;
+				Settings.LastTraining = Data.CurrentVocable.Id;
+				if (!Data.CurrentTraining.AutoPlay)
+				{
+					var current = Data.TrainingSound.OrderBy(item => Guid.NewGuid()).FirstOrDefault();
+					PlaySound(current);
+				}
 			}
+		}
+		private static bool IsLastTrainingVocable()
+		{
+			return (Data.Trainings.IndexOf(Data.CurrentVocable) + 1) >= Data.Trainings.Count;
 		}
 
 		public static void Prev()
@@ -102,7 +118,12 @@ namespace VocableTrainer
 				}
 
 				Data.CurrentVocable = Data.Trainings[i];
-				Settings.LastTraining = i;
+				Settings.LastTraining = Data.CurrentVocable.Id;
+				if (!Data.CurrentTraining.AutoPlay)
+				{
+					var current = Data.TrainingSound.OrderBy(item => Guid.NewGuid()).FirstOrDefault();
+					PlaySound(current);
+				}
 			}
 		}
 
@@ -112,5 +133,52 @@ namespace VocableTrainer
 			return task.Result;
 		}
 
+		private static DateTime lastChange = DateTime.Now;
+		private static Random rnd = new Random(DateTime.Now.Millisecond);
+
+		public static void DoTraining()
+		{
+			if (Data == null || Data.CurrentTraining == null)
+			{
+				return;
+			}
+
+			if (Data.State == PlayState.Playing && Data.CurrentTraining.AutoPlay)
+			{
+				if (lastChange.AddSeconds(App.Data.CurrentTraining.Pause) <= DateTime.Now)
+				{
+					if (Data.TrainingSound.Count == 0)
+					{
+						if (IsLastTrainingVocable())
+						{
+							Data.State = PlayState.Finished;
+							return;
+						}
+
+						Data.TrainingSound.Add(Sound.Lang.Native);
+						Data.TrainingSound.Add(Sound.Lang.Foreign);
+
+						Next();
+					}
+
+					var current = Data.TrainingSound.OrderBy(item => Guid.NewGuid()).FirstOrDefault();
+					Data.TrainingSound.Remove(current);
+
+					PlaySound(current);
+					if (!Data.CurrentTraining.PlayAnswer)
+					{
+						Data.TrainingSound.Clear();
+					}
+
+					lastChange = DateTime.Now;
+				}
+			}
+			else
+			{
+				lastChange = DateTime.Now;
+			}
+		}
+
 	}
+
 }

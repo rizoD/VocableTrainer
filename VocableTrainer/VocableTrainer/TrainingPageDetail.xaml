@@ -21,7 +21,15 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
-                <Label VerticalTextAlignment="Center" Grid.Column="0" Text="Auto play answer" />
+                <Label VerticalTextAlignment="Center" Grid.Column="0" Text="Play answer" />
+                <Switch x:Name="PlayAnswer" Grid.Column="1" IsToggled="{Binding CurrentTraining.PlayAnswer}"/>
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Label VerticalTextAlignment="Center" Grid.Column="0" Text="Auto play next" />
                 <Switch x:Name="AutoPause" Grid.Column="1" IsToggled="{Binding CurrentTraining.AutoPlay}"/>
             </Grid>
             <Grid>
