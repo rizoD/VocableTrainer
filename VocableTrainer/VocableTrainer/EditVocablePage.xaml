@@ -6,11 +6,25 @@
     <ContentPage.Content>
         <StackLayout Grid.Row="0">
             <Label>Foreign:</Label>
-            <Entry x:Name="Foreign" />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Entry Grid.Column="0" x:Name="Foreign" />
+                <Button Grid.Column="1" x:Name="PlayForeign" Text="&#128265;" Clicked="PlayForeign_OnClicked" />
+            </Grid>
             <Label>Detail:</Label>
             <Entry x:Name="Detail"></Entry>
             <Label>Native:</Label>
-            <Entry x:Name="Native"></Entry>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Entry Grid.Column="0" x:Name="Native" />
+                <Button Grid.Column="1" x:Name="PlayNative" Text="&#128265;" Clicked="PlayNative_OnClicked" />
+            </Grid>
             <Button x:Name="SountBtn" Text="Update Sound" Clicked="SoundBtn_OnClicked"/>
             <StackLayout Orientation="Horizontal">
                 <Button x:Name="DelBtn" Text="Delete" Clicked="DelBtn_OnClicked" />

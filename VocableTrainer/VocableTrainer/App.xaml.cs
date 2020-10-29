@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Android.Bluetooth;
 using Android.Content;
 using Android.Media.Audiofx;
 using Google.Apis.Drive.v3;
@@ -36,7 +37,6 @@ namespace VocableTrainer
 		protected override void OnSleep()
 		{
 		}
-
 		protected override void OnResume()
 		{
 		}
@@ -61,6 +61,18 @@ namespace VocableTrainer
 				{
 					SoundManager.Play(sound);
 				}
+			}
+		}
+
+		public static void TogglePlay()
+		{
+			if (Data.State == PlayState.Playing)
+			{
+				Pause();
+			}
+			else
+			{
+				Play();
 			}
 		}
 

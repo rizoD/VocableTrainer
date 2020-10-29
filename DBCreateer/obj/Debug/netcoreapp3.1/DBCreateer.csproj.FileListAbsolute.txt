@@ -23,6 +23,7 @@ C:\Projects\Privat\Xamarin\VocableTrainer\DBCreateer\bin\Debug\netcoreapp3.1\run
 C:\Projects\Privat\Xamarin\VocableTrainer\DBCreateer\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\e_sqlite3.dll
 C:\Projects\Privat\Xamarin\VocableTrainer\DBCreateer\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\e_sqlite3.dll
 C:\Projects\Privat\Xamarin\VocableTrainer\DBCreateer\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\e_sqlite3.dll
+C:\Projects\Privat\Xamarin\VocableTrainer\DBCreateer\obj\Debug\netcoreapp3.1\DBCreateer.csprojAssemblyReference.cache
 C:\Projects\Privat\Xamarin\VocableTrainer\DBCreateer\obj\Debug\netcoreapp3.1\DBCreateer.AssemblyInfoInputs.cache
 C:\Projects\Privat\Xamarin\VocableTrainer\DBCreateer\obj\Debug\netcoreapp3.1\DBCreateer.AssemblyInfo.cs
 C:\Projects\Privat\Xamarin\VocableTrainer\DBCreateer\obj\Debug\netcoreapp3.1\DBCreateer.csproj.CoreCompileInputs.cache
@@ -30,4 +31,3 @@ C:\Projects\Privat\Xamarin\VocableTrainer\DBCreateer\obj\Debug\netcoreapp3.1\DBC
 C:\Projects\Privat\Xamarin\VocableTrainer\DBCreateer\obj\Debug\netcoreapp3.1\DBCreateer.dll
 C:\Projects\Privat\Xamarin\VocableTrainer\DBCreateer\obj\Debug\netcoreapp3.1\DBCreateer.pdb
 C:\Projects\Privat\Xamarin\VocableTrainer\DBCreateer\obj\Debug\netcoreapp3.1\DBCreateer.genruntimeconfig.cache
-C:\Projects\Privat\Xamarin\VocableTrainer\DBCreateer\obj\Debug\netcoreapp3.1\DBCreateer.csprojAssemblyReference.cache

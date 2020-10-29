@@ -113,7 +113,6 @@ namespace VocableTrainer
 			{
 				_CurrentLanguage = value;
 				PropertyChanged(this, new PropertyChangedEventArgs(nameof(CurrentLanguage)));
-				LoadVocables();
 			}
 		}
 
@@ -164,9 +163,9 @@ namespace VocableTrainer
 			LoadVocables();
 		}
 
-		private void LoadVocables(Vocable vocable = null)
+		internal void LoadVocables(Vocable vocable = null)
 		{
-			vocables = Database.GetVocables(Settings.CurrentLanguage);
+			vocables = Database.GetVocables(Settings.CurrentLanguage).OrderByDescending(item => item.Id);
 			LoadTraining();
 			Vocables = new ObservableCollection<Vocable>(vocables);
 			Trainings = new ObservableCollection<Vocable>(CurrentTraining.ApplySorting(vocables));
@@ -291,9 +290,17 @@ namespace VocableTrainer
 		public void ShuffleTraining()
 		{
 			var train = vocables.OrderByDescending(item => item.Id);
-			var first = train.Take(CurrentTraining.MostRecent).OrderBy(item => Guid.NewGuid());
-			var last = train.Skip(CurrentTraining.MostRecent).OrderBy(item => Guid.NewGuid());
-			Trainings = new ObservableCollection<Vocable>(first.Concat(last));
+			int i = 0;
+			IEnumerable<Vocable> traininglist = new List<Vocable>();
+
+			while (i < train.Count())
+			{
+				traininglist =
+					traininglist.Concat(train.Skip(i).Take(CurrentTraining.MostRecent).OrderBy(item => Guid.NewGuid()));
+				i += CurrentTraining.MostRecent;
+			}
+			
+			Trainings = new ObservableCollection<Vocable>(traininglist);
 			CurrentVocable = Trainings.FirstOrDefault();
 			Settings.LastTraining = CurrentVocable.Id;
 

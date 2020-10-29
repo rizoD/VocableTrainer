@@ -45,6 +45,7 @@ namespace VocableTrainer
 			if (item != null)
 			{
 				Settings.CurrentLanguage = item.Id;
+				App.Data.LoadVocables();
 			}
 		}
 
@@ -61,19 +62,33 @@ namespace VocableTrainer
 
 		private async void ImportBtn_OnClicked(object sender, EventArgs e)
 		{
-			var file = await CrossFilePicker.Current.PickFile();
-
-			if (file != null)
+			try
 			{
-				using (Stream fileStream = File.OpenWrite(App.Data.DBPath))
+				var file = await CrossFilePicker.Current.PickFile();
+				if (file != null)
 				{
-					file.GetStream().CopyTo(fileStream);
+					using (Stream fileStream = File.OpenWrite(App.Data.DBPath))
+					{
+						file.GetStream().CopyTo(fileStream);
+					}
+					MainThread.BeginInvokeOnMainThread(() =>
+					{
+						// Code to run on the main thread
+						App.Data.LoadFile();
+						DisplayAlert("Import", "Import completed", "OK");
+					});
+					
+
 				}
-				App.Data.LoadFile();
+
+			}
+			catch (Exception ex)
+			{
+				DisplayAlert("Error", ex.Message, "OK");
 			}
 		}
 
-		private async void ExportBtn_OnClickedBtn_OnClicked(object sender, EventArgs e)
+		private void ExportBtn_OnClickedBtn_OnClicked(object sender, EventArgs e)
 		{
 			try
 			{

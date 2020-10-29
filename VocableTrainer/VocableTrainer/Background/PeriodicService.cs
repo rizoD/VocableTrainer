@@ -46,34 +46,19 @@ namespace VocableTrainer.Background
 
 			var timer = new System.Threading.Timer((e) =>
 			{
-				App.DoTraining();
+				try
+				{
+					App.DoTraining();
+				}
+				catch (Exception ex)
+				{
+
+				}
 			}, null, startTimeSpan, periodTimeSpan);
 
 
 			return StartCommandResult.Sticky;
 		}
-
-
-		//void CreateNotificationChannel()
-		//{
-		//	if (Build.VERSION.SdkInt < BuildVersionCodes.O)
-		//	{
-		//		// Notification channels are new in API 26 (and not a part of the
-		//		// support library). There is no need to create a notification
-		//		// channel on older versions of Android.
-		//		return;
-		//	}
-
-		//	var channelName = Resources.GetString(Resource.String.channel_name);
-		//	var channelDescription = GetString(Resource.String.channel_description);
-		//	var channel = new NotificationChannel("10111", channelName, NotificationImportance.Default)
-		//	{
-		//		Description = channelDescription
-		//	};
-
-		//	var notificationManager = (NotificationManager)GetSystemService(NotificationService);
-		//	notificationManager.CreateNotificationChannel(channel);
-		//}
 
 	}
 }

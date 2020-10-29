@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using VocableTrainer.Data;
 using Xamarin.Forms;
@@ -51,6 +52,17 @@ namespace VocableTrainer
 		{
 			App.Data.UpdateCurrentSound(Sound.Lang.Native);
 			App.Data.UpdateCurrentSound(Sound.Lang.Foreign);
+		}
+
+		private void PlayForeign_OnClicked(object sender, EventArgs e)
+		{
+			App.PlaySound(Sound.Lang.Foreign);
+		}
+
+		private void PlayNative_OnClicked(object sender, EventArgs e)
+		{
+			App.PlaySound(Sound.Lang.Native);
+
 		}
 	}
 }

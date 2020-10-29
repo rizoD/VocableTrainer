@@ -44,6 +44,7 @@
     </AndroidSigningKeyPass>
     <AndroidApkSignerAdditionalArguments>
     </AndroidApkSignerAdditionalArguments>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
