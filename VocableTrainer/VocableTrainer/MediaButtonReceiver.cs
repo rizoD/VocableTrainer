@@ -11,8 +11,6 @@ namespace VocableTrainer
 	[IntentFilter(new[] { "android.intent.action.MEDIA_BUTTON" })] // , BluetoothHeadset.ActionAudioStateChanged, BluetoothHeadset.ActionVendorSpecificHeadsetEvent
 	public class MediaButtonReceiver : BroadcastReceiver
 	{
-		public string ComponentName { get { return Class.Name; } }
-
 		public override void OnReceive(Context context, Intent intent)
 		{
 			if (intent.Action != Intent.ActionMediaButton)

@@ -40,7 +40,7 @@ namespace VocableTrainer.Droid
 			{
 				bluetoothDeviceReceiver = new BlueToothDeviceBroadcastReciever();
 			}
-			RegisterReceiver(bluetoothDeviceReceiver, new IntentFilter(BluetoothDevice.ActionFound));
+			RegisterReceiver(bluetoothDeviceReceiver, new IntentFilter(BluetoothDevice.ActionAclDisconnected));
 
 			if (mediaButtonReceiver == null)
 			{
@@ -48,7 +48,7 @@ namespace VocableTrainer.Droid
 			}
 			RegisterReceiver(mediaButtonReceiver, new IntentFilter(Intent.ActionMediaButton));
 
-			createNotification();
+			//createNotification();
 
 			base.OnResume();
         }

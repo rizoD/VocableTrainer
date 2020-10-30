@@ -5,7 +5,7 @@ using Android.Content;
 namespace VocableTrainer
 {
 	[BroadcastReceiver]
-	[IntentFilter(new[] { BluetoothDevice.ActionFound })]
+	[IntentFilter(new[] { BluetoothDevice.ActionAclDisconnected })]
 	public class BlueToothDeviceBroadcastReciever : BroadcastReceiver
 	{
 		public override void OnReceive(Context context, Intent intent)
