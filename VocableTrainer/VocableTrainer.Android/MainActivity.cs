@@ -11,13 +11,17 @@ using VocableTrainer.Background;
 using Android.Bluetooth;
 using Android.Media;
 using Android.Support.V4.App;
+using VocableTrainer.Droid.Actions;
+using VocableTrainer.Droid.Notification;
+using Xamarin.Forms;
 
 namespace VocableTrainer.Droid
 {
     [Activity(Label = "VocableTrainer", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize )]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
-	    private MediaButtonReceiver mediaButtonReceiver;
+	    private ActionReceiver receiver;
+        private MediaButtonReceiver mediaButtonReceiver;
 	    private BlueToothDeviceBroadcastReciever bluetoothDeviceReceiver;
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -31,24 +35,29 @@ namespace VocableTrainer.Droid
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
 
+            Notifications.CreateNotificationChannel(this);
+            receiver = new ActionReceiver();
+            bluetoothDeviceReceiver = new BlueToothDeviceBroadcastReciever();
+            mediaButtonReceiver = new MediaButtonReceiver();
+
+            Notifications.CreateNotification(this);
             PeriodicService.Start();
+		}
+
+        protected override void OnDestroy()
+        {
+	        UnregisterReceiver(receiver);
+	        UnregisterReceiver(mediaButtonReceiver);
+	        UnregisterReceiver(bluetoothDeviceReceiver);
+	        base.OnDestroy();
         }
 
         protected override void OnResume()
         {
-			if (bluetoothDeviceReceiver == null)
-			{
-				bluetoothDeviceReceiver = new BlueToothDeviceBroadcastReciever();
-			}
+	        RegisterReceiver(receiver, new IntentFilter(ActionReceiver.IntentFilterID));
 			RegisterReceiver(bluetoothDeviceReceiver, new IntentFilter(BluetoothDevice.ActionAclDisconnected));
-
-			if (mediaButtonReceiver == null)
-			{
-				mediaButtonReceiver = new MediaButtonReceiver();
-			}
 			RegisterReceiver(mediaButtonReceiver, new IntentFilter(Intent.ActionMediaButton));
 
-			//createNotification();
 
 			base.OnResume();
         }
@@ -60,36 +69,5 @@ namespace VocableTrainer.Droid
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
 
-
-        private void createNotification()
-        {
-	        //Create notification
-	        var notificationManager = GetSystemService(Context.NotificationService) as NotificationManager;
-
-	        //Create an intent to show ui
-	        var uiIntent = new Intent(this, typeof(MainActivity));
-
-	        //Use Notification Builder
-	        NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
-
-	        //Create the notification
-	        //we use the pending intent, passing our ui intent over which will get called
-	        //when the notification is tapped.
-
-
-	        var notification = builder.SetContentIntent(PendingIntent.GetActivity(this, 0, uiIntent, 0))
-		        .SetSmallIcon(Resource.Drawable.navigation_empty_icon)
-		        .SetTicker("Vocable Trainer")
-		        .SetContentTitle("Vocable Trainer")
-		        .SetContentText("Test")
-		        //.AddAction(new NotificationCompat.Action())
-		        //Set the notification sound
-		        .SetSound(RingtoneManager.GetDefaultUri(RingtoneType.Notification))
-		        //Auto cancel will remove the notification once the user touches it
-		        .SetAutoCancel(false).Build();
-
-	        //Show the notification
-	        notificationManager.Notify(1, notification);
-        }
     }
 }

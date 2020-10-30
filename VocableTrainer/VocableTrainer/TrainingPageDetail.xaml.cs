@@ -3,10 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Android;
+using Android.App;
 using Android.Content;
+using Android.OS;
+using Java.Lang;
 using VocableTrainer.Background;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Android.Support.V4.App;
+
 
 namespace VocableTrainer
 {
@@ -20,7 +26,7 @@ namespace VocableTrainer
 			{
 				App.Data.CurrentVocable = App.Data.Vocables.LastOrDefault();
 			}
-			
+
 		}
 
 		private void Prev_OnClicked(object sender, EventArgs e)

@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using System.Text;
 using Android.App;
+using Android.Bluetooth;
 using Android.Content;
 using Android.Views;
 
 namespace VocableTrainer
 {
-	[BroadcastReceiver] //(Enabled = true, Exported = false)
-	[IntentFilter(new[] { "android.intent.action.MEDIA_BUTTON" })] // , BluetoothHeadset.ActionAudioStateChanged, BluetoothHeadset.ActionVendorSpecificHeadsetEvent
+	[BroadcastReceiver(Enabled = true)]
+	[IntentFilter(new[] {
+		Intent.ActionMediaButton
+	})] 
 	public class MediaButtonReceiver : BroadcastReceiver
 	{
 		public override void OnReceive(Context context, Intent intent)

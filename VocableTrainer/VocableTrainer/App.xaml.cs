@@ -11,6 +11,7 @@ using Google.Apis.Drive.v3;
 using Plugin.FilePicker.Abstractions;
 using VocableTrainer.Data;
 using Xamarin.Forms;
+using Xamarin.Forms.Markup;
 using Uri = Android.Net.Uri;
 
 namespace VocableTrainer
@@ -24,11 +25,14 @@ namespace VocableTrainer
 		static string[] Scopes = { DriveService.Scope.DriveReadonly };
 		static string ApplicationName = "VocableTrainer";
 
+
 		public App()
 		{
 			InitializeComponent();
 			MainPage = new TrainingPage(); // new MainPage();
+
 		}
+
 
 		protected override void OnStart()
 		{
@@ -147,10 +151,13 @@ namespace VocableTrainer
 
 		private static DateTime lastChange = DateTime.Now;
 		private static Random rnd = new Random(DateTime.Now.Millisecond);
+		private static bool working = false;
 
 		public static void DoTraining()
 		{
-			if (Data == null || Data.CurrentTraining == null)
+			if (Data == null || 
+			    Data.CurrentTraining == null ||
+			    working)
 			{
 				return;
 			}
@@ -159,29 +166,41 @@ namespace VocableTrainer
 			{
 				if (lastChange.AddSeconds(App.Data.CurrentTraining.Pause) <= DateTime.Now)
 				{
-					if (Data.TrainingSound.Count == 0)
+					working = true;
+					try
 					{
-						if (IsLastTrainingVocable())
+
+						if (Data.TrainingSound.Count == 0)
 						{
-							Data.State = PlayState.Finished;
-							return;
+							if (IsLastTrainingVocable())
+							{
+								Data.State = PlayState.Finished;
+								return;
+							}
+
+							Data.TrainingSound.Add(Sound.Lang.Native);
+							Data.TrainingSound.Add(Sound.Lang.Foreign);
+
+							Next();
 						}
 
-						Data.TrainingSound.Add(Sound.Lang.Native);
-						Data.TrainingSound.Add(Sound.Lang.Foreign);
+						var current = Data.TrainingSound.OrderBy(item => Guid.NewGuid()).FirstOrDefault();
+						Data.TrainingSound.Remove(current);
 
-						Next();
+						PlaySound(current);
+						if (!Data.CurrentTraining.PlayAnswer)
+						{
+							Data.TrainingSound.Clear();
+						}
 					}
-
-					var current = Data.TrainingSound.OrderBy(item => Guid.NewGuid()).FirstOrDefault();
-					Data.TrainingSound.Remove(current);
-
-					PlaySound(current);
-					if (!Data.CurrentTraining.PlayAnswer)
+					catch (Exception ex)
 					{
-						Data.TrainingSound.Clear();
+						ex.ToString();
 					}
-
+					finally
+					{
+						working = false;
+					}
 					lastChange = DateTime.Now;
 				}
 			}

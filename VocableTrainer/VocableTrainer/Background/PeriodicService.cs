@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -27,20 +28,6 @@ namespace VocableTrainer.Background
 
 		public override StartCommandResult OnStartCommand(Intent intent, StartCommandFlags flags, int startId)
 		{
-			// From shared code or in your PCL
-
-			//CreateNotificationChannel();
-			//string messageBody = "service starting";
-
-			//var notification = new Notification.Builder(this, "10111")
-			//.SetContentTitle("Foreground")
-			//.SetContentText(messageBody)
-			//.SetSmallIcon(Resource.Drawable.main)
-			//.SetOngoing(true)
-			//.Build();
-			//StartForeground(SERVICE_RUNNING_NOTIFICATION_ID, notification);
-
-			//=======you can do you always running work here.=====
 			var startTimeSpan = TimeSpan.Zero;
 			var periodTimeSpan = TimeSpan.FromSeconds(1);
 
@@ -48,11 +35,14 @@ namespace VocableTrainer.Background
 			{
 				try
 				{
-					App.DoTraining();
+					Task.Run(() =>
+					{
+						App.DoTraining();
+					});
 				}
 				catch (Exception ex)
 				{
-
+					ex.ToString();
 				}
 			}, null, startTimeSpan, periodTimeSpan);
 

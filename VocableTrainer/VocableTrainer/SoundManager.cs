@@ -6,9 +6,11 @@ using System.IO;
 using System.Net;
 using System.Net.Http;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Dalvik.Annotation;
 using Newtonsoft.Json;
+using Xamarin.Forms;
 using Encoding = System.Text.Encoding;
 
 namespace VocableTrainer
@@ -42,22 +44,31 @@ namespace VocableTrainer
 
 		public static void Play(Sound sound)
 		{
-			try
+			var taks = Task.Factory.StartNew(() =>
 			{
+				bool finished = false;
 				MediaPlayer currentPlayer = new MediaPlayer();
 				currentPlayer.Prepared += (sender, e) =>
 				{
 					currentPlayer.Start();
 				};
+				currentPlayer.Completion += (sender, args) =>
+				{
+					args.ToString();
+					finished = true;
+				};
 				currentPlayer.Stop();
 				currentPlayer.SetDataSource(new StreamMediaDataSource(new MemoryStream(sound.Data)));
-				currentPlayer.Prepare();
-			}
-			catch (Exception ex)
-			{
-				ex.ToString();
-			}
+				currentPlayer.PrepareAsync();
+				while (!finished)
+				{
+					Thread.Sleep(100);
+				}
+			});
+
+			taks.Wait(TimeSpan.FromSeconds(5));
 		}
+
 
 		private const string URL = "https://ttsmp3.com/makemp3_new.php";
 		private static HttpClient client = new HttpClient
@@ -78,7 +89,7 @@ namespace VocableTrainer
 				{
 					httpResponse.Wait(TimeSpan.FromSeconds(10));
 					if (httpResponse.Result != null &&
-					    httpResponse.Result.StatusCode == HttpStatusCode.OK)
+						httpResponse.Result.StatusCode == HttpStatusCode.OK)
 					{
 						var json = await httpResponse.Result.Content.ReadAsStringAsync();
 						state = JsonConvert.DeserializeObject<TTSState>(json);
@@ -91,7 +102,7 @@ namespace VocableTrainer
 					{
 						httpResponse.Wait(TimeSpan.FromSeconds(10));
 						if (httpResponse.Result != null &&
-						    httpResponse.Result.StatusCode == HttpStatusCode.OK)
+							httpResponse.Result.StatusCode == HttpStatusCode.OK)
 						{
 							return await httpResponse.Result.Content.ReadAsByteArrayAsync();
 						}
