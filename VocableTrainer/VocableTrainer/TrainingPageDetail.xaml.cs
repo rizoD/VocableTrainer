@@ -29,12 +29,6 @@ namespace VocableTrainer
 
 		}
 
-		private void Prev_OnClicked(object sender, EventArgs e)
-		{
-			App.Prev();
-		}
-
-
 		private void Pause_OnClicked(object sender, EventArgs e)
 		{
 			App.Pause();
@@ -42,21 +36,30 @@ namespace VocableTrainer
 
 		private void Next_OnClicked(object sender, EventArgs e)
 		{
-			App.Next();
+			Task.Run(App.PlayNextAudio);
 		}
 
 		private void Foreign_OnClicked(object sender, EventArgs e)
 		{
-			App.PlaySound(Sound.Lang.Foreign);
+			Task.Run(() =>
+			{
+				App.PlaySound(Sound.Lang.Foreign);
+			});
 		}
 
 		private void Native_OnClicked(object sender, EventArgs e)
 		{
-			App.PlaySound(Sound.Lang.Native);
+
+			Task.Run(() =>
+			{
+				App.PlaySound(Sound.Lang.Native);
+			});
 		}
 
 		private void Edit_OnClicked(object sender, EventArgs e)
 		{
+			//App.TogglePlay();
+			App.Pause();
 			Navigation.PushModalAsync(new EditVocablePage());
 		}
 
@@ -78,5 +81,6 @@ namespace VocableTrainer
 		{
 			App.TrainingFlag();
 		}
+
 	}
 }

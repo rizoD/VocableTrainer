@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Android.Bluetooth;
 using Android.Content;
 using Android.Media.Audiofx;
+using Android.Widget;
 using Google.Apis.Drive.v3;
 using Plugin.FilePicker.Abstractions;
 using VocableTrainer.Data;
@@ -111,11 +112,6 @@ namespace VocableTrainer
 				int i = (Data.Trainings.IndexOf(Data.CurrentVocable) + 1) % Data.Trainings.Count;
 				Data.CurrentVocable = Data.Trainings[i];
 				Settings.LastTraining = Data.CurrentVocable.Id;
-				if (!Data.CurrentTraining.AutoPlay)
-				{
-					var current = Data.TrainingSound.OrderBy(item => Guid.NewGuid()).FirstOrDefault();
-					PlaySound(current);
-				}
 			}
 		}
 		private static bool IsLastTrainingVocable()
@@ -135,11 +131,6 @@ namespace VocableTrainer
 
 				Data.CurrentVocable = Data.Trainings[i];
 				Settings.LastTraining = Data.CurrentVocable.Id;
-				if (!Data.CurrentTraining.AutoPlay)
-				{
-					var current = Data.TrainingSound.OrderBy(item => Guid.NewGuid()).FirstOrDefault();
-					PlaySound(current);
-				}
 			}
 		}
 
@@ -155,9 +146,9 @@ namespace VocableTrainer
 
 		public static void DoTraining()
 		{
-			if (Data == null || 
-			    Data.CurrentTraining == null ||
-			    working)
+			if (Data == null ||
+				Data.CurrentTraining == null ||
+				working)
 			{
 				return;
 			}
@@ -167,46 +158,80 @@ namespace VocableTrainer
 				if (lastChange.AddSeconds(App.Data.CurrentTraining.Pause) <= DateTime.Now)
 				{
 					working = true;
-					try
-					{
 
-						if (Data.TrainingSound.Count == 0)
-						{
-							if (IsLastTrainingVocable())
-							{
-								Data.State = PlayState.Finished;
-								return;
-							}
+					PlayNextAudio();
 
-							Data.TrainingSound.Add(Sound.Lang.Native);
-							Data.TrainingSound.Add(Sound.Lang.Foreign);
-
-							Next();
-						}
-
-						var current = Data.TrainingSound.OrderBy(item => Guid.NewGuid()).FirstOrDefault();
-						Data.TrainingSound.Remove(current);
-
-						PlaySound(current);
-						if (!Data.CurrentTraining.PlayAnswer)
-						{
-							Data.TrainingSound.Clear();
-						}
-					}
-					catch (Exception ex)
-					{
-						ex.ToString();
-					}
-					finally
-					{
-						working = false;
-					}
+					working = false;
 					lastChange = DateTime.Now;
 				}
 			}
-			else
+		}
+
+		public static void PlayNextAudio()
+		{
+
+			try
 			{
-				lastChange = DateTime.Now;
+				if (Data.TrainingSound.Count == 0)
+				{
+					if (IsLastTrainingVocable())
+					{
+						Data.State = PlayState.Finished;
+						return;
+					}
+
+					Data.TrainingSound.Add(Sound.Lang.Native);
+					Data.TrainingSound.Add(Sound.Lang.Foreign);
+
+					Next();
+				}
+
+				var current = Data.TrainingSound.OrderBy(item => Guid.NewGuid()).FirstOrDefault();
+				Data.TrainingSound.Remove(current);
+
+				PlaySound(current);
+				if (!Data.CurrentTraining.PlayAnswer)
+				{
+					Data.TrainingSound.Clear();
+				}
+			}
+			catch (Exception ex)
+			{
+				ex.ToString();
+			}
+		}
+
+		public static void ShowLoading(Action action, Action ending)
+		{
+			Data.IsBusy = true;
+
+			try
+			{
+				Task task = Task.Factory.StartNew(action);
+
+				task.ContinueWith((tsk, obj) =>
+				{
+					if (tsk.Exception != null)
+					{
+						Device.BeginInvokeOnMainThread(() =>
+						{
+							Data.IsBusy = false;
+							Toast.MakeText(Android.App.Application.Context, $"Application Error: {tsk.Exception.Message}", ToastLength.Long).Show();
+						});
+					}
+					else
+					{
+						Device.BeginInvokeOnMainThread(() =>
+						{
+							Data.IsBusy = false;
+							ending();
+						});
+					}
+				}, new object());
+			}
+			catch (Exception ex)
+			{
+				Toast.MakeText(Android.App.Application.Context, $"Application Error: {ex.Message}", ToastLength.Long).Show();
 			}
 		}
 

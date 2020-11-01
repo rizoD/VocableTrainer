@@ -30,6 +30,8 @@ namespace VocableTrainer
 		private ObservableCollection<Vocable> _Trainings;
 		private string _SearchText = string.Empty;
 
+		private bool isBusy = false;
+
 		private PlayState _State = PlayState.Finished;
 
 		public readonly static string DBFile = "VocableTraining.db3";
@@ -51,6 +53,12 @@ namespace VocableTrainer
 			get => _State == PlayState.Playing;
 		}
 
+		public bool Paused
+		{
+			get => _State == PlayState.Pause;
+		}
+
+
 		public PlayState State
 		{
 			get => _State;
@@ -59,10 +67,12 @@ namespace VocableTrainer
 			{
 				_State = value;
 				PropertyChanged(this, new PropertyChangedEventArgs(nameof(State)));
+				PropertyChanged(this, new PropertyChangedEventArgs(nameof(Paused)));
 				PropertyChanged(this, new PropertyChangedEventArgs(nameof(NotPlaying)));
 				PropertyChanged(this, new PropertyChangedEventArgs(nameof(Playing)));
 			}
 		}
+
 		public ObservableCollection<Vocable> Vocables
 		{
 			get => _Vocables;
@@ -91,6 +101,17 @@ namespace VocableTrainer
 			{
 				_Trainings = value;
 				PropertyChanged(this, new PropertyChangedEventArgs(nameof(Trainings)));
+			}
+		}
+
+		public bool IsBusy
+		{
+			get => isBusy;
+
+			set
+			{
+				isBusy = value;
+				PropertyChanged(this, new PropertyChangedEventArgs(nameof(IsBusy)));
 			}
 		}
 

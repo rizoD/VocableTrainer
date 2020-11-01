@@ -2,11 +2,20 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:VocableTrainer;assembly=VocableTrainer"
+             xmlns:sk="clr-namespace:Xamarin.Forms.Skeleton;assembly=Xamarin.Forms.Skeleton"
              x:Class="VocableTrainer.SettingsPageDetail"
              Title="Settings"
              Appearing="SettingsPageDetail_OnAppearing">
-    <StackLayout BindingContext="{x:Static local:App.Data}" >
-
+    <StackLayout BindingContext="{x:Static local:App.Data}"
+                 sk:Skeleton.IsParent="True"
+                 sk:Skeleton.IsBusy="{Binding IsBusy}"
+                 sk:Skeleton.Animation="{sk:DefaultAnimation Fade}"
+                 sk:Skeleton.BackgroundColor="Gray">
+        <ActivityIndicator 
+            IsRunning="{Binding IsBusy}"
+            IsVisible="{Binding IsBusy}"
+            VerticalOptions="CenterAndExpand"
+            HorizontalOptions="Fill"/>
         <Label>Vocable database</Label>
         <StackLayout Orientation="Horizontal">
             <Button x:Name="ImportBtn" Text="Import" Clicked="ImportBtn_OnClicked" />

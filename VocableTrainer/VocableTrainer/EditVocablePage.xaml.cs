@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
+using Android.Widget;
 using VocableTrainer.Data;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -10,6 +12,7 @@ namespace VocableTrainer
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class EditVocablePage : ContentPage
 	{
+
 		public EditVocablePage()
 		{
 			InitializeComponent();
@@ -50,18 +53,24 @@ namespace VocableTrainer
 
 		private void SoundBtn_OnClicked(object sender, EventArgs e)
 		{
-			App.Data.UpdateCurrentSound(Sound.Lang.Native);
-			App.Data.UpdateCurrentSound(Sound.Lang.Foreign);
+			App.ShowLoading(() =>
+			{
+				App.Data.UpdateCurrentSound(Sound.Lang.Native);
+				App.Data.UpdateCurrentSound(Sound.Lang.Foreign);
+			}, Toast.MakeText(Android.App.Application.Context, "Sound updated", ToastLength.Long).Show);
 		}
 
 		private void PlayForeign_OnClicked(object sender, EventArgs e)
 		{
-			App.PlaySound(Sound.Lang.Foreign);
+			App.ShowLoading(() => { App.PlaySound(Sound.Lang.Foreign); },
+				Toast.MakeText(Android.App.Application.Context, "Foreign played", ToastLength.Long).Show);
+
 		}
 
 		private void PlayNative_OnClicked(object sender, EventArgs e)
 		{
-			App.PlaySound(Sound.Lang.Native);
+			App.ShowLoading(() => { App.PlaySound(Sound.Lang.Native); },
+				Toast.MakeText(Android.App.Application.Context, "Native played", ToastLength.Long).Show);
 
 		}
 	}

@@ -38,6 +38,7 @@ namespace VocableTrainer.Droid.Notification
 				.SetCustomContentView(BuildRemoteViews(context))
 				.SetSmallIcon(Resource.Drawable.Icon)
 				.SetSound(null); // This is the icon to display
+				
 
 			// Finally, publish the notification:
 			var notificationManager = NotificationManagerCompat.From(context);
@@ -64,7 +65,7 @@ namespace VocableTrainer.Droid.Notification
 				return;
 			}
 
-			var channel = new NotificationChannel(CHANNEL_ID, "Local Notifications", NotificationImportance.Default)
+			var channel = new NotificationChannel(CHANNEL_ID, "Local Notifications", NotificationImportance.Low)
 			{
 				Description = "The count from MainActivity."
 			};

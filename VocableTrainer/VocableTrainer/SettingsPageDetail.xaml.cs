@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
+using Android.App;
 using Android.Widget;
 using Plugin.FilePicker;
 using Plugin.FilePicker.Abstractions;
@@ -13,6 +14,7 @@ namespace VocableTrainer
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class SettingsPageDetail : ContentPage
 	{
+
 		public SettingsPageDetail()
 		{
 			InitializeComponent();
@@ -67,20 +69,17 @@ namespace VocableTrainer
 				var file = await CrossFilePicker.Current.PickFile();
 				if (file != null)
 				{
-					using (Stream fileStream = File.OpenWrite(App.Data.DBPath))
+					App.ShowLoading(() =>
 					{
-						file.GetStream().CopyTo(fileStream);
-					}
-					MainThread.BeginInvokeOnMainThread(() =>
-					{
+						using (Stream fileStream = File.OpenWrite(App.Data.DBPath))
+						{
+							file.GetStream().CopyTo(fileStream);
+						}
 						// Code to run on the main thread
-						App.Data.LoadFile();
-						DisplayAlert("Import", "Import completed", "OK");
-					});
-					
+						Device.BeginInvokeOnMainThread(App.Data.LoadFile);
 
+					}, Toast.MakeText(Android.App.Application.Context, "DB import completed", ToastLength.Long).Show);
 				}
-
 			}
 			catch (Exception ex)
 			{
@@ -88,20 +87,24 @@ namespace VocableTrainer
 			}
 		}
 
+
 		private void ExportBtn_OnClickedBtn_OnClicked(object sender, EventArgs e)
 		{
-			try
+			App.ShowLoading(() =>
 			{
+
+				var download = Android.OS.Environment.GetExternalStoragePublicDirectory(Android.OS.Environment.DirectoryDownloads).ToString();
+				if (!System.IO.Directory.Exists(download))
+				{
+					throw new ApplicationException("Download directory not existing");
+				}
+
 				var bytes = System.IO.File.ReadAllBytes(App.Data.DBPath);
 				var fileCopyName = $"{ViewModel.DBFile}_{System.DateTime.Now:yyyy-MM-dd_HH-mm}.db3";
-				var download = Android.OS.Environment.GetExternalStoragePublicDirectory(Android.OS.Environment.DirectoryDownloads).AbsolutePath;
 				string path = Path.Combine(download, fileCopyName);
 				System.IO.File.WriteAllBytes(path, bytes);
-			}
-			catch (Exception ex)
-			{
-				DisplayAlert("Error", ex.Message, "OK");
-			}
+
+			}, Toast.MakeText(Android.App.Application.Context, "DB export completed", ToastLength.Long).Show);
 		}
 	}
 }

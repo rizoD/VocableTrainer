@@ -2,9 +2,20 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:VocableTrainer;assembly=VocableTrainer"
+             xmlns:sk="clr-namespace:Xamarin.Forms.Skeleton;assembly=Xamarin.Forms.Skeleton"
              x:Class="VocableTrainer.EditVocablePage">
     <ContentPage.Content>
-        <StackLayout Grid.Row="0">
+        <StackLayout Grid.Row="0"  
+                     BindingContext="{x:Static local:App.Data}"
+                     sk:Skeleton.IsParent="True"
+                     sk:Skeleton.IsBusy="{Binding IsBusy}"
+                     sk:Skeleton.Animation="{sk:DefaultAnimation Fade}"
+                     sk:Skeleton.BackgroundColor="Gray">
+            <ActivityIndicator 
+                IsRunning="{Binding IsBusy}"
+                IsVisible="{Binding IsBusy}"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Fill"/>
             <Label>Foreign:</Label>
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -25,7 +36,9 @@
                 <Entry Grid.Column="0" x:Name="Native" />
                 <Button Grid.Column="1" x:Name="PlayNative" Text="&#128265;" Clicked="PlayNative_OnClicked" />
             </Grid>
-            <Button x:Name="SountBtn" Text="Update Sound" Clicked="SoundBtn_OnClicked"/>
+            <Grid>
+                <Button x:Name="SountBtn" Text="Update Sound" Clicked="SoundBtn_OnClicked"/>
+            </Grid>
             <StackLayout Orientation="Horizontal">
                 <Button x:Name="DelBtn" Text="Delete" Clicked="DelBtn_OnClicked" />
                 <Button x:Name="CancelBtn" Text="Cancel" Clicked="CancelBtn_OnClicked" />

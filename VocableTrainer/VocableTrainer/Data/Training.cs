@@ -22,10 +22,6 @@ namespace VocableTrainer
 		public int Id { get; set; }
 		public int LangId { get; set; }
 
-		public bool CanPlay
-		{
-			get => Sorting != null;
-		}
 
 		public int MostRecent
 		{
@@ -67,15 +63,6 @@ namespace VocableTrainer
 
 		public byte[] Sorting { get; set; }
 		
-		public Training()
-		{
-		}
-
-		public void Finished()
-		{
-			Sorting = null;
-			PropertyChanged(this, new PropertyChangedEventArgs(nameof(CanPlay)));
-		}
 
 		public void SaveSorting(IEnumerable<Vocable> list)
 		{

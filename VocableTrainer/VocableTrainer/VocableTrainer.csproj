@@ -16,6 +16,7 @@
     <PackageReference Include="Xam.Plugins.Settings" Version="3.1.1" />
     <PackageReference Include="Xamarin.Forms" Version="4.8.0.1560" />
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
+    <PackageReference Include="Xamarin.Forms.Skeleton" Version="2.0.0" />
     <PackageReference Include="Xamarin.Plugin.FilePicker" Version="2.1.41" />
   </ItemGroup>
 
@@ -25,6 +26,12 @@
     </Reference>
     <Reference Include="Xamarin.Android.Support.Compat">
       <HintPath>..\..\..\..\..\..\Microsoft\Xamarin\NuGet\xamarin.android.support.compat\28.0.0.3\lib\monoandroid90\Xamarin.Android.Support.Compat.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Essentials">
+      <HintPath>..\..\..\..\..\..\Microsoft\Xamarin\NuGet\xamarin.essentials\1.5.3.2\lib\monoandroid90\Xamarin.Essentials.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform.Android">
+      <HintPath>..\..\..\..\..\..\Microsoft\Xamarin\NuGet\xamarin.forms\4.6.0.1141\lib\MonoAndroid90\Xamarin.Forms.Platform.Android.dll</HintPath>
     </Reference>
   </ItemGroup>
 

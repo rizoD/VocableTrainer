@@ -30,4 +30,3 @@ C:\Projects\Privat\Xamarin\VocableTrainer\DBCreateer\obj\Debug\netcoreapp3.1\DBC
 C:\Projects\Privat\Xamarin\VocableTrainer\DBCreateer\obj\Debug\netcoreapp3.1\DBCreateer.dll
 C:\Projects\Privat\Xamarin\VocableTrainer\DBCreateer\obj\Debug\netcoreapp3.1\DBCreateer.pdb
 C:\Projects\Privat\Xamarin\VocableTrainer\DBCreateer\obj\Debug\netcoreapp3.1\DBCreateer.genruntimeconfig.cache
-C:\Projects\Privat\Xamarin\VocableTrainer\DBCreateer\obj\Debug\netcoreapp3.1\DBCreateer.csprojAssemblyReference.cache
