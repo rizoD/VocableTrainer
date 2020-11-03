@@ -23,6 +23,8 @@ namespace VocableTrainer.Droid
 	    private ActionReceiver receiver;
         private MediaButtonReceiver mediaButtonReceiver;
 	    private BlueToothDeviceBroadcastReciever bluetoothDeviceReceiver;
+
+	    private Notifications notifications;
 	    //DeviceDiscoveredReceiver btreceiver;
 	    //BluetoothAdapter btAdapter;
 
@@ -31,18 +33,20 @@ namespace VocableTrainer.Droid
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 
+            notifications = new Notifications();
+
             base.OnCreate(savedInstanceState);
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
 
-            Notifications.CreateNotificationChannel(this);
+            notifications.CreateNotificationChannel(this);
             receiver = new ActionReceiver();
             bluetoothDeviceReceiver = new BlueToothDeviceBroadcastReciever();
             mediaButtonReceiver = new MediaButtonReceiver();
 
-            Notifications.CreateNotification(this);
+            notifications.CreateNotification(this);
             PeriodicService.Start();
 
             //btreceiver = new DeviceDiscoveredReceiver(this);
@@ -53,6 +57,7 @@ namespace VocableTrainer.Droid
 
         protected override void OnDestroy()
         {
+            notifications.CancelNotifications();
 	        UnregisterReceiver(receiver);
 	        UnregisterReceiver(bluetoothDeviceReceiver);
 	        base.OnDestroy();

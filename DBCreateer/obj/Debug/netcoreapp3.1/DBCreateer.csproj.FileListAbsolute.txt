@@ -1,5 +1,4 @@
 C:\Projects\Privat\Xamarin\VocableTrainer\DBCreateer\bin\Debug\netcoreapp3.1\DBCreateer.exe
-C:\Projects\Privat\Xamarin\VocableTrainer\DBCreateer\bin\Debug\netcoreapp3.1\jsonImport.txt
 C:\Projects\Privat\Xamarin\VocableTrainer\DBCreateer\bin\Debug\netcoreapp3.1\DBCreateer.deps.json
 C:\Projects\Privat\Xamarin\VocableTrainer\DBCreateer\bin\Debug\netcoreapp3.1\DBCreateer.runtimeconfig.json
 C:\Projects\Privat\Xamarin\VocableTrainer\DBCreateer\bin\Debug\netcoreapp3.1\DBCreateer.runtimeconfig.dev.json
@@ -30,3 +29,6 @@ C:\Projects\Privat\Xamarin\VocableTrainer\DBCreateer\obj\Debug\netcoreapp3.1\DBC
 C:\Projects\Privat\Xamarin\VocableTrainer\DBCreateer\obj\Debug\netcoreapp3.1\DBCreateer.dll
 C:\Projects\Privat\Xamarin\VocableTrainer\DBCreateer\obj\Debug\netcoreapp3.1\DBCreateer.pdb
 C:\Projects\Privat\Xamarin\VocableTrainer\DBCreateer\obj\Debug\netcoreapp3.1\DBCreateer.genruntimeconfig.cache
+C:\Projects\Privat\Xamarin\VocableTrainer\DBCreateer\bin\Debug\netcoreapp3.1\jsonImport_s.txt
+C:\Projects\Privat\Xamarin\VocableTrainer\DBCreateer\bin\Debug\netcoreapp3.1\jsonImport_v.txt
+C:\Projects\Privat\Xamarin\VocableTrainer\DBCreateer\obj\Debug\netcoreapp3.1\DBCreateer.csprojAssemblyReference.cache

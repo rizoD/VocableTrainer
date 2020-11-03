@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using SQLite;
+using VocableTrainer.Data;
 
 namespace VocableTrainer
 {
@@ -11,7 +12,7 @@ namespace VocableTrainer
 		private string _Detail = String.Empty;
 		private string _Native = String.Empty;	
 		private int _LangId = 0;
-		private int _flag = 0;
+		private Flags _flag = 0;
 
 		public event PropertyChangedEventHandler PropertyChanged = delegate { };
 		public Vocable()
@@ -43,7 +44,7 @@ namespace VocableTrainer
 
 		}
 
-		public int Flag
+		public Flags Flag
 		{
 			get => _flag;
 

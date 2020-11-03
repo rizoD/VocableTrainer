@@ -1,0 +1,1517 @@
+[
+		{
+			ID: '1',
+			back: 'ときどき一人で飲みます。',
+			front:'Ich trinke manchmal alleine',
+		},
+		{
+			ID: '2',
+			back: 'ようこそ日本へ',
+			front:'Wilkommen in japan',
+		},
+		{
+			ID: '3',
+			back: '時々一人で旅行します。',
+			front:'ich reise manchmal alleine',
+		},
+		{
+			ID: '4',
+			back: '一人で旅行しません。',
+			front:'ich reise nicht alleine',
+		},
+		{
+			ID: '5',
+			back: '彼はいつも忙しいです',
+			front:'er ist immer beschäftigt',
+		},
+		{
+			ID: '6',
+			back: 'いつも一人で旅行します',
+			front:'ich reise immer alleine',
+		},
+		{
+			ID: '7',
+			back: 'ベッドは片隅にあります',
+			front:'das Bett steht in der Ecke',
+		},
+		{
+			ID: '8',
+			back: 'お父さんはおいくつですか？',
+			front:'wie alt ist dein vater',
+		},
+		{
+			ID: '9',
+			back: '私の部屋はこちらです。',
+			front:'mein zimmer ist da entlang',
+		},
+		{
+			ID: '10',
+			back: 'お子さんたちはおいくつですか？',
+			front:'wie alt sind deine kinder',
+		},
+		{
+			ID: '11',
+			back: 'こちらが夫のジョンです。',
+			front:'das ist mein mann, John',
+		},
+		{
+			ID: '12',
+			back: '大丈夫ですか',
+			front:'bist du in ordnung?',
+		},
+		{
+			ID: '13',
+			back: '今月はちょっと忙しいです。',
+			front:'dieses monat bin ich ein bischen beschäftigt',
+		},
+		{
+			ID: '14',
+			back: '今月は忙しくないです。',
+			front:'dieses monat bin ich nicht beschäftigt',
+		},
+		{
+			ID: '15',
+			back: '来月、彼に会います。',
+			front:'ich treffe ihn nächstes monat',
+		},
+		{
+			ID: '16',
+			back: '新聞を読みますか？',
+			front:'ließt du die zeitung?',
+		},
+		{
+			ID: '17',
+			back: 'これが私の電話番号です。',
+			front:'das ist meine telefonnummer',
+		},
+		{
+			ID: '18',
+			back: '日本の料理はおいしい。',
+			front:'die japanische küche ist köstlich',
+		},
+		{
+			ID: '19',
+			back: 'ホテルに電話をかけます。',
+			front:'ich rufe das hotel an',
+		},
+		{
+			ID: '20',
+			back: 'よく料理します。',
+			front:'ich koche öfters',
+		},
+		{
+			ID: '21',
+			back: '公園で母に会いました。',
+			front:'Ich traf meine Mutter im Park',
+		},
+		{
+			ID: '22',
+			back: '今月日本に来ました。',
+			front:'dieses monat kam ich nach japan',
+		},
+		{
+			ID: '23',
+			back: '彼女の電話番号は何ですか？',
+			front:'wie ist ihre Telefonnummer',
+		},
+		{
+			ID: '24',
+			back: 'あそこで会いましょう。',
+			front:'lass uns dort treffen',
+		},
+		{
+			ID: '25',
+			back: '醬油をください',
+			front:'die soja souce bitte',
+		},
+		{
+			ID: '26',
+			back: '今日の夕飯は野菜です。',
+			front:'das abendessen von heute ist gemüse',
+		},
+		{
+			ID: '27',
+			back: '今日の夕飯は全然おいしくないです。',
+			front:'das abendessen von heute ist überhaut nicht köstlich',
+		},
+		{
+			ID: '28',
+			back: '午後五時に夕飯を食べます。',
+			front:'ich esse zu abend um 5 uhr nachmittags',
+		},
+		{
+			ID: '29',
+			back: '砂糖が多いです。',
+			front:'es ist eine menge Zucker',
+		},
+		{
+			ID: '30',
+			back: 'おいしくないですか？',
+			front:'ist es nicht köstlich',
+		},
+		{
+			ID: '31',
+			back: 'このお弁当は全然おいしくないです。',
+			front:'diese Lunch box ist überhaut nicht köstlich',
+		},
+		{
+			ID: '32',
+			back: '今は五時十五分です。',
+			front:'Es ist jetzt 5:15 Uhr',
+		},
+		{
+			ID: '33',
+			back: 'ソファーはここです。',
+			front:'Das Sofa ist hier.',
+		},
+		{
+			ID: '34',
+			back: 'これは私のソファーです。',
+			front:'Dieses ist mein Sofa',
+		},
+		{
+			ID: '35',
+			back: '鳥が三羽います。',
+			front:'Da sind 3 Vögel',
+		},
+		{
+			ID: '36',
+			back: '犬と猫がいます。',
+			front:'Da ist ein Hund und eine Katze.',
+		},
+		{
+			ID: '37',
+			back: '窓はどこですか？',
+			front:'Wo ist das Fenster',
+		},
+		{
+			ID: '38',
+			back: '庭はあそこです',
+			front:'Der Garten ist dort drüben.',
+		},
+		{
+			ID: '39',
+			back: '彼らは韓国出身です。',
+			front:'Sie sind aus Korea',
+		},
+		{
+			ID: '40',
+			back: 'マリオは台湾人です。',
+			front:'Maria ist Taiwanese',
+		},
+		{
+			ID: '41',
+			back: '母は韓国語が話せます。',
+			front:'Meine Mutter spricht koreanisch',
+		},
+		{
+			ID: '42',
+			back: '週末は日本に行きました。',
+			front:'Am Wochenende ging ich nach Japan.',
+		},
+		{
+			ID: '43',
+			back: 'それはオーストラリアからのお土産です。',
+			front:'Das ist ein Souvenier aus Australien.',
+		},
+		{
+			ID: '44',
+			back: '高いお土産を買いました',
+			front:'Ich habe ein teures Souvenir gekauft.',
+		},
+		{
+			ID: '45',
+			back: '祖母は八十五歳です。',
+			front:'Meine Großmutter ist 85 Jahre alt.',
+		},
+		{
+			ID: '46',
+			back: 'おばあさんはお元気ですか？',
+			front:'Wie geht es deiner Großmutter?',
+		},
+		{
+			ID: '47',
+			back: 'おじいさんはおいくつですか',
+			front:'Wie alt ist dein Großvater?',
+		},
+		{
+			ID: '48',
+			back: '東京のおじさんはお元気ですか？',
+			front:'Wie geht es deinem Onkel in Tokyo?',
+		},
+		{
+			ID: '49',
+			back: '大阪のおばさんはお元気ですか？',
+			front:'Wie geht es deiner Tante in Osaka?',
+		},
+		{
+			ID: '50',
+			back: '祖父は百歳です。',
+			front:'Mein Großvater ist 100 Jahre alt.',
+		},
+		{
+			ID: '51',
+			back: '祖父は七十八歳です。',
+			front:'Mein Großvater ist 78 Jahre alt.',
+		},
+		{
+			ID: '52',
+			back: '彼はジョンさんのおじさんです。',
+			front:'Er ist Johns Onkel.',
+		},
+		{
+			ID: '53',
+			back: '祖母は百一歳です。',
+			front:'Mein Großmutter ist 101 Jahre alt.',
+		},
+		{
+			ID: '54',
+			back: 'よく眠れましたか',
+			front:'Hat du gut geschlafen?',
+		},
+		{
+			ID: '55',
+			back: '火曜日は勉強します。',
+			front:'Ich studiere am Dienstag.',
+		},
+		{
+			ID: '56',
+			back: '金曜日にパーティーをします。',
+			front:'Am Freitag mache ich Party',
+		},
+		{
+			ID: '57',
+			back: '日曜日は友達と勉強します。',
+			front:'Am Sonntag studiere ich mit meinem Freund',
+		},
+		{
+			ID: '58',
+			back: '土曜日に働きます。',
+			front:'Ich arbeite am Samstag',
+		},
+		{
+			ID: '59',
+			back: '月曜日は忙しいです。',
+			front:'Montag bin ich beschäftigt',
+		},
+		{
+			ID: '60',
+			back: '木曜日は忙しいですか？',
+			front:'Bist du beschäftigt am Donnerstag.',
+		},
+		{
+			ID: '61',
+			back: 'おかえりなさい、お母さん。',
+			front:'Willkommen zurück Mutter',
+		},
+		{
+			ID: '62',
+			back: '彼女は母親に似ています。',
+			front:'Sie sieht aus wie ihre Mutter',
+		},
+		{
+			ID: '63',
+			back: 'そうですよ。',
+			front:'Das ist richtig',
+		},
+		{
+			ID: '64',
+			back: '直美は学生です。',
+			front:'Noami ist eine Schülerin.',
+		},
+		{
+			ID: '65',
+			back: '大学生です。',
+			front:'Ich bin Student.',
+		},
+		{
+			ID: '66',
+			back: '健太は東京に住んでいます。',
+			front:'Kenta lebt in Tokyo.',
+		},
+		{
+			ID: '67',
+			back: '大学生ですか？',
+			front:'Bist du Student?',
+		},
+		{
+			ID: '68',
+			back: 'このステーキはおいしいですね。',
+			front:'Dieses Steak ist köstlich, nicht wahr?',
+		},
+		{
+			ID: '69',
+			back: 'これはいくらですか？',
+			front:'Wieviel kostet das hier?',
+		},
+		{
+			ID: '70',
+			back: 'お昼ご飯を食べます。',
+			front:'Ich esse zu Mittag',
+		},
+		{
+			ID: '71',
+			back: 'このお昼ご飯はおいしいです。',
+			front:'Dieses Mittagessen ist köstlich.',
+		},
+		{
+			ID: '72',
+			back: 'あれはいくらですか？',
+			front:'Was kostet das dort?',
+		},
+		{
+			ID: '73',
+			back: 'あなたの後ろにいます',
+			front:'Ich bin hinter dir.',
+		},
+		{
+			ID: '74',
+			back: 'テーブルの横に椅子が一つあります。',
+			front:'Neben dem Tisch steht ein Stuhl.',
+		},
+		{
+			ID: '75',
+			back: 'あの隅には本棚があります。',
+			front:'In dieser Ecke ist ein Bücherregal',
+		},
+		{
+			ID: '76',
+			back: '後ろに椅子があります。',
+			front:'Hinter mir ist ein Stuhl.',
+		},
+		{
+			ID: '77',
+			back: 'このテレビは古いです。',
+			front:'Dieser Fernseher ist alt.',
+		},
+		{
+			ID: '78',
+			back: '兄はテーブルの横にいます。',
+			front:'Mein großer Bruder ist neben dem Tisch.',
+		},
+		{
+			ID: '79',
+			back: '古いテレビです。',
+			front:'Es ist ein alter Fernseher.',
+		},
+		{
+			ID: '80',
+			back: 'おじの娘は私のいとこです。',
+			front:'Die Tochter meines Onkels ist meine Cousine.',
+		},
+		{
+			ID: '81',
+			back: '彼は兄が二人います。',
+			front:'Er hat 2 ältere Brüder.',
+		},
+		{
+			ID: '82',
+			back: '孫娘は三歳です',
+			front:'Meine Enkeltochter ist 3 Jahre alt.',
+		},
+		{
+			ID: '83',
+			back: 'お孫さんがいますか？',
+			front:'Haben sie Enkelkinder?',
+		},
+		{
+			ID: '84',
+			back: 'この建物には出口と入り口があります。',
+			front:'Dieses Gebäude hat einen Ausgang und einen Eingang.',
+		},
+		{
+			ID: '85',
+			back: '入り口はどこですか',
+			front:'Wo ist der Eingang?',
+		},
+		{
+			ID: '86',
+			back: '建物はどちらですか',
+			front:'Wo entlang ist das Gebäude?',
+		},
+		{
+			ID: '87',
+			back: '建物の入り口はどこですか？',
+			front:'Wo ist der Eingang von diesem Gebäude?',
+		},
+		{
+			ID: '88',
+			back: 'その建物はこちらです。',
+			front:'Dieses Gebäude ist da entlang.',
+		},
+		{
+			ID: '89',
+			back: 'この建物はどこですか？',
+			front:'Wo ist dieses Gebäude?',
+		},
+		{
+			ID: '90',
+			back: 'あなたの出身はどこですか',
+			front:'Von wo bist du?',
+		},
+		{
+			ID: '91',
+			back: 'このボウルは安いです。',
+			front:'Diese Schüssel ist billig.',
+		},
+		{
+			ID: '92',
+			back: 'スプーンを二つください。',
+			front:'Zwei Löffel bitte.',
+		},
+		{
+			ID: '93',
+			back: '青のボウルを買いました。',
+			front:'Ich habe die blaue Schüssel gekauft.',
+		},
+		{
+			ID: '94',
+			back: 'お寿司が欲しいです。',
+			front:'Ich will Sushi.',
+		},
+		{
+			ID: '95',
+			back: 'お皿とコップとスプーンがあります。',
+			front:'Da ist ein Teller, ein Glas und ein Löffel.',
+		},
+		{
+			ID: '96',
+			back: 'フォークで寿司を食べます。',
+			front:'Ich esse Sushi mit der Gabel.',
+		},
+		{
+			ID: '97',
+			back: 'ナイフを使います',
+			front:'Ich benutze ein Messer.',
+		},
+		{
+			ID: '98',
+			back: 'フォークとナイフをください',
+			front:'Messer und Gabel bitte.',
+		},
+		{
+			ID: '99',
+			back: 'これはあなたのボウルですか？',
+			front:'Ist das deine Schüssel?',
+		},
+		{
+			ID: '100',
+			back: '八時ごろに学校へ行きます。',
+			front:'Gegen 08:00 Uhr gehe ich in die Schule.',
+		},
+		{
+			ID: '101',
+			back: '私は毎日りんごを食べます。',
+			front:'Ich esse jeden Tag Äpfel',
+		},
+		{
+			ID: '102',
+			back: '毎朝お茶を飲みます。',
+			front:'Ich trinke jeden Morgen Tee',
+		},
+		{
+			ID: '103',
+			back: '今は午前零時です。',
+			front:'Es ist jetzt 12:00 Vormittag',
+		},
+		{
+			ID: '104',
+			back: '毎朝九時に起きます。',
+			front:'Ich stehe jeden Morgen um 09:00 auf.',
+		},
+		{
+			ID: '105',
+			back: 'お子さんたちはおいくつですか？',
+			front:'Wie alt sind deine Kinder?',
+		},
+		{
+			ID: '106',
+			back: '私には妻と三人の子供がいます。',
+			front:'Ich habe eine Frau und 3 Kinder.',
+		},
+		{
+			ID: '107',
+			back: 'こちらが妻のマリアです。',
+			front:'Das ist meine Frau, Maria.',
+		},
+		{
+			ID: '108',
+			back: '空が曇っています。',
+			front:'Der Himmel ist bewölkt',
+		},
+		{
+			ID: '109',
+			back: '昨日は曇りでした。',
+			front:'Gestern war bewölkt.',
+		},
+		{
+			ID: '110',
+			back: '雨は降っていますか？',
+			front:'Regnet es?',
+		},
+		{
+			ID: '111',
+			back: '夏は風が弱く吹きます。',
+			front:'Im Sommer bläst der wind schwächlich.',
+		},
+		{
+			ID: '112',
+			back: '夜は寒いです。',
+			front:'Die Nacht ist kalt.',
+		},
+		{
+			ID: '113',
+			back: '風が強く吹きます。',
+			front:'Der Wind weht kräftig.',
+		},
+		{
+			ID: '114',
+			back: '夜は暗い。',
+			front:'Die Nacht ist finster.',
+		},
+		{
+			ID: '115',
+			back: '空が晴れています。',
+			front:'Der Himmel ist sonnig.',
+		},
+		{
+			ID: '116',
+			back: '雪が降っています。',
+			front:'Es schneit.',
+		},
+		{
+			ID: '117',
+			back: '強い風が吹いています。',
+			front:'Ein starker wind bläst.',
+		},
+		{
+			ID: '118',
+			back: '甘い果物はいかがですか？',
+			front:'Wie wäre es mit süßen Früchten?',
+		},
+		{
+			ID: '119',
+			back: '塩は食べません。',
+			front:'Ich esse kein Salz.',
+		},
+		{
+			ID: '120',
+			back: 'いかがですか？',
+			front:'Wie ist es?',
+		},
+		{
+			ID: '121',
+			back: 'この果物は全然おいしくないです。',
+			front:'Diese Frucht ist gar nicht köstlich.',
+		},
+		{
+			ID: '122',
+			back: '醤油が多いです。',
+			front:'Das ist eine menge Sojasauce',
+		},
+		{
+			ID: '123',
+			back: '水曜日と金曜日に留学生が来ました',
+			front:'Die Austauschschüler kamen am Mittwoch und Freitag.',
+		},
+		{
+			ID: '124',
+			back: '水曜日はレストランに行きます',
+			front:'Ich gehe Mittwoch ins Restaurant',
+		},
+		{
+			ID: '125',
+			back: '直美と健太は大学生です。',
+			front:'Naomi und Kenta sind Studenten an der Universität.',
+		},
+		{
+			ID: '126',
+			back: 'おいくつですか？',
+			front:'Wie alt sind sie?',
+		},
+		{
+			ID: '127',
+			back: 'テーブルの横に椅子が一つあります。',
+			front:'Der Stuhl steht neben dem Tisch',
+		},
+		{
+			ID: '128',
+			back: '本が本棚に七冊あります。',
+			front:'Es sind 7 Bücher auf dem Bücherregal',
+		},
+		{
+			ID: '129',
+			back: '布団は鏡の下にあります。',
+			front:'Der Futon ist unter dem Spiegel.',
+		},
+		{
+			ID: '130',
+			back: '新しい冷蔵庫です。',
+			front:'Es ist ein neuer Kühlschrank',
+		},
+		{
+			ID: '131',
+			back: '兄はテーブルの横にいます。',
+			front:'Mein älterer Bruder ist neben dem Tisch',
+		},
+		{
+			ID: '132',
+			back: '父は母の横にいます。',
+			front:'Mein Vater ist neben meiner Mutter',
+		},
+		{
+			ID: '133',
+			back: 'あの冷蔵庫は新しいです。',
+			front:'Dieser Kühlschrank ist neu.',
+		},
+		{
+			ID: '134',
+			back: 'この鏡は高いですか？',
+			front:'Ist dieser Spiegel teuer?',
+		},
+		{
+			ID: '135',
+			back: '机の上に本が三冊あります。',
+			front:'Es sind 3 Bücher auf dem Tisch.',
+		},
+		{
+			ID: '136',
+			back: '家から遠いです',
+			front:'Es ist weit von meinem Haus.',
+		},
+		{
+			ID: '137',
+			back: 'それはここから近いですか',
+			front:'Ist es nahe von hier?',
+		},
+		{
+			ID: '138',
+			back: '近くもう遠くもないです',
+			front:'Es ist weder nahe noch weit.',
+		},
+		{
+			ID: '139',
+			back: '遠くに行きます',
+			front:'Ich gehe weit weg.',
+		},
+		{
+			ID: '140',
+			back: '帽子はあまり被りません',
+			front:'Ich trage nicht oft Hüte.',
+		},
+		{
+			ID: '141',
+			back: '彼はパンツを履きます',
+			front:'Er trägt Unterhosen.',
+		},
+		{
+			ID: '142',
+			back: '彼は黒い靴を履きます',
+			front:'Er trägt schwarze Schuhe',
+		},
+		{
+			ID: '143',
+			back: '中国に五年いました',
+			front:'Ich war 5 Jahre in China.',
+		},
+		{
+			ID: '144',
+			back: '10月5日は何曜日ですか',
+			front:'Welcher Wochentag ist der 5. Oktober?',
+		},
+		{
+			ID: '145',
+			back: '今週の土曜日は9月9日です',
+			front:'Dieser Samstag ist der 9. September',
+		},
+		{
+			ID: '146',
+			back: 'いっつ仕事をしますか',
+			front:'Wann bist du arbeiten.',
+		},
+		{
+			ID: '147',
+			back: 'おとといは何をしましたか',
+			front:'Was hast du vorgestern gemacht?',
+		},
+		{
+			ID: '148',
+			back: '彼はいつ会いますか',
+			front:'Wann wird er kommen.',
+		},
+		{
+			ID: '149',
+			back: '去年のはいい年でした',
+			front:'Letztes Jahr war ein gutes Jahr.',
+		},
+		{
+			ID: '150',
+			back: '私は来年日本に行きます',
+			front:'Ich gehe nach Japan nächstes Jahr.',
+		},
+		{
+			ID: '151',
+			back: 'いいえ家族がいません',
+			front:'Nein ich habe keine Familie.',
+		},
+		{
+			ID: '152',
+			back: '僕は彼女の弟です',
+			front:'Ich bin ihr jüngerer Bruder.',
+		},
+		{
+			ID: '153',
+			back: '明日映画を見ます',
+			front:'Morgen schaue ich mir einen Film an.',
+		},
+		{
+			ID: '154',
+			back: '彼女は僕の手紙を読みません',
+			front:'Sie liest meine Briefe nicht.',
+		},
+		{
+			ID: '155',
+			back: '友達に手紙を書きます',
+			front:'Ich werde einen Brief an meinen Freund schreiben.',
+		},
+		{
+			ID: '156',
+			back: '肉は好きじゃないです',
+			front:'Ich mag kein Fleisch.',
+		},
+		{
+			ID: '157',
+			back: '毎月銀行へ出かけます',
+			front:'Ich gehe raus zur Bank jedes Monat.',
+		},
+		{
+			ID: '158',
+			back: '今日は休みます',
+			front:'Ich werde heute eine Pause machen.',
+		},
+		{
+			ID: '159',
+			back: '明日一緒に出かけましょうか',
+			front:'Sollen wir morgen zusammen ausgehen?',
+		},
+		{
+			ID: '160',
+			back: 'どうやって銀行まで行きますか',
+			front:'Wie gehe ich zur Bank?',
+		},
+		{
+			ID: '161',
+			back: '今日も晴れています',
+			front:'Heute ist es wieder sonnig',
+		},
+		{
+			ID: '162',
+			back: '早くも遅くもないです',
+			front:'Es ist wieder schnell noch langsam.',
+		},
+		{
+			ID: '163',
+			back: '帽子はあまり被りません',
+			front:'Ich trage Hüte nicht sehr oft.',
+		},
+		{
+			ID: '164',
+			back: '春と秋はオレンジ色のコートを着ます',
+			front:'Frühling und Herbst trage ich',
+		},
+		{
+			ID: '165',
+			back: '母と父の間に私がいます',
+			front:'Ich bin zwischen meiner Mutter und meinem Vater',
+		},
+		{
+			ID: '166',
+			back: '前と後ろには妹たちがいます',
+			front:'Vor und hinter mir sind meine Jüngeren Schwestern.',
+		},
+		{
+			ID: '167',
+			back: '道の向こうにコンビニがあります',
+			front:'Gegenüber der Straße ist ein convenience store.',
+		},
+		{
+			ID: '168',
+			back: 'どうやってこの店に行きますか',
+			front:'Wie gehe ich zu diesem Laden.',
+		},
+		{
+			ID: '169',
+			back: '彼女はいつも5時に会社を出ます',
+			front:'Sie verlässt die Firma immer um 5 Uhr',
+		},
+		{
+			ID: '170',
+			back: 'まっすぐ進みましょう',
+			front:'Lass uns direkt weiter gehen.',
+		},
+		{
+			ID: '171',
+			back: '次の駅で降ります',
+			front:'An der nächsten Station steige ich aus.',
+		},
+		{
+			ID: '172',
+			back: '次狭い道をまっすぐ進みます',
+			front:'Als nächstes, gerade weiter gehen auf der schmalen Straße.',
+		},
+		{
+			ID: '173',
+			back: 'そちらをまっすぐ進みましょう',
+			front:'Lass uns direkt dort hin gehen.',
+		},
+		{
+			ID: '174',
+			back: '今お金がありません',
+			front:'Ich habe jetzt kein Geld.',
+		},
+		{
+			ID: '175',
+			back: 'ここの角を左に曲がります',
+			front:'An dieser Ecke links abbiegen.',
+		},
+		{
+			ID: '176',
+			back: 'お金はありますか？',
+			front:'Ist da Geld?',
+		},
+		{
+			ID: '177',
+			back: '今、お金がありません。',
+			front:'Ich habe jetzt kein Geld.',
+		},
+		{
+			ID: '178',
+			back: 'お金で時計を買いました',
+			front:'Ich habe eine Uhr mit Geld gekauft.',
+		},
+		{
+			ID: '179',
+			back: '今日は本当に暑いです。',
+			front:'Heute ist es wirklich heiß.',
+		},
+		{
+			ID: '180',
+			back: 'ご飯を茶碗半分ください',
+			front:'Eine halbe schale reis bitte.',
+		},
+		{
+			ID: '181',
+			back: 'あなたのカレーを半分ください',
+			front:'Bitte gib mir die hälfte von deinem Curry.',
+		},
+		{
+			ID: '182',
+			back: 'あなたの好物は何ですか？',
+			front:'Was ist dein lieblingsessen.',
+		},
+		{
+			ID: '183',
+			back: '何の絵を描きますか',
+			front:'Was für ein Bild wirst du mahlen?',
+		},
+		{
+			ID: '184',
+			back: '今日は彼女と遊びます',
+			front:'Heute werden ich mit ihr spielen',
+		},
+		{
+			ID: '185',
+			back: '駅から学校まで10くらいかかります',
+			front:'Es dauert ca. 10 min vom Bahnhof zur Schule',
+		},
+		{
+			ID: '186',
+			back: '駅からホテルまで車で5分くらいかかります',
+			front:'Es dauert ca. 5 Minuten von der Station zum Hotel mit dem Auto',
+		},
+		{
+			ID: '187',
+			back: 'こんなに可愛い時計は他にありません',
+			front:'Es gibt keine andere Uhr die so süß ist.',
+		},
+		{
+			ID: '188',
+			back: '他に何か欲しいですか',
+			front:'Was möchtest du noch?',
+		},
+		{
+			ID: '189',
+			back: 'こんなものが他にもあります',
+			front:'Da sind auch noch andere Dinge wie das.',
+		},
+		{
+			ID: '190',
+			back: '彼と同じ財布が欲しいです',
+			front:'Ich will dieselbe Geldbörse wie er',
+		},
+		{
+			ID: '191',
+			back: 'カバンを持ちましょうか',
+			front:'Darf ich die Tasche tragen',
+		},
+		{
+			ID: '192',
+			back: 'パン屋でパンを買いました',
+			front:'Ich habe das Brot in der Bäckerei gekauft',
+		},
+		{
+			ID: '193',
+			back: '違う鞄が欲しいです',
+			front:'Ich will eine andere Tasche',
+		},
+		{
+			ID: '194',
+			back: '魚屋で何を買いましたか',
+			front:'Was hast du im fischladen gekauft',
+		},
+		{
+			ID: '195',
+			back: '妹のカバンを持ちます',
+			front:'Ich trage die Tasche meiner jüngeren Schwester',
+		},
+		{
+			ID: '196',
+			back: '本屋で新しい本をたくさん買いました',
+			front:'Ich habe viele neue Bücher im Buchladen gekauft.',
+		},
+		{
+			ID: '197',
+			back: '彼女は安いお土産を売ります',
+			front:'Sie verkauft billige Souvenirs.',
+		},
+		{
+			ID: '198',
+			back: '時計は要りません',
+			front:'Ich brauche keine Uhr.',
+		},
+		{
+			ID: '199',
+			back: '違いは何ですか',
+			front:'Was ist der Unterschied',
+		},
+		{
+			ID: '200',
+			back: '田中さんとは彼氏がいますか',
+			front:'Hat Tanaka einen Freund',
+		},
+		{
+			ID: '201',
+			back: '先月彼氏と別れました',
+			front:'Ich habe letztes Monat mit meinem Freund Schluss gemacht.',
+		},
+		{
+			ID: '202',
+			back: 'この部屋は明るくないです',
+			front:'Dieses Zimmer ist nicht hell.',
+		},
+		{
+			ID: '203',
+			back: '昨夜は雪が降りました',
+			front:'Gestern Abend hat es geschneit.',
+		},
+		{
+			ID: '204',
+			back: '東京は人がたくさんいます',
+			front:'Es gibt viele Leute in Tokio',
+		},
+		{
+			ID: '205',
+			back: '彼女は立派です',
+			front:'Sie ist toll.',
+		},
+		{
+			ID: '206',
+			back: 'こちらの方はどなたですか',
+			front:'Wer ist die Person dort drüben.',
+		},
+		{
+			ID: '207',
+			back: 'どなたですか',
+			front:'Wer ist es',
+		},
+		{
+			ID: '208',
+			back: 'あの方は彼女のおじいさんです',
+			front:'Diese Person ist ihr Großvater.',
+		},
+		{
+			ID: '209',
+			back: '誕生日が5月の人は何人いますか',
+			front:'Wie viele Menschen haben im Mai geburtstag.',
+		},
+		{
+			ID: '210',
+			back: '部屋に人が一人います',
+			front:'Es ist eine Person im Raum',
+		},
+		{
+			ID: '211',
+			back: '子供達は何をしていますか',
+			front:'Was machen die Kinder?',
+		},
+		{
+			ID: '212',
+			back: '学校に行き、それから勉強しました',
+			front:'Ich gehe in die Schule und dann lernte ich.',
+		},
+		{
+			ID: '213',
+			back: '洗濯しましたか',
+			front:'Hast du die Wäsche gemacht',
+		},
+		{
+			ID: '214',
+			back: '洗濯してそれから掃除しましょう',
+			front:'Lass uns die Wäsche machen und danach sauber machen.',
+		},
+		{
+			ID: '215',
+			back: '銀行に入ります',
+			front:'Ich betrete die Bank',
+		},
+		{
+			ID: '216',
+			back: '病院を出ます',
+			front:'Ich verlasse das Hospital',
+		},
+		{
+			ID: '217',
+			back: '病院のそばに小さなコンビニがあります',
+			front:'Beim Spital ist ein kleiner convenience-store.',
+		},
+		{
+			ID: '218',
+			back: 'この道は西に行きます',
+			front:'Dieser Weg geht nach Westen',
+		},
+		{
+			ID: '219',
+			back: '僕のまだ若いですよ',
+			front:'Ich bin noch jung.',
+		},
+		{
+			ID: '220',
+			back: 'あの男の人はまだ若いです',
+			front:'Dieser junge ist noch jung',
+		},
+		{
+			ID: '221',
+			back: '彼は大人です',
+			front:'Er ist erwachsen',
+		},
+		{
+			ID: '222',
+			back: 'あの女の人たちは有名です',
+			front:'Diese Frauen sind berühmt.',
+		},
+		{
+			ID: '223',
+			back: 'あの男の人はまだ若いです',
+			front:'Diese Mann ist noch jung',
+		},
+		{
+			ID: '224',
+			back: 'どうやって家に帰りますか',
+			front:'Wie kommst du nach Hause.',
+		},
+		{
+			ID: '225',
+			back: '家に帰ってください',
+			front:'Bitte gehe nach Hause',
+		},
+		{
+			ID: '226',
+			back: 'シャワーの浴びて、それから大学に行きました',
+			front:'Ich durfte und ging dann in den Universität.',
+		},
+		{
+			ID: '227',
+			back: 'すぐにシャワーを浴びてください',
+			front:'Bitte geh sofort in die Duschen',
+		},
+		{
+			ID: '228',
+			back: '家に帰っていいですか',
+			front:'Kann ich nach Hause gehen?',
+		},
+		{
+			ID: '229',
+			back: '手紙はすぐに読んでください',
+			front:'Lies den Brief bitte sofort.',
+		},
+		{
+			ID: '230',
+			back: '昨日祖父が亡くなりました',
+			front:'Gestern ist mein Großvater gestorben.',
+		},
+		{
+			ID: '231',
+			back: '子供が生まれました',
+			front:'Mein Kind wurde geboren.',
+		},
+		{
+			ID: '232',
+			back: '彼は先月離婚しました',
+			front:'Er wurde letztes Monat geschieden.',
+		},
+		{
+			ID: '233',
+			back: '赤ちゃんの可愛いです',
+			front:'Babys sind niedlich.',
+		},
+		{
+			ID: '234',
+			back: '7月に離婚しました',
+			front:'Ich wurde im Juli geschieden',
+		},
+		{
+			ID: '235',
+			back: 'おととい祖母が死にました',
+			front:'Vorgestern ist meine Großmutter gestorben.',
+		},
+		{
+			ID: '236',
+			back: '先週私の犬が死にました',
+			front:'Letzte Woche ist mein Hund gestorben.',
+		},
+		{
+			ID: '237',
+			back: 'こんなに可愛い時計はほかにありません',
+			front:'Es gibt keine andere Uhr die so süß ist wie diese.',
+		},
+		{
+			ID: '238',
+			back: '他にもこんなものがあります',
+			front:'Da sind andere Dinge wie dieses.',
+		},
+		{
+			ID: '239',
+			back: 'どこに座りましたか',
+			front:'Wo bist du gesessen.',
+		},
+		{
+			ID: '240',
+			back: '窓を開けてください',
+			front:'Öffne bitte das Fenster.',
+		},
+		{
+			ID: '241',
+			back: '名前を書いてください',
+			front:'Bitte schreiben sie ihren Namen.',
+		},
+		{
+			ID: '242',
+			back: '大きな窓を開けて涼しい風を入りました',
+			front:'Ich öffnete das Fenster und ließ die kalte Luft herein.',
+		},
+		{
+			ID: '243',
+			back: '去年彼女と別れました',
+			front:'Ich habe letztes Jahr mit dir Schluss gemacht.',
+		},
+		{
+			ID: '244',
+			back: '彼はまだ独身です',
+			front:'Er ist noch immer Single.',
+		},
+		{
+			ID: '245',
+			back: '週末彼は彼女とデートしました',
+			front:'Ich hatte ein date mit seiner Freundin am Wochenende.',
+		},
+		{
+			ID: '246',
+			back: '立ってください',
+			front:'Bitte stehen sie auf.',
+		},
+		{
+			ID: '247',
+			back: '病院の入り口で立っています',
+			front:'Ich gestehe am Eingang vom hospital.',
+		},
+		{
+			ID: '248',
+			back: '窓を開けてと電気を消してください',
+			front:'Öffne das Fenster und lösche das Licht, bitte.',
+		},
+		{
+			ID: '249',
+			back: '持っていませんが',
+			front:'Ich habe es nicht.',
+		},
+		{
+			ID: '250',
+			back: '冷蔵庫を3台持っています',
+			front:'Ich habe drei Kühlschränke',
+		},
+		{
+			ID: '251',
+			back: 'またゆっくりお願いします',
+			front:'Bitte noch mal langsam.',
+		},
+		{
+			ID: '252',
+			back: '携帯電話は持っていますか',
+			front:'Hast du ein Smartphone.',
+		},
+		{
+			ID: '253',
+			back: '窓はゆっくり閉めてください',
+			front:'Bitte schließ das Fenster langsam.',
+		},
+		{
+			ID: '254',
+			back: 'ここの角を左に曲がります',
+			front:'An dieser Ecke links abbiegen.',
+		},
+		{
+			ID: '255',
+			back: '次狭い道をまっすぐ進みます',
+			front:'Als nächstes an der schmalen Straße gerade weiter.',
+		},
+		{
+			ID: '256',
+			back: '家族が何人いますか',
+			front:'Wie viele Leute sind in deiner Familie.',
+		},
+		{
+			ID: '257',
+			back: '洗濯してそれから掃除してましょう',
+			front:'Lass uns die Wäsche machen und dann aufräumen.',
+		},
+		{
+			ID: '258',
+			back: '家の掃除をしてください',
+			front:'Bitte mach das Haus sauber.',
+		},
+		{
+			ID: '259',
+			back: '部屋に人が一人います',
+			front:'Da ist eine Person im Raum.',
+		},
+		{
+			ID: '260',
+			back: 'そちらの方はどなたですか',
+			front:'Wer ist diese Person.',
+		},
+		{
+			ID: '261',
+			back: '冷蔵庫で一週間は大丈夫です',
+			front:'Es wird okay sein für eine Woche im Kühlschrank.',
+		},
+		{
+			ID: '262',
+			back: '電気をつけてください',
+			front:'Bitte schalte das Licht ein.',
+		},
+		{
+			ID: '263',
+			back: '立ってください',
+			front:'Bitte stehe auf.',
+		},
+		{
+			ID: '264',
+			back: '窓を開けて閉めました',
+			front:'Ich öffnete das Fenster und dann schloss ich es.',
+		},
+		{
+			ID: '265',
+			back: '今日は早く家に入ります',
+			front:'Ich gehe heute früher nach Hause.',
+		},
+		{
+			ID: '266',
+			back: '早い電車に乗りました',
+			front:'Ich habe einen früheren Zug genommen',
+		},
+		{
+			ID: '267',
+			back: '病院の入り口で立っています',
+			front:'Ich stehe am Hospital eingang.',
+		},
+		{
+			ID: '268',
+			back: 'ちょっとの間忙しいです',
+			front:'Ich bin beschäftigt für kurze Zeit.',
+		},
+		{
+			ID: '269',
+			back: '椅子に座って待ってください',
+			front:'Bitte setz dich auf den Stuhl und warte',
+		},
+		{
+			ID: '270',
+			back: 'このお店はいつも賑やかです',
+			front:'Dieses Geschäft ist immer lebhaft',
+		},
+		{
+			ID: '271',
+			back: '今鳥が鳴きましたか',
+			front:'Hat da eben ein Vogel geschrien.',
+		},
+		{
+			ID: '272',
+			back: 'この男の人の声はとても大きです',
+			front:'Die Stimme dieses Mannes ist sehr laut.',
+		},
+		{
+			ID: '273',
+			back: 'この子供達は少しうるさいです',
+			front:'Diese Kinder sind ein bisschen laut.',
+		},
+		{
+			ID: '274',
+			back: '昨日のパーティーはとても賑やかでし',
+			front:'Die Party gestern war sehr lebhaft',
+		},
+		{
+			ID: '275',
+			back: 'こちらの人はどなたですか',
+			front:'Wer ist die Person hier drüben.',
+		},
+		{
+			ID: '276',
+			back: '猿は木に登っています',
+			front:'Affen klettern auf den Baum',
+		},
+		{
+			ID: '277',
+			back: '鳩が飛んでいます',
+			front:'Die Taube fliegt',
+		},
+		{
+			ID: '278',
+			back: 'どこに座りましたか',
+			front:'Wo bist du gesessen.',
+		},
+		{
+			ID: '279',
+			back: '今朝ご飯を食べています',
+			front:'Ich esse mein Frühstück jetzt',
+		},
+		{
+			ID: '280',
+			back: '大きな窓を開け涼しい風を入りました',
+			front:'Ich habe das Fenster geöffnet und die kühle Brise hereingelassen.',
+		},
+		{
+			ID: '281',
+			back: 'その山に登ってください',
+			front:'Bitte klettere auf diesem Berg.',
+		},
+		{
+			ID: '282',
+			back: '犬が木に登っています',
+			front:'Der Hund klettert auf dem Baum.',
+		},
+		{
+			ID: '283',
+			back: '花瓶に花を入れました',
+			front:'Ich werde blumen in die Vase geben.',
+		},
+		{
+			ID: '284',
+			back: 'この花瓶はとても高いです',
+			front:'Diese Base ist sehr teuer.',
+		},
+		{
+			ID: '285',
+			back: '誰かその山に登りました',
+			front:'Wer ist auf diesem Berg geklettert.',
+		},
+		{
+			ID: '286',
+			back: '妹は公園の木に登ります',
+			front:'Meine kleine Schwester klettert auf Bäumen im Park.',
+		},
+		{
+			ID: '287',
+			back: '山の上にたくさん木があります',
+			front:'Auf dem Berg sind viele Bäume',
+		},
+		{
+			ID: '288',
+			back: '山に登ってそれから川に行きます',
+			front:'Ich klettere auf dem Berg und dann gehe ich zum Fluss.',
+		},
+		{
+			ID: '289',
+			back: '魚が池にたくさんいます',
+			front:'Es sind viele Fische im Teich.',
+		},
+		{
+			ID: '290',
+			back: '私の家の庭には小さな池があります',
+			front:'Im Garten meines Hauses ist ein kleiner Teich.',
+		},
+		{
+			ID: '291',
+			back: '本棚の上の窓は閉めてください',
+			front:'Bitte schließ das Fenster über dem Bücherregal.',
+		},
+		{
+			ID: '292',
+			back: '電気をつけてください',
+			front:'Bitte dreh das licht auf.',
+		},
+		{
+			ID: '293',
+			back: 'もう授業は始まっていますか',
+			front:'Hat die Klasse bereits begonnen?',
+		},
+		{
+			ID: '294',
+			back: '宿題は終わりましたか',
+			front:'Hast du die Aufgabe gemacht',
+		},
+		{
+			ID: '295',
+			back: '家の掃除をしてください',
+			front:'Bitte räum das Haus auf',
+		},
+		{
+			ID: '296',
+			back: '子供達は何をしてますか',
+			front:'was machen die Kinder',
+		},
+		{
+			ID: '297',
+			back: '机の上に花瓶があります',
+			front:'auf dem Schreibtisch steht eine Vase',
+		},
+		{
+			ID: '298',
+			back: '仕事が終わってパーティへ行きました',
+			front:'die Arbeit endete und ich ging auf die Party',
+		},
+		{
+			ID: '299',
+			back: '授業が終わりました',
+			front:'die Klasse ist vorbei',
+		},
+		{
+			ID: '300',
+			back: '次の授業は何ですか',
+			front:'was ist deine nächste Klasse',
+		},
+		{
+			ID: '301',
+			back: 'まだ宿題が終わっていません',
+			front:'ich bin noch immer nicht mit der Hausaufgabe fertig',
+		},
+		{
+			ID: '302',
+			back: '午後3時に授業が終わって家に帰りました',
+			front:'um 3 Uhr Nachmittag endete die Klasse und ich ging nach Hause',
+		},
+		{
+			ID: '303',
+			back: '授業が始まります座ってください',
+			front:'die Klasse beginnt bitte setz dich hin',
+		}
+]

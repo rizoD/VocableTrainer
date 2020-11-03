@@ -14,11 +14,11 @@ namespace VocableTrainer.Droid.Notification
 {
 	internal class Notifications
 	{
-		static readonly int NOTIFICATION_ID = 1000;
-		static readonly string CHANNEL_ID = "location_notification";
+		readonly int NOTIFICATION_ID = 1000;
+		readonly string CHANNEL_ID = "location_notification";
+		private NotificationManagerCompat notificationManager = null;
 
-
-		public static PendingIntent GetPendingAction(Context context, string actionValue, int i)
+		public PendingIntent GetPendingAction(Context context, string actionValue, int i)
 		{
 			//This is the intent of PendingIntent
 			Intent message = new Intent(ActionReceiver.IntentFilterID);
@@ -28,7 +28,7 @@ namespace VocableTrainer.Droid.Notification
 			return PendingIntent.GetBroadcast(context, i, message, PendingIntentFlags.UpdateCurrent);
 		}
 
-		public static void CreateNotification(Context context)
+		public void CreateNotification(Context context)
 		{
 			// Build the notification:
 			var builder = new NotificationCompat.Builder(context, CHANNEL_ID)
@@ -41,11 +41,20 @@ namespace VocableTrainer.Droid.Notification
 				
 
 			// Finally, publish the notification:
-			var notificationManager = NotificationManagerCompat.From(context);
-			notificationManager.Notify(NOTIFICATION_ID, builder.Build());
+			if (notificationManager == null)
+			{
+				notificationManager = NotificationManagerCompat.From(context);
+			}
+
+			notificationManager?.Notify(NOTIFICATION_ID, builder.Build());
 		}
 
-		public static RemoteViews BuildRemoteViews(Context context)
+		public void CancelNotifications()
+		{
+			notificationManager?.CancelAll();
+		}
+
+		public RemoteViews BuildRemoteViews(Context context)
 		{
 			RemoteViews expandedView = new RemoteViews(Forms.Context.PackageName, Resource.Layout.NotificaitonLayout);
 			expandedView.SetOnClickPendingIntent(Resource.Id.flagImg, GetPendingAction(context, ActionReceiver.FlagAction, 1));
@@ -55,7 +64,7 @@ namespace VocableTrainer.Droid.Notification
 			return expandedView;
 		}
 
-		public static void CreateNotificationChannel(Context context)
+		public void CreateNotificationChannel(Context context)
 		{
 			if (Build.VERSION.SdkInt < BuildVersionCodes.O)
 			{

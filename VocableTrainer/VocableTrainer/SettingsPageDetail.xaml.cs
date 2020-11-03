@@ -2,6 +2,7 @@
 using System.IO;
 using System.Linq;
 using Android.App;
+using Android.Content.PM;
 using Android.Widget;
 using Plugin.FilePicker;
 using Plugin.FilePicker.Abstractions;
@@ -88,8 +89,15 @@ namespace VocableTrainer
 		}
 
 
-		private void ExportBtn_OnClickedBtn_OnClicked(object sender, EventArgs e)
+		private async void ExportBtn_OnClickedBtn_OnClicked(object sender, EventArgs e)
 		{
+			await Permissions.RequestAsync<Permissions.StorageWrite>().ConfigureAwait(false);
+
+			if(await Permissions.CheckStatusAsync<Permissions.StorageWrite>().ConfigureAwait(false) != PermissionStatus.Granted)
+			{
+				Toast.MakeText(Android.App.Application.Context, "No permission to write export file.", ToastLength.Long).Show();
+				return;
+			}
 			App.ShowLoading(() =>
 			{
 
