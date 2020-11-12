@@ -8309,6 +8309,9 @@ namespace VocableTrainer.Droid
 			// aapt resource value: 0x7F070067
 			public const int Icon = 2131165287;
 			
+			// aapt resource value: 0x7F070068
+			public const int Icon_16 = 2131165288;
+			
 			// aapt resource value: 0x7F070064
 			public const int ic_mtrl_chip_checked_black = 2131165284;
 			
@@ -8317,9 +8320,6 @@ namespace VocableTrainer.Droid
 			
 			// aapt resource value: 0x7F070066
 			public const int ic_mtrl_chip_close_circle = 2131165286;
-			
-			// aapt resource value: 0x7F070068
-			public const int loading = 2131165288;
 			
 			// aapt resource value: 0x7F070069
 			public const int mtrl_snackbar_background = 2131165289;
@@ -8623,7 +8623,7 @@ namespace VocableTrainer.Droid
 			public const int @fixed = 2131230799;
 			
 			// aapt resource value: 0x7F080050
-			public const int flagImg = 2131230800;
+			public const int flag = 2131230800;
 			
 			// aapt resource value: 0x7F080051
 			public const int flyoutcontent_appbar = 2131230801;
@@ -8737,52 +8737,52 @@ namespace VocableTrainer.Droid
 			public const int never = 2131230835;
 			
 			// aapt resource value: 0x7F080074
-			public const int nextImg = 2131230836;
+			public const int none = 2131230836;
 			
 			// aapt resource value: 0x7F080075
-			public const int none = 2131230837;
-			
-			// aapt resource value: 0x7F080076
-			public const int normal = 2131230838;
+			public const int normal = 2131230837;
 			
 			// aapt resource value: 0x7F080004
 			public const int NotificaitonLayout = 2131230724;
 			
+			// aapt resource value: 0x7F080076
+			public const int notification_background = 2131230838;
+			
 			// aapt resource value: 0x7F080077
-			public const int notification_background = 2131230839;
+			public const int notification_main_column = 2131230839;
 			
 			// aapt resource value: 0x7F080078
-			public const int notification_main_column = 2131230840;
+			public const int notification_main_column_container = 2131230840;
 			
 			// aapt resource value: 0x7F080079
-			public const int notification_main_column_container = 2131230841;
+			public const int outline = 2131230841;
 			
 			// aapt resource value: 0x7F08007A
-			public const int outline = 2131230842;
+			public const int parallax = 2131230842;
 			
 			// aapt resource value: 0x7F08007B
-			public const int parallax = 2131230843;
+			public const int parentPanel = 2131230843;
 			
 			// aapt resource value: 0x7F08007C
-			public const int parentPanel = 2131230844;
+			public const int parent_matrix = 2131230844;
 			
 			// aapt resource value: 0x7F08007D
-			public const int parent_matrix = 2131230845;
+			public const int pin = 2131230845;
 			
 			// aapt resource value: 0x7F08007E
-			public const int pin = 2131230846;
+			public const int play = 2131230846;
 			
 			// aapt resource value: 0x7F08007F
-			public const int playImg = 2131230847;
+			public const int progress_circular = 2131230847;
 			
 			// aapt resource value: 0x7F080080
-			public const int progress_circular = 2131230848;
+			public const int progress_horizontal = 2131230848;
 			
 			// aapt resource value: 0x7F080081
-			public const int progress_horizontal = 2131230849;
+			public const int radio = 2131230849;
 			
 			// aapt resource value: 0x7F080082
-			public const int radio = 2131230850;
+			public const int replay = 2131230850;
 			
 			// aapt resource value: 0x7F080083
 			public const int right = 2131230851;

@@ -42,6 +42,7 @@ namespace VocableTrainer
 		public event PropertyChangedEventHandler PropertyChanged = delegate { };
 
 		public List<Sound.Lang> TrainingSound { get; set; }
+		public Sound.Lang LastTrainingSound { get; set; }
 
 		public bool NotPlaying
 		{

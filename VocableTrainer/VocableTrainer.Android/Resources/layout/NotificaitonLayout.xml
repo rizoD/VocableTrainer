@@ -9,9 +9,9 @@
         android:id="@+id/viewImageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="10dp"
+        android:padding="5dp"
         android:contentDescription="@null"
-        android:src="@drawable/icon"
+        android:src="@drawable/icon_16"
         android:layout_column="0"
         android:layout_rowSpan="2"
         android:layout_row="0"/>
@@ -22,7 +22,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="14dp"
+            android:textAppearance="?android:attr/textAppearanceMedium"
             android:padding="3px"
             android:text="Vocable Trainer"
             android:layout_column="1"
@@ -30,30 +30,35 @@
         <LinearLayout
             android:layout_column="0"
             android:layout_row="1"
+            android:padding="30px"    
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal">
-          <ImageView
+            <TextView
                 android:layout_width="0px"
                 android:layout_weight=".3"
-                android:layout_height="wrap_content"
-                android:padding="15dp"
-                android:id="@+id/flagImg"
-                android:src="@drawable/flag"/>
-            <ImageView
-                android:layout_width="0px"
-                android:layout_weight=".3"
-                android:layout_height="wrap_content"
-                android:padding="15dp"
-                android:id="@+id/playImg"
-                android:src="@drawable/playpause"/>
-            <ImageView
-                android:layout_width="0px"
-                android:layout_weight=".3"
-                android:layout_height="wrap_content"
-                android:padding="15dp"
-                android:id="@+id/nextImg"
-                android:src="@drawable/next"/>
+                android:text="Flag"
+                android:layout_height="match_parent"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/flag"
+                android:textColor="@android:color/holo_blue_dark" />
+            <TextView
+              android:layout_width="0px"
+              android:layout_weight=".4"
+              android:text="Play/Pause"
+              android:layout_height="match_parent"
+              android:textAppearance="?android:attr/textAppearanceMedium"
+              android:id="@+id/play"
+              android:textColor="@android:color/holo_blue_dark" />
+            <TextView
+              android:layout_width="0px"
+              android:layout_weight=".25"
+              android:text="Replay"
+              android:layout_height="match_parent"
+              android:textAppearance="?android:attr/textAppearanceMedium"
+              android:id="@+id/replay" 
+              android:textColor="@android:color/holo_blue_dark" />
+
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

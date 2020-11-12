@@ -14,7 +14,8 @@
 
         <ListView Grid.Row="1" 
                       ItemsSource="{Binding Vocables}"
-                      SelectedItem="{Binding CurrentVocable}">
+                      SelectedItem="{Binding CurrentVocable}"
+                      ItemSelected="ListView_OnItemSelected">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -38,7 +39,6 @@
         </ListView>
         <StackLayout Grid.Row="2" Orientation="Horizontal">
             <Button x:Name="AddBtn" Text="Add New" Clicked="AddBtn_OnClicked"/>
-            <Button x:Name="EditBtn" Text="Edit" Clicked="EditBtn_OnClicked" />
         </StackLayout>
     </Grid>
 </ContentPage>

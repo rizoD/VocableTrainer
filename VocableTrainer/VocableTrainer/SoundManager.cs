@@ -10,6 +10,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Dalvik.Annotation;
 using Newtonsoft.Json;
+using Plugin.SimpleAudioPlayer;
 using Xamarin.Forms;
 using Encoding = System.Text.Encoding;
 
@@ -44,29 +45,8 @@ namespace VocableTrainer
 
 		public static void Play(Sound sound)
 		{
-			var taks = Task.Factory.StartNew(() =>
-			{
-				bool finished = false;
-				MediaPlayer currentPlayer = new MediaPlayer();
-				currentPlayer.Prepared += (sender, e) =>
-				{
-					currentPlayer.Start();
-				};
-				currentPlayer.Completion += (sender, args) =>
-				{
-					args.ToString();
-					finished = true;
-				};
-				currentPlayer.Stop();
-				currentPlayer.SetDataSource(new StreamMediaDataSource(new MemoryStream(sound.Data)));
-				currentPlayer.PrepareAsync();
-				while (!finished)
-				{
-					Thread.Sleep(100);
-				}
-			});
-
-			taks.Wait(TimeSpan.FromSeconds(5));
+			CrossSimpleAudioPlayer.Current.Load(new MemoryStream(sound.Data));
+			CrossSimpleAudioPlayer.Current.Play();
 		}
 
 

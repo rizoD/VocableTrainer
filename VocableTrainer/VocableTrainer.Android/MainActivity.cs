@@ -1,5 +1,5 @@
 ﻿using System;
-
+using System.Threading;
 using Android.App;
 using Android.Content;
 using Android.Content.PM;
@@ -48,15 +48,18 @@ namespace VocableTrainer.Droid
 
             notifications.CreateNotification(this);
             PeriodicService.Start();
-
+            
             //btreceiver = new DeviceDiscoveredReceiver(this);
             //IntentFilter filter = new IntentFilter(BluetoothDevice.ActionFound);
             //RegisterReceiver(receiver, filter);
             //btAdapter = BluetoothAdapter.DefaultAdapter;
         }
 
+       
+
         protected override void OnDestroy()
         {
+
             notifications.CancelNotifications();
 	        UnregisterReceiver(receiver);
 	        UnregisterReceiver(bluetoothDeviceReceiver);

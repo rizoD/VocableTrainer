@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using System.Threading.Tasks;
 using Android.App;
 using Android.Bluetooth;
 using Android.Content;
@@ -23,7 +24,7 @@ namespace VocableTrainer
 				if (device.BluetoothClass.DeviceClass == DeviceClass.AudioVideoHeadphones
 				    || device.BluetoothClass.DeviceClass == DeviceClass.AudioVideoWearableHeadset)
 				{
-					App.Pause();
+					Task.Run(App.Pause);
 					Toast.MakeText(context, $"Training Paused", ToastLength.Short).Show();
 				}
 			}

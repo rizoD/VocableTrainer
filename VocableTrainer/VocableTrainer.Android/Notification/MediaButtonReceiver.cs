@@ -19,14 +19,14 @@ namespace VocableTrainer
 	})]
 	public class MediaButtonReceiver : BroadcastReceiver
 	{
-		private static DateTime lastBtnPress = DateTime.Now;
+		private static int cnt = 0;
 
 		public string ComponentName { get { return Class.Name; } }
 
 		public override void OnReceive(Context context, Intent intent)
 		{
 			//Btn Presses seem to need a debounce
-			if (lastBtnPress.AddSeconds(2) > DateTime.Now)
+			if (cnt == 1)
 			{
 				return;
 			}
@@ -46,17 +46,25 @@ namespace VocableTrainer
 				case Keycode.MediaPause:
 				case Keycode.MediaPlay:
 				case Keycode.MediaPlayPause:
-					App.TogglePlay(); 
+					Task.Run(() =>
+					{
+						App.TogglePlay(true);
+					}); 
 					break;
 				case Keycode.MediaNext:
-					App.PlayNextAudio();
+					Task.Run(() =>
+					{
+						 App.Replay(true);
+					});
 					break;
 				case Keycode.MediaPrevious:
-					App.TrainingFlag();
+					Task.Run(() =>
+					{
+						 App.TrainingFlag(true);
+					});
 					break;
 			}
-			lastBtnPress = DateTime.Now;
-
+			cnt = (cnt + 1) % 2;
 		}
 	}
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using Android.Bluetooth;
 using Android.Content;
@@ -10,6 +11,7 @@ using Android.Media.Audiofx;
 using Android.Widget;
 using Google.Apis.Drive.v3;
 using Plugin.FilePicker.Abstractions;
+using Plugin.SimpleAudioPlayer;
 using VocableTrainer.Data;
 using Xamarin.Forms;
 using Xamarin.Forms.Markup;
@@ -26,6 +28,9 @@ namespace VocableTrainer
 		static string[] Scopes = { DriveService.Scope.DriveReadonly };
 		static string ApplicationName = "VocableTrainer";
 
+		private static string FlagResource = "Flag_Short.mp3";
+		private static string PlayResource = "Play_Short.mp3";
+		private static string PauseResource = "Pause_Short.mp3";
 
 		public App()
 		{
@@ -34,6 +39,24 @@ namespace VocableTrainer
 
 		}
 
+		private static void PlayChime(bool play, string resource)
+		{
+			if (play)
+			{
+				try
+				{
+					using (Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("VocableTrainer." + resource))
+					{
+						CrossSimpleAudioPlayer.Current.Load(stream);
+						CrossSimpleAudioPlayer.Current.Play();
+					}
+				}
+				catch (Exception ex)
+				{
+					ex.ToString();
+				}
+			}
+		}
 
 		protected override void OnStart()
 		{
@@ -46,10 +69,19 @@ namespace VocableTrainer
 		{
 		}
 
-		public static void TrainingFlag()
+		public static void TrainingFlag(bool rc = false)
 		{
-			Data.CurrentVocable.Flag |= Flags.Training;
-			Data.SaveVocable(Data.CurrentVocable);
+			try
+			{
+				PlayChime(rc, FlagResource);
+
+				Data.CurrentVocable.Flag |= Flags.Training;
+				Data.SaveVocable(Data.CurrentVocable);
+			}
+			catch (Exception ex)
+			{
+
+			}
 		}
 
 		public static void PlaySound(Sound.Lang type)
@@ -69,15 +101,50 @@ namespace VocableTrainer
 			}
 		}
 
-		public static void TogglePlay()
+		public static void TogglePlay(bool rc = false)
 		{
-			if (Data.State == PlayState.Playing)
+			try
 			{
-				Pause();
+				
+				if (Data.CurrentTraining != null)
+				{
+					if (Data.CurrentTraining.AutoPlay)
+					{
+						if (Data.State == PlayState.Playing)
+						{
+							PlayChime(rc, PauseResource);
+							Pause();
+						}
+						else
+						{
+							PlayChime(rc, PlayResource);
+							Play();
+						}
+					}
+					else
+					{
+						PlayChime(rc, PlayResource);
+						PlayNextAudio();
+					}
+				}
 			}
-			else
+			catch (Exception ex)
 			{
-				Play();
+			}
+		}
+
+		public static void TimerCallback(object state)
+		{
+			try
+			{
+				Task.Run(() =>
+				{
+					App.DoTraining();
+				});
+			}
+			catch (Exception ex)
+			{
+				ex.ToString();
 			}
 		}
 
@@ -101,6 +168,7 @@ namespace VocableTrainer
 
 		public static void Pause()
 		{
+
 			Data.TrainingSound.Clear();
 			Data.State = PlayState.Pause;
 		}
@@ -167,9 +235,21 @@ namespace VocableTrainer
 			}
 		}
 
+		public static void Replay(bool rc = false)
+		{
+			try
+			{
+				PlayChime(rc, PlayResource);
+				PlaySound(Data.LastTrainingSound);
+			}
+			catch (Exception ex)
+			{
+
+			}
+		}
+
 		public static void PlayNextAudio()
 		{
-
 			try
 			{
 				if (Data.TrainingSound.Count == 0)
@@ -187,6 +267,7 @@ namespace VocableTrainer
 				}
 
 				var current = Data.TrainingSound.OrderBy(item => Guid.NewGuid()).FirstOrDefault();
+				Data.LastTrainingSound = current;
 				Data.TrainingSound.Remove(current);
 
 				PlaySound(current);

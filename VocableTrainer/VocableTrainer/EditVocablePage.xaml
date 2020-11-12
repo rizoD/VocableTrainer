@@ -11,11 +11,6 @@
                      sk:Skeleton.IsBusy="{Binding IsBusy}"
                      sk:Skeleton.Animation="{sk:DefaultAnimation Fade}"
                      sk:Skeleton.BackgroundColor="Gray">
-            <ActivityIndicator 
-                IsRunning="{Binding IsBusy}"
-                IsVisible="{Binding IsBusy}"
-                VerticalOptions="CenterAndExpand"
-                HorizontalOptions="Fill"/>
             <Label>Foreign:</Label>
             <Grid>
                 <Grid.ColumnDefinitions>

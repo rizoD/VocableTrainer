@@ -34,12 +34,13 @@ namespace VocableTrainer.Droid.Notification
 			var builder = new NotificationCompat.Builder(context, CHANNEL_ID)
 				.SetAutoCancel(false) // Dismiss the notification from the notification area when the user clicks on it
 				//   .SetContentIntent(resultPendingIntent) // Start up this activity when the user clicks the intent.
+				.SetVisibility(NotificationCompat.VisibilityPublic)
 				.SetContentTitle("Vocable Trainer") // Set the title
 				.SetCustomContentView(BuildRemoteViews(context))
 				.SetSmallIcon(Resource.Drawable.Icon)
 				.SetSound(null); // This is the icon to display
 				
-
+			
 			// Finally, publish the notification:
 			if (notificationManager == null)
 			{
@@ -57,9 +58,9 @@ namespace VocableTrainer.Droid.Notification
 		public RemoteViews BuildRemoteViews(Context context)
 		{
 			RemoteViews expandedView = new RemoteViews(Forms.Context.PackageName, Resource.Layout.NotificaitonLayout);
-			expandedView.SetOnClickPendingIntent(Resource.Id.flagImg, GetPendingAction(context, ActionReceiver.FlagAction, 1));
-			expandedView.SetOnClickPendingIntent(Resource.Id.playImg, GetPendingAction(context, ActionReceiver.PlayAction, 2));
-			expandedView.SetOnClickPendingIntent(Resource.Id.nextImg, GetPendingAction(context, ActionReceiver.NextAction, 3));
+			expandedView.SetOnClickPendingIntent(Resource.Id.flag, GetPendingAction(context, ActionReceiver.FlagAction, 1));
+			expandedView.SetOnClickPendingIntent(Resource.Id.play, GetPendingAction(context, ActionReceiver.PlayAction, 2));
+			expandedView.SetOnClickPendingIntent(Resource.Id.replay, GetPendingAction(context, ActionReceiver.ReplayAction, 3));
 
 			return expandedView;
 		}

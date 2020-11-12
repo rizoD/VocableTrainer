@@ -18,9 +18,10 @@ namespace VocableTrainer
 			Navigation.PushModalAsync(new EditVocablePage());
 		}
 
-		private void EditBtn_OnClicked(object sender, EventArgs e)
+		private void ListView_OnItemSelected(object sender, SelectedItemChangedEventArgs e)
 		{
 			Navigation.PushModalAsync(new EditVocablePage());
+
 		}
 	}
 }
