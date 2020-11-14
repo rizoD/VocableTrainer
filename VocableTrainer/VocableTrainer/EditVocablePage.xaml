@@ -4,41 +4,37 @@
              xmlns:local="clr-namespace:VocableTrainer;assembly=VocableTrainer"
              xmlns:sk="clr-namespace:Xamarin.Forms.Skeleton;assembly=Xamarin.Forms.Skeleton"
              x:Class="VocableTrainer.EditVocablePage">
-    <ContentPage.Content>
+    <ContentPage.Content >
         <StackLayout Grid.Row="0"  
                      BindingContext="{x:Static local:App.Data}"
                      sk:Skeleton.IsParent="True"
                      sk:Skeleton.IsBusy="{Binding IsBusy}"
                      sk:Skeleton.Animation="{sk:DefaultAnimation Fade}"
-                     sk:Skeleton.BackgroundColor="Gray">
+                     sk:Skeleton.BackgroundColor="Gray" >
             <Label>Foreign:</Label>
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
-                <Entry Grid.Column="0" x:Name="Foreign" />
+                <Entry Grid.Column="0" x:Name="Foreign" Text="{Binding CurrentVocable.Foreign}"/>
                 <Button Grid.Column="1" x:Name="PlayForeign" Text="&#128265;" Clicked="PlayForeign_OnClicked" />
             </Grid>
             <Label>Detail:</Label>
-            <Entry x:Name="Detail"></Entry>
+            <Entry x:Name="Detail" Text="{Binding CurrentVocable.Detail}"/>
             <Label>Native:</Label>
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
-                <Entry Grid.Column="0" x:Name="Native" />
+                <Entry Grid.Column="0" x:Name="Native" Text="{Binding CurrentVocable.Native}"/>
                 <Button Grid.Column="1" x:Name="PlayNative" Text="&#128265;" Clicked="PlayNative_OnClicked" />
             </Grid>
-            <Grid>
+           
+                <Button x:Name="FlagBtn" Text="Remove Flags" Clicked="FlagBtn_OnClicked"/>
                 <Button x:Name="SountBtn" Text="Update Sound" Clicked="SoundBtn_OnClicked"/>
-            </Grid>
-            <StackLayout Orientation="Horizontal">
                 <Button x:Name="DelBtn" Text="Delete" Clicked="DelBtn_OnClicked" />
-                <Button x:Name="CancelBtn" Text="Cancel" Clicked="CancelBtn_OnClicked" />
-                <Button x:Name="OKBtn" Text="OK" Clicked="OKBtn_OnClicked"/>
-            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

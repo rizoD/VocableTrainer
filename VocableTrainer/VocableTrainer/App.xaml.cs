@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Threading;
 using System.Threading.Tasks;
 using Android.Bluetooth;
 using Android.Content;
@@ -28,27 +29,37 @@ namespace VocableTrainer
 		static string[] Scopes = { DriveService.Scope.DriveReadonly };
 		static string ApplicationName = "VocableTrainer";
 
-		private static string FlagResource = "Flag_Short.mp3";
-		private static string PlayResource = "Play_Short.mp3";
-		private static string PauseResource = "Pause_Short.mp3";
+		// aapt resource value: 0x7F0D0000
+		public const int Flag_Short = 2131558400;
+
+		// aapt resource value: 0x7F0D0001
+		public const int Pause_Short = 2131558401;
+
+		// aapt resource value: 0x7F0D0002
+		public const int Play_Short = 2131558402;
 
 		public App()
 		{
 			InitializeComponent();
 			MainPage = new TrainingPage(); // new MainPage();
+			Task.Run(Data.LoadFile);
 
 		}
 
-		private static void PlayChime(bool play, string resource)
+		private static void PlayChime(bool play, int resource)
 		{
-			if (play)
+			if (play && Settings.PlayRcChime)
 			{
 				try
 				{
-					using (Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("VocableTrainer." + resource))
+					using (Stream stream = Android.App.Application.Context.Resources.OpenRawResource(resource))
 					{
 						CrossSimpleAudioPlayer.Current.Load(stream);
 						CrossSimpleAudioPlayer.Current.Play();
+						while (CrossSimpleAudioPlayer.Current.IsPlaying)
+						{
+							Thread.Sleep(100);
+						}
 					}
 				}
 				catch (Exception ex)
@@ -73,7 +84,7 @@ namespace VocableTrainer
 		{
 			try
 			{
-				PlayChime(rc, FlagResource);
+				PlayChime(rc, Flag_Short);
 
 				Data.CurrentVocable.Flag |= Flags.Training;
 				Data.SaveVocable(Data.CurrentVocable);
@@ -105,25 +116,25 @@ namespace VocableTrainer
 		{
 			try
 			{
-				
+
 				if (Data.CurrentTraining != null)
 				{
 					if (Data.CurrentTraining.AutoPlay)
 					{
 						if (Data.State == PlayState.Playing)
 						{
-							PlayChime(rc, PauseResource);
+							PlayChime(rc, Pause_Short);
 							Pause();
 						}
 						else
 						{
-							PlayChime(rc, PlayResource);
+							PlayChime(rc, Play_Short);
 							Play();
 						}
 					}
 					else
 					{
-						PlayChime(rc, PlayResource);
+						PlayChime(rc, Play_Short);
 						PlayNextAudio();
 					}
 				}
@@ -148,6 +159,17 @@ namespace VocableTrainer
 			}
 		}
 
+		public static void UpdateLang()
+		{
+			if (App.Data != null &&
+				App.Data.CurrentLanguage != null)
+			{
+				Settings.CurrentLanguage = App.Data.CurrentLanguage.Id;
+				App.Stop();
+				App.Data.LoadVocables();
+			}
+		}
+
 		public static void Play()
 		{
 			Data.SaveTrainingState();
@@ -163,7 +185,12 @@ namespace VocableTrainer
 			Data.TrainingSound.Add(Sound.Lang.Native);
 			Data.TrainingSound.Add(Sound.Lang.Foreign);
 			Data.State = PlayState.Playing;
+		}
 
+		public static void Stop()
+		{
+			Data.TrainingSound.Clear();
+			Data.State = PlayState.Finished;
 		}
 
 		public static void Pause()
@@ -216,6 +243,7 @@ namespace VocableTrainer
 		{
 			if (Data == null ||
 				Data.CurrentTraining == null ||
+				Data.State == PlayState.Finished ||
 				working)
 			{
 				return;
@@ -239,8 +267,9 @@ namespace VocableTrainer
 		{
 			try
 			{
-				PlayChime(rc, PlayResource);
+				PlayChime(rc, Play_Short);
 				PlaySound(Data.LastTrainingSound);
+
 			}
 			catch (Exception ex)
 			{

@@ -26,7 +26,6 @@ namespace VocableTrainer
 			{
 				App.Data.CurrentVocable = App.Data.Vocables.LastOrDefault();
 			}
-
 		}
 
 		private void Pause_OnClicked(object sender, EventArgs e)
@@ -81,6 +80,5 @@ namespace VocableTrainer
 		{
 			App.TrainingFlag();
 		}
-
 	}
 }

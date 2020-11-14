@@ -10,6 +10,12 @@ namespace VocableTrainer
 		public VocablePageDetail()
 		{
 			InitializeComponent();
+			this.Appearing += OnAppearing;
+		}
+
+		private void OnAppearing(object sender, EventArgs e)
+		{
+			App.Data.CurrentVocable = null;
 		}
 
 		private void AddBtn_OnClicked(object sender, EventArgs e)

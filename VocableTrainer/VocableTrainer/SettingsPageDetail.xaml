@@ -21,7 +21,22 @@
             <Button x:Name="ImportBtn" Text="Import" Clicked="ImportBtn_OnClicked" />
             <Button x:Name="ExportBtn" Text="Export" Clicked="ExportBtn_OnClickedBtn_OnClicked" />
         </StackLayout>
-        <Label>Language</Label>
+
+        <Label>Languages</Label>
+        <StackLayout Orientation="Horizontal">
+            <Button x:Name="EditLang" Text="Edit current" Clicked="EditLang_OnClicked"/>
+            <Button x:Name="AddLang" Text="Add new" Clicked="AddLang_OnClicked" />
+        </StackLayout>
+        
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Label VerticalTextAlignment="Center" Grid.Column="0" Text="Play remote control chime" />
+            <Switch x:Name="PlayChime" Grid.Column="1" Toggled="PlayChime_OnToggled"/>
+        </Grid>
+        <!--<Label>Language</Label>
         <Grid >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
@@ -33,7 +48,7 @@
                     SelectedItem="{Binding CurrentLanguage}"
                     SelectedIndexChanged="Language_OnSelectedIndexChanged"/>
             <Button Grid.Column="1" x:Name="EditLang" Text="&#9997;" Clicked="EditLang_OnClicked" FontSize="28"/>
-        </Grid>
+        </Grid>-->
        
         <Label>Native voice</Label>
         <Entry x:Name="NativeVoice" TextChanged="NativeVoice_OnTextChanged"/>

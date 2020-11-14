@@ -7,15 +7,23 @@
     <Grid BindingContext="{x:Static local:App.Data}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <SearchBar Grid.Row="0" Placeholder="Search items.." Text="{Binding SearchText}"/>
 
-        <ListView Grid.Row="1" 
-                      ItemsSource="{Binding Vocables}"
-                      SelectedItem="{Binding CurrentVocable}"
-                      ItemSelected="ListView_OnItemSelected">
+        <Picker Grid.Row="0"  x:Name="Language" Title="Language" 
+                ItemsSource="{Binding Languages}" 
+                ItemDisplayBinding="{Binding Name}"
+                SelectedItem="{Binding CurrentLanguage}"/>
+
+        <SearchBar Grid.Row="1" Placeholder="Search items.." Text="{Binding SearchText}"/>
+
+        <ListView Grid.Row="2" 
+                  x:Name="lvVocables"
+                  ItemsSource="{Binding Vocables}"
+                  SelectedItem="{Binding CurrentVocable}"
+                  ItemSelected="ListView_OnItemSelected">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -37,7 +45,7 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <StackLayout Grid.Row="2" Orientation="Horizontal">
+        <StackLayout Grid.Row="3" Orientation="Horizontal">
             <Button x:Name="AddBtn" Text="Add New" Clicked="AddBtn_OnClicked"/>
         </StackLayout>
     </Grid>

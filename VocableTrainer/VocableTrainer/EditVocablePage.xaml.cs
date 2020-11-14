@@ -16,29 +16,19 @@ namespace VocableTrainer
 		public EditVocablePage()
 		{
 			InitializeComponent();
-			Native.Text = App.Data.CurrentVocable.Native;
-			Detail.Text = App.Data.CurrentVocable.Detail;
-			Foreign.Text = App.Data.CurrentVocable.Foreign;
 			Foreign.Focus();
+			this.Disappearing += OnDisappearing;
 		}
 
-		private void CancelBtn_OnClicked(object sender, EventArgs e)
+		private void OnDisappearing(object sender, EventArgs e)
 		{
-			Navigation.PopModalAsync();
-		}
-
-		private void OKBtn_OnClicked(object sender, EventArgs e)
-		{
-			App.Data.CheckSounds(Native.Text, Sound.Lang.Native);
-			App.Data.CheckSounds(Foreign.Text, Sound.Lang.Foreign);
-
-			App.Data.CurrentVocable.Flag = Flags.None;
-			App.Data.CurrentVocable.Native = Native.Text;
-			App.Data.CurrentVocable.Detail = Detail.Text;
-			App.Data.CurrentVocable.Foreign = Foreign.Text;
-			App.Data.CurrentVocable.LangId = App.Data.CurrentLanguage.Id;
-			App.Data.SaveVocable(App.Data.CurrentVocable);
-			Navigation.PopModalAsync();
+			if (App.Data.CurrentVocable != null &&
+			    !string.IsNullOrWhiteSpace(App.Data.CurrentVocable.Foreign) &&
+			    !string.IsNullOrWhiteSpace(App.Data.CurrentVocable.Native))
+			{
+				App.Data.CurrentVocable.LangId = App.Data.CurrentLanguage.Id;
+				App.Data.SaveVocable(App.Data.CurrentVocable);
+			}
 		}
 
 		async void DelBtn_OnClicked(object sender, EventArgs e)
@@ -47,6 +37,7 @@ namespace VocableTrainer
 			if (answer)
 			{
 				App.Data.DeleteVocable(App.Data.CurrentVocable);
+				App.Data.CurrentVocable = null;
 				Navigation.PopModalAsync();
 			}
 		}
@@ -72,6 +63,11 @@ namespace VocableTrainer
 			App.ShowLoading(() => { App.PlaySound(Sound.Lang.Native); },
 				Toast.MakeText(Android.App.Application.Context, "Native played", ToastLength.Long).Show);
 
+		}
+
+		private void FlagBtn_OnClicked(object sender, EventArgs e)
+		{
+			App.Data.CurrentVocable.Flag = Flags.None;
 		}
 	}
 }

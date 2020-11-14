@@ -13,6 +13,7 @@ using Android.Icu.Text;
 using Android.Widget;
 using Newtonsoft.Json;
 using VocableTrainer.Data;
+using Xamarin.Forms.Internals;
 
 namespace VocableTrainer
 {
@@ -23,11 +24,12 @@ namespace VocableTrainer
 		private Training _Training;
 		private Vocable _CurrentVocable;
 		private Language _CurrentLanguage;
+		private Language _EditLanguage;
 
 
-		private ObservableCollection<Vocable> _Vocables;
-		private ObservableCollection<Language> _Languages;
-		private ObservableCollection<Vocable> _Trainings;
+		private ObservableCollection<Vocable> _Vocables = new ObservableCollection<Vocable>();
+		private ObservableCollection<Language> _Languages = new ObservableCollection<Language>();
+		private ObservableCollection<Vocable> _Trainings = new ObservableCollection<Vocable>();
 		private string _SearchText = string.Empty;
 
 		private bool isBusy = false;
@@ -133,8 +135,27 @@ namespace VocableTrainer
 
 			set
 			{
-				_CurrentLanguage = value;
-				PropertyChanged(this, new PropertyChangedEventArgs(nameof(CurrentLanguage)));
+				if (_CurrentLanguage != value)
+				{
+					_CurrentLanguage = value;
+					PropertyChanged(this, new PropertyChangedEventArgs(nameof(CurrentLanguage)));
+					if (value != null)
+					{
+						App.UpdateLang();
+					}
+				}
+			}
+		}
+		
+
+		public Language EditLanguage
+		{
+			get => _EditLanguage;
+
+			set
+			{
+				_EditLanguage = value;
+				PropertyChanged(this, new PropertyChangedEventArgs(nameof(EditLanguage)));
 			}
 		}
 
@@ -155,59 +176,75 @@ namespace VocableTrainer
 
 			set
 			{
-				_SearchText = value;
-				if (SearchText == "flagged")
+				if (_SearchText != value)
 				{
-					Vocables = new ObservableCollection<Vocable>(vocables.Where(item => item.Flag > 0));
-				}
-				else
-				{
-					Vocables = new ObservableCollection<Vocable>(vocables.Where(item =>
-						item.Native.ToLower().Contains(value.ToLower()) ||
-						item.Detail.ToLower().Contains(value.ToLower()) ||
-						item.Foreign.ToLower().Contains(value.ToLower())));
-				}
+					_SearchText = value;
 
-				PropertyChanged(this, new PropertyChangedEventArgs(nameof(SearchText)));
+					Task.Run(() => { ApplyFilter(vocables); });
+					PropertyChanged(this, new PropertyChangedEventArgs(nameof(SearchText)));
+				}
 			}
 		}
 
 		public ViewModel()
 		{
 			TrainingSound = new List<Sound.Lang>();
-			LoadFile();
 		}
 
 		public void LoadFile()
 		{
 			Database = new LangDatabase(DBPath);
 			LoadLang();
-			LoadVocables();
+		}
+
+		public void ApplyFilter(IEnumerable<Vocable> vocables)
+		{
+			try
+			{
+				if (SearchText == "flagged")
+				{
+					Vocables = new ObservableCollection<Vocable>(vocables.Where(item => item.Flag > 0));
+				}
+				else
+				{
+					Vocables = new ObservableCollection<Vocable>(vocables.Where(item => 
+						item.Native.Filter(SearchText) ||
+						item.Detail.Filter(SearchText) ||
+						item.Foreign.Filter(SearchText)));
+				}
+			}
+			catch (Exception ex)
+			{
+				ex.ToString();
+			}
 		}
 
 		internal void LoadVocables(Vocable vocable = null)
 		{
-			vocables = Database.GetVocables(Settings.CurrentLanguage).OrderByDescending(item => item.Id);
-			LoadTraining();
-			Vocables = new ObservableCollection<Vocable>(vocables);
-			Trainings = new ObservableCollection<Vocable>(CurrentTraining.ApplySorting(vocables));
+			Task.Run(() =>
+			{
+				vocables = Database.GetVocables(Settings.CurrentLanguage).OrderByDescending(item => item.Id);
+				LoadTraining();
+				ApplyFilter(vocables);
+				Trainings = new ObservableCollection<Vocable>(CurrentTraining.ApplySorting(vocables));
 
-			if (vocable != null)
-			{
-				CurrentVocable = vocables.LastOrDefault(item => item.Id == vocable.Id);
-			}
-			else
-			{
-				vocable = vocables.FirstOrDefault(item => item.Id == Settings.LastTraining);
 				if (vocable != null)
 				{
-					CurrentVocable = vocable;
+					CurrentVocable = vocables.LastOrDefault(item => item.Id == vocable.Id);
 				}
 				else
 				{
-					CurrentVocable = Vocables.LastOrDefault();
+					vocable = vocables.FirstOrDefault(item => item.Id == Settings.LastTraining);
+					if (vocable != null)
+					{
+						CurrentVocable = vocable;
+					}
+					else
+					{
+						CurrentVocable = Vocables.LastOrDefault();
+					}
 				}
-			}
+			});
 		}
 
 		private void LoadTraining()
@@ -225,12 +262,6 @@ namespace VocableTrainer
 		private void LoadLang()
 		{
 			Languages = new ObservableCollection<Language>(Database.GetLanguages());
-
-			Languages.Insert(0, new Language()
-			{
-				Id = 0,
-				Name = "{New language}"
-			});
 			CurrentLanguage = Languages.FirstOrDefault(item => item.Id == Settings.CurrentLanguage);
 		}
 
@@ -258,7 +289,7 @@ namespace VocableTrainer
 		}
 
 
-		public async void UpdateCurrentSound(Sound.Lang type)
+		public Sound UpdateCurrentSound(Sound.Lang type)
 		{
 			Sound sound = Database.GetSound(CurrentVocable.Id, type);
 			if (sound != null)
@@ -271,6 +302,8 @@ namespace VocableTrainer
 			{
 				SaveSound(sound);
 			}
+
+			return sound;
 		}
 
 		public void CheckSounds(string text, Sound.Lang type)

@@ -35,21 +35,8 @@ namespace VocableTrainer
 			{
 				App.Data.CurrentLanguage = App.Data.Languages.First();
 			}
-		}
 
-		private async void EditLang_OnClicked(object sender, EventArgs e)
-		{
-			Navigation.PushModalAsync(new EditLangPage());
-		}
-
-		private void Language_OnSelectedIndexChanged(object sender, EventArgs e)
-		{
-			var item = Language.SelectedItem as Language;
-			if (item != null)
-			{
-				Settings.CurrentLanguage = item.Id;
-				App.Data.LoadVocables();
-			}
+			PlayChime.IsToggled = Settings.PlayRcChime;
 		}
 
 		private void SettingsPageDetail_OnAppearing(object sender, EventArgs e)
@@ -61,6 +48,7 @@ namespace VocableTrainer
 		{
 			Settings.NativeVoice = e.NewTextValue;
 		}
+
 
 
 		private async void ImportBtn_OnClicked(object sender, EventArgs e)
@@ -114,5 +102,23 @@ namespace VocableTrainer
 
 			}, Toast.MakeText(Android.App.Application.Context, "DB export completed", ToastLength.Long).Show);
 		}
+
+		private void PlayChime_OnToggled(object sender, ToggledEventArgs e)
+		{
+			Settings.PlayRcChime = e.Value;
+		}
+
+		private void AddLang_OnClicked(object sender, EventArgs e)
+		{
+			App.Data.EditLanguage = new Language();
+			Navigation.PushModalAsync(new EditLangPage());
+		}
+
+		private void EditLang_OnClicked(object sender, EventArgs e)
+		{
+			App.Data.EditLanguage = App.Data.CurrentLanguage;
+			Navigation.PushModalAsync(new EditLangPage());
+		}
+
 	}
 }

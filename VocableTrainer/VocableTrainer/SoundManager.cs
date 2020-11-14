@@ -47,6 +47,10 @@ namespace VocableTrainer
 		{
 			CrossSimpleAudioPlayer.Current.Load(new MemoryStream(sound.Data));
 			CrossSimpleAudioPlayer.Current.Play();
+			while (CrossSimpleAudioPlayer.Current.IsPlaying)
+			{
+				Thread.Sleep(100);
+			}
 		}
 
 

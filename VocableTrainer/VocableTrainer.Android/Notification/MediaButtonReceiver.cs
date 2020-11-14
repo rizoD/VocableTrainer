@@ -25,18 +25,20 @@ namespace VocableTrainer
 
 		public override void OnReceive(Context context, Intent intent)
 		{
-			//Btn Presses seem to need a debounce
-			if (cnt == 1)
-			{
-				return;
-			}
+		
 
 			if (intent.Action != Intent.ActionMediaButton)
 			{
 				//Toast.MakeText(context, "Not a Media Button", ToastLength.Short).Show();
 				return;
 			}
+			cnt = (cnt + 1) % 2;
 
+			//Btn Presses seem to need a debounce
+			if (cnt == 0)
+			{
+				return;
+			}
 			var keyEvent = (KeyEvent)intent.GetParcelableExtra(Intent.ExtraKeyEvent);
 
 			//Toast.MakeText(context, "Key: "+ keyEvent, ToastLength.Short).Show();
@@ -54,17 +56,17 @@ namespace VocableTrainer
 				case Keycode.MediaNext:
 					Task.Run(() =>
 					{
-						 App.Replay(true);
+						Thread.Sleep(2000);
+						App.Replay(true);
 					});
 					break;
 				case Keycode.MediaPrevious:
 					Task.Run(() =>
 					{
-						 App.TrainingFlag(true);
+						App.TrainingFlag(true);
 					});
 					break;
 			}
-			cnt = (cnt + 1) % 2;
 		}
 	}
 }

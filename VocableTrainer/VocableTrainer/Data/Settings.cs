@@ -14,6 +14,11 @@ namespace VocableTrainer
 		{
 			get { return CrossSettings.Current; }
 		}
+		public static bool PlayRcChime
+		{
+			get => AppSettings.GetValueOrDefault(nameof(PlayRcChime), true);
+			set => AppSettings.AddOrUpdateValue(nameof(PlayRcChime), value);
+		}
 
 		public static int LastTraining
 		{

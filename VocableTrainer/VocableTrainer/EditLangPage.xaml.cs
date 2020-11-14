@@ -12,18 +12,21 @@ namespace VocableTrainer
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class EditLangPage : ContentPage
 	{
-		private Language selectedLanguage;
 		public EditLangPage()
 		{
 			InitializeComponent();
-			selectedLanguage = App.Data.CurrentLanguage;
-			if (selectedLanguage == null || selectedLanguage.Id == 0)
-			{
-				selectedLanguage = new Language();
-			}
-			LangText.Text = selectedLanguage.Name;
-			LangVoice.Text = selectedLanguage.Voice;
+			Disappearing += OnDisappearing;
 			LangText.Focus();
+		}
+
+		private void OnDisappearing(object sender, EventArgs e)
+		{
+			if (!string.IsNullOrWhiteSpace(App.Data.EditLanguage.Name) &&
+			    !string.IsNullOrWhiteSpace(App.Data.EditLanguage.Voice))
+			{
+				App.Data.SaveLang(App.Data.EditLanguage);
+				App.Data.CurrentLanguage = App.Data.EditLanguage;
+			}
 		}
 
 		private async void DelBtn_OnClicked(object sender, EventArgs e)
@@ -31,26 +34,10 @@ namespace VocableTrainer
 			bool answer = await DisplayAlert("Question?", "Would you like to delete this Language?", "Yes", "No");
 			if (answer)
 			{
-				if (selectedLanguage.Id > 0)
-				{
-					App.Data.DeleteLang(selectedLanguage);
-				}
-
+				App.Data.DeleteLang(App.Data.EditLanguage);
+				App.Data.CurrentLanguage = App.Data.Languages.FirstOrDefault();
 				Navigation.PopModalAsync();
 			}
-		}
-
-		private void CancelBtn_OnClicked(object sender, EventArgs e)
-		{
-			Navigation.PopModalAsync();
-		}
-
-		private void OKBtn_OnClicked(object sender, EventArgs e)
-		{
-			selectedLanguage.Name = LangText.Text;
-			selectedLanguage.Voice = LangVoice.Text;
-			App.Data.SaveLang(selectedLanguage);
-			Navigation.PopModalAsync();
 		}
 
 	}
