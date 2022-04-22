@@ -13,6 +13,7 @@ namespace VocableTrainer
 		private string _Native = String.Empty;	
 		private int _LangId = 0;
 		private Flags _flag = 0;
+		private int _Recall = 0;
 
 		public event PropertyChangedEventHandler PropertyChanged = delegate { };
 		public Vocable()
@@ -83,6 +84,17 @@ namespace VocableTrainer
 			{
 				_Native = value;
 				PropertyChanged(this, new PropertyChangedEventArgs(nameof(Native)));
+			}
+		}
+
+		public int RecallScore
+		{
+			get => _Recall;
+
+			set
+			{
+				_Recall = value;
+				PropertyChanged(this, new PropertyChangedEventArgs(nameof(RecallScore)));
 			}
 		}
 	}

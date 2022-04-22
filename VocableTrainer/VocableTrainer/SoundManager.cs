@@ -1,17 +1,12 @@
 ﻿using Android.Media;
 using System;
-using System.Buffers.Text;
-using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Net.Http;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using Dalvik.Annotation;
 using Newtonsoft.Json;
 using Plugin.SimpleAudioPlayer;
-using Xamarin.Forms;
 using Encoding = System.Text.Encoding;
 
 namespace VocableTrainer

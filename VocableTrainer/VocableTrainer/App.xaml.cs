@@ -1,22 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
-using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
-using Android.Bluetooth;
-using Android.Content;
-using Android.Media.Audiofx;
 using Android.Widget;
 using Google.Apis.Drive.v3;
-using Plugin.FilePicker.Abstractions;
 using Plugin.SimpleAudioPlayer;
 using VocableTrainer.Data;
 using Xamarin.Forms;
-using Xamarin.Forms.Markup;
-using Uri = Android.Net.Uri;
 
 namespace VocableTrainer
 {
@@ -80,8 +72,24 @@ namespace VocableTrainer
 		{
 		}
 
+		public static void ResetRecallScore()
+		{
+			try
+			{
+				Data.CurrentVocable.RecallScore = 0;
+				Data.SaveVocable(Data.CurrentVocable);
+			}
+			catch (Exception ex)
+			{
+
+			}
+		}
 		public static void TrainingFlag(bool rc = false)
 		{
+			ResetRecallScore(); 
+			return;
+
+			// we simply reuse the Flag function to Reset the Recall Score
 			try
 			{
 				PlayChime(rc, Flag_Short);
@@ -180,7 +188,7 @@ namespace VocableTrainer
 
 		public static void Restart()
 		{
-			Data.ShuffleTraining();
+			Data.BlockShuffle(true);
 			Data.SaveTrainingState();
 			Data.TrainingSound.Add(Sound.Lang.Native);
 			Data.TrainingSound.Add(Sound.Lang.Foreign);
@@ -195,15 +203,22 @@ namespace VocableTrainer
 
 		public static void Pause()
 		{
-
 			Data.TrainingSound.Clear();
 			Data.State = PlayState.Pause;
 		}
 
 		public static void Next()
 		{
+			// before we get the next vocable we increase the RecallScore
+			if (Data.CurrentVocable != null)
+			{
+				Data.CurrentVocable.RecallScore++;
+				Data.SaveVocable(Data.CurrentVocable);
+			}
+
 			if (Data.Trainings.Count > 0)
 			{
+				// now we can get the next one
 				int i = (Data.Trainings.IndexOf(Data.CurrentVocable) + 1) % Data.Trainings.Count;
 				Data.CurrentVocable = Data.Trainings[i];
 				Settings.LastTraining = Data.CurrentVocable.Id;

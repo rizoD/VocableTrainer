@@ -2,7 +2,7 @@
   "profiles": {
     "DBCreateer": {
       "commandName": "Project",
-      "commandLineArgs": "VocableTraining.db3 jsonImport_v.txt jsonImport_s.txt "
+      "commandLineArgs": "C:\\Tools\\sqlite3\\VocableTraining.db3"
     }
   }
 }

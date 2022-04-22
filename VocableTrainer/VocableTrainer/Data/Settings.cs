@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
-using System.Text;
-using Plugin.Settings;
+﻿using Plugin.Settings;
 using Plugin.Settings.Abstractions;
 
 namespace VocableTrainer

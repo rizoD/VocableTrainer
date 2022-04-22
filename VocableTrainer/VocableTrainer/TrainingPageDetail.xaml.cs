@@ -38,7 +38,6 @@ namespace VocableTrainer
 
 		private void Native_OnClicked(object sender, EventArgs e)
 		{
-
 			Task.Run(() =>
 			{
 				App.PlaySound(Sound.Lang.Native);

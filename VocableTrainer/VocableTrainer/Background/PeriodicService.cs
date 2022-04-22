@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using Android.App;
 using Android.Content;
 using Android.OS;
-using VocableTrainer.Data;
 
 namespace VocableTrainer.Background
 {
@@ -14,11 +11,8 @@ namespace VocableTrainer.Background
 	{
 		public static void Start()
 		{
-			var intent = new Intent(Android.App.Application.Context,
-				typeof(PeriodicService));
-
-			Android.App.Application.Context.StartService(intent);
-
+			var intent = new Intent(Application.Context, typeof(PeriodicService));
+			Application.Context.StartService(intent);
 		}
 
 		public override IBinder OnBind(Intent intent)

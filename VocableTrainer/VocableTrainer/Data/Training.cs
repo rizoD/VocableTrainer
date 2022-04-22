@@ -61,9 +61,16 @@ namespace VocableTrainer
 			}
 		}
 
+		/// <summary>
+		/// Stores the sorting for next training (if not reset)
+		/// </summary>
 		public byte[] Sorting { get; set; }
 		
 
+		/// <summary>
+		/// Saves the previously sorted list to the training so it can be reused after a restart
+		/// </summary>
+		/// <param name="list"></param>
 		public void SaveSorting(IEnumerable<Vocable> list)
 		{
 			var lang = list.FirstOrDefault()?.LangId;
@@ -75,6 +82,12 @@ namespace VocableTrainer
 			Sorting = GetBytes(list);
 		}
 
+		/// <summary>
+		/// Applies the sorting to the vocalbe list tat was previously saved
+		/// so that we have the same sorting as in the last run
+		/// </summary>
+		/// <param name="list"></param>
+		/// <returns></returns>
 		public IEnumerable<Vocable> ApplySorting(IEnumerable<Vocable> list)
 		{
 			if (list != null && Sorting != null)

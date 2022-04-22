@@ -15,6 +15,8 @@ namespace DBCreateer
 		{
 			var arg = args.ToList();
 			db = new LangDatabase(arg.FirstOrDefault());
+
+			/*
 			arg.Remove(arg.First());
 			var json_v = File.ReadAllText(arg.FirstOrDefault());
 			arg.Remove(arg.First());
@@ -22,6 +24,7 @@ namespace DBCreateer
 			arg.Remove(arg.First());
 			CreateLanguage(json_v, "Jap vocables");
 			CreateLanguage(json_s, "Jap sentences");
+			*/
 		}
 
 		private static void CreateLanguage(string json, string langName)

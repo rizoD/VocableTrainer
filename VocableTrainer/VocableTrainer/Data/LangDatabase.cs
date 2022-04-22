@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using Java.IO;
 using SQLite;
-using File = System.IO.File;
-using IOException = System.IO.IOException;
 
 namespace VocableTrainer
 {

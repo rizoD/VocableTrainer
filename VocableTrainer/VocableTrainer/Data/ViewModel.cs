@@ -4,16 +4,8 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Reflection;
-using System.Text;
 using System.Threading.Tasks;
-using Android.Icu.Text;
-using Android.Widget;
-using Newtonsoft.Json;
 using VocableTrainer.Data;
-using Xamarin.Forms.Internals;
 
 namespace VocableTrainer
 {
@@ -341,13 +333,23 @@ namespace VocableTrainer
 			Database.SaveSound(item);
 		}
 
-
-		public void ShuffleTraining()
+		public void BlockShuffle(bool useRecall)
 		{
-			var train = vocables.OrderByDescending(item => item.Id);
+
+			IOrderedEnumerable<Vocable> train = null;
+
+			if (useRecall)
+			{
+				train = vocables.OrderBy(item => item.RecallScore);
+			} else
+			{
+				train = vocables.OrderByDescending(item => item.Id);
+			}
+
 			int i = 0;
 			IEnumerable<Vocable> traininglist = new List<Vocable>();
 
+			// takes the list splits it up in blocks of (size MostRecent) and shuffles it with the Orderby new Guid
 			while (i < train.Count())
 			{
 				traininglist =

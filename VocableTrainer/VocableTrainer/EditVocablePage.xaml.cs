@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
 using Android.Widget;
 using VocableTrainer.Data;
 using Xamarin.Forms;
@@ -22,12 +19,26 @@ namespace VocableTrainer
 
 		private void OnDisappearing(object sender, EventArgs e)
 		{
+			Save(false);
+		}
+
+		private void Save(bool updateSound)
+		{
 			if (App.Data.CurrentVocable != null &&
-			    !string.IsNullOrWhiteSpace(App.Data.CurrentVocable.Foreign) &&
-			    !string.IsNullOrWhiteSpace(App.Data.CurrentVocable.Native))
+				!string.IsNullOrWhiteSpace(App.Data.CurrentVocable.Foreign) &&
+				!string.IsNullOrWhiteSpace(App.Data.CurrentVocable.Native))
 			{
+				// check ID before save.. since after it will be updated if new
+				bool isNew = App.Data.CurrentVocable.Id == 0;
+
 				App.Data.CurrentVocable.LangId = App.Data.CurrentLanguage.Id;
 				App.Data.SaveVocable(App.Data.CurrentVocable);
+
+				// if we have a new vocable we update the sounds anyway
+				if (updateSound || isNew)
+				{
+					UpdateAllSound();
+				}
 			}
 		}
 
@@ -43,6 +54,11 @@ namespace VocableTrainer
 		}
 
 		private void SoundBtn_OnClicked(object sender, EventArgs e)
+		{
+			Save(true);
+		}
+
+		private void UpdateAllSound()
 		{
 			App.ShowLoading(() =>
 			{

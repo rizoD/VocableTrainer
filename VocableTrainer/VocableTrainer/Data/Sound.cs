@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.IO;
-using System.Text;
+﻿using System.ComponentModel;
 using SQLite;
 
 namespace VocableTrainer

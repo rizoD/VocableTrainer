@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using DBCreateer;
 using SQLite;
-using File = System.IO.File;
-using IOException = System.IO.IOException;
 
 namespace VocableTrainer
 {
@@ -15,7 +12,6 @@ namespace VocableTrainer
 
 		public LangDatabase(string dbPath)
 		{
-
 			_database = new SQLiteAsyncConnection(dbPath);
 			_database.CreateTableAsync<Vocable>().Wait();
 			_database.CreateTableAsync<Language>().Wait();
