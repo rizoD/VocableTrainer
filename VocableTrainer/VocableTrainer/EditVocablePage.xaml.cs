@@ -1,5 +1,7 @@
 ﻿using System;
 using Android.Widget;
+using Java.IO;
+using Java.Lang;
 using VocableTrainer.Data;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -22,7 +24,7 @@ namespace VocableTrainer
 			Save(false);
 		}
 
-		private void Save(bool updateSound)
+		private void Save(bool userRequested)
 		{
 			if (App.Data.CurrentVocable != null &&
 				!string.IsNullOrWhiteSpace(App.Data.CurrentVocable.Foreign) &&
@@ -32,12 +34,12 @@ namespace VocableTrainer
 				bool isNew = App.Data.CurrentVocable.Id == 0;
 
 				App.Data.CurrentVocable.LangId = App.Data.CurrentLanguage.Id;
-				App.Data.SaveVocable(App.Data.CurrentVocable);
+				App.Data.SaveVocable(App.Data.CurrentVocable, true);
 
 				// if we have a new vocable we update the sounds anyway
-				if (updateSound || isNew)
+				if (userRequested || isNew)
 				{
-					UpdateAllSound();
+					UpdateAllSound(userRequested);
 				}
 			}
 		}
@@ -58,13 +60,23 @@ namespace VocableTrainer
 			Save(true);
 		}
 
-		private void UpdateAllSound()
+		private void UpdateAllSound(bool uiUpdate)
 		{
-			App.ShowLoading(() =>
+			Action action = () =>
 			{
 				App.Data.UpdateCurrentSound(Sound.Lang.Native);
 				App.Data.UpdateCurrentSound(Sound.Lang.Foreign);
-			}, Toast.MakeText(Android.App.Application.Context, "Sound updated", ToastLength.Long).Show);
+			};
+
+			if (uiUpdate)
+			{
+				App.ShowLoading(action, Toast.MakeText(Android.App.Application.Context, "Sound updated", ToastLength.Long).Show);
+			}
+			else
+			{
+				action();
+				Toast.MakeText(Android.App.Application.Context, "Sound updated", ToastLength.Long).Show();
+			}
 		}
 
 		private void PlayForeign_OnClicked(object sender, EventArgs e)

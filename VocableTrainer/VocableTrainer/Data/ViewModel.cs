@@ -138,7 +138,7 @@ namespace VocableTrainer
 				}
 			}
 		}
-		
+
 
 		public Language EditLanguage
 		{
@@ -199,7 +199,7 @@ namespace VocableTrainer
 				}
 				else
 				{
-					Vocables = new ObservableCollection<Vocable>(vocables.Where(item => 
+					Vocables = new ObservableCollection<Vocable>(vocables.Where(item =>
 						item.Native.Filter(SearchText) ||
 						item.Detail.Filter(SearchText) ||
 						item.Foreign.Filter(SearchText)));
@@ -321,10 +321,14 @@ namespace VocableTrainer
 
 		}
 
-		public void SaveVocable(Vocable item)
+
+		public void SaveVocable(Vocable item, bool reload)
 		{
 			Database.SaveVocable(item);
-			LoadVocables(item);
+			if (reload)
+			{
+				LoadVocables(item);
+			}
 		}
 
 
@@ -339,9 +343,10 @@ namespace VocableTrainer
 			IOrderedEnumerable<Vocable> train = null;
 
 			if (useRecall)
-			{
-				train = vocables.OrderBy(item => item.RecallScore);
-			} else
+			{ 
+				train = vocables.OrderBy(item => item.RecallScore).ThenByDescending(item => item.Id);
+			}
+			else
 			{
 				train = vocables.OrderByDescending(item => item.Id);
 			}
@@ -356,7 +361,7 @@ namespace VocableTrainer
 					traininglist.Concat(train.Skip(i).Take(CurrentTraining.MostRecent).OrderBy(item => Guid.NewGuid()));
 				i += CurrentTraining.MostRecent;
 			}
-			
+
 			Trainings = new ObservableCollection<Vocable>(traininglist);
 			CurrentVocable = Trainings.FirstOrDefault();
 			Settings.LastTraining = CurrentVocable.Id;

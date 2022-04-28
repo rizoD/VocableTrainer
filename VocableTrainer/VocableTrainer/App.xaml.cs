@@ -77,7 +77,7 @@ namespace VocableTrainer
 			try
 			{
 				Data.CurrentVocable.RecallScore = 0;
-				Data.SaveVocable(Data.CurrentVocable);
+				Data.SaveVocable(Data.CurrentVocable, false);
 			}
 			catch (Exception ex)
 			{
@@ -95,7 +95,7 @@ namespace VocableTrainer
 				PlayChime(rc, Flag_Short);
 
 				Data.CurrentVocable.Flag |= Flags.Training;
-				Data.SaveVocable(Data.CurrentVocable);
+				Data.SaveVocable(Data.CurrentVocable, false);
 			}
 			catch (Exception ex)
 			{
@@ -213,7 +213,7 @@ namespace VocableTrainer
 			if (Data.CurrentVocable != null)
 			{
 				Data.CurrentVocable.RecallScore++;
-				Data.SaveVocable(Data.CurrentVocable);
+				Data.SaveVocable(Data.CurrentVocable, false);
 			}
 
 			if (Data.Trainings.Count > 0)

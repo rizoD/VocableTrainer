@@ -31,8 +31,15 @@
                 <Entry Grid.Column="0" x:Name="Native" Text="{Binding CurrentVocable.Native}"/>
                 <Button Grid.Column="1" x:Name="PlayNative" Text="&#128265;" Clicked="PlayNative_OnClicked" />
             </Grid>
-           
-                <Button x:Name="FlagBtn" Text="Remove Flags" Clicked="FlagBtn_OnClicked"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0">Recall Score:</Label>
+                <Label Grid.Column="1" Text="{Binding CurrentVocable.RecallScore}"/>
+            </Grid>
+            <Button x:Name="FlagBtn" Text="Remove Flags" Clicked="FlagBtn_OnClicked"/>
                 <Button x:Name="SountBtn" Text="Update Sound" Clicked="SoundBtn_OnClicked"/>
                 <Button x:Name="DelBtn" Text="Delete" Clicked="DelBtn_OnClicked" />
         </StackLayout>
