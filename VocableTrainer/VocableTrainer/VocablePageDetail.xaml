@@ -47,6 +47,8 @@
         </ListView>
         <StackLayout Grid.Row="3" Orientation="Horizontal">
             <Button x:Name="AddBtn" Text="Add New" Clicked="AddBtn_OnClicked"/>
+            <Label>Vocables: </Label>
+            <Label Text="{Binding Vocables.Count}"/>
         </StackLayout>
     </Grid>
 </ContentPage>

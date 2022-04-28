@@ -27,10 +27,14 @@ namespace VocableTrainer
 
 		private void UpdateSelected()
 		{
-			App.Data.CurrentLanguage = App.Data.Languages.FirstOrDefault(item => item.Id == Settings.CurrentLanguage);
-			if (App.Data.CurrentLanguage == null)
+			if (App.Data.Languages != null && App.Data.Languages.Count > 0)
 			{
-				App.Data.CurrentLanguage = App.Data.Languages.First();
+				App.Data.CurrentLanguage =
+					App.Data.Languages.FirstOrDefault(item => item.Id == Settings.CurrentLanguage);
+				if (App.Data.CurrentLanguage == null)
+				{
+					App.Data.CurrentLanguage = App.Data.Languages.First();
+				}
 			}
 
 			PlayChime.IsToggled = Settings.PlayRcChime;
