@@ -16,10 +16,16 @@ namespace VocableTrainer
 	{
 		public static ViewModel Data = new ViewModel();
 
+		static readonly object lockObj = new object();
+
 		// If modifying these scopes, delete your previously saved credentials
 		// at ~/.credentials/drive-dotnet-quickstart.json
 		static string[] Scopes = { DriveService.Scope.DriveReadonly };
 		static string ApplicationName = "VocableTrainer";
+
+
+		// aapt resource value: 0x7F0D0000
+		public const int Error_Short = 2131558400;
 
 		// aapt resource value: 0x7F0D0000
 		public const int Flag_Short = 2131558400;
@@ -37,10 +43,18 @@ namespace VocableTrainer
 			Task.Run(Data.LoadFile);
 
 		}
-
-		private static void PlayChime(bool play, int resource)
+		/// <summary>
+		/// Plays the chime sound given
+		/// 
+		/// We can interact via the app or remotely via the media control buttons (Bluetooth)
+		/// if we do it remotely we might want to play a sound to indicate that the action was successfull
+		/// so we added the parameter `rcPlay` to know where the action originated from
+		/// </summary>
+		/// <param name="rcPlay">this shows if the action was trigger remotely</param>
+		/// <param name="resource">the resource to play</param>
+		private static void PlayChime(bool rcPlay, int resource)
 		{
-			if (play && Settings.PlayRcChime)
+			if (rcPlay && Settings.PlayRcChime || Settings.AllwaysPlayChime)
 			{
 				try
 				{
@@ -86,14 +100,15 @@ namespace VocableTrainer
 		}
 		public static void TrainingFlag(bool rc = false)
 		{
-			ResetRecallScore(); 
-			return;
-
-			// we simply reuse the Flag function to Reset the Recall Score
 			try
 			{
-				PlayChime(rc, Flag_Short);
+				PlayChime(rc, Error_Short);
+				// we simply reuse the Flag function to Reset the Recall Score
+				ResetRecallScore();
 
+			    ForwardTimeToPlayNext(); // if we know that we got it wrong we forward time to play the next sound
+				return;
+				// this flaggs the vocalbe (was used to flag "wrong" vocalbes)
 				Data.CurrentVocable.Flag |= Flags.Training;
 				Data.SaveVocable(Data.CurrentVocable, false);
 			}
@@ -250,12 +265,16 @@ namespace VocableTrainer
 			return task.Result;
 		}
 
-		private static DateTime lastChange = DateTime.Now;
-		private static Random rnd = new Random(DateTime.Now.Millisecond);
-		private static bool working = false;
+		private static DateTime lastPlayed = DateTime.Now; // used to show when the last audio file was played
+		private static bool working = false; // used to flag if we currently play an audio file
 
+		/// <summary>
+		/// Handles the training timeout
+		/// during training this gets run every second an will the react accordingly
+		/// </summary>
 		public static void DoTraining()
 		{
+			// we can ignore this if no data, no traing, finished or currently doing something 
 			if (Data == null ||
 				Data.CurrentTraining == null ||
 				Data.State == PlayState.Finished ||
@@ -264,27 +283,58 @@ namespace VocableTrainer
 				return;
 			}
 
+			// if we are playing the training (not paused) and `AutoPlay` was enabled
 			if (Data.State == PlayState.Playing && Data.CurrentTraining.AutoPlay)
 			{
-				if (lastChange.AddSeconds(App.Data.CurrentTraining.Pause) <= DateTime.Now)
+				DateTime expired = DateTime.MaxValue;
+				lock (lockObj)
 				{
+					expired = lastPlayed.AddSeconds(App.Data.CurrentTraining.Pause);
+				}
+				// only do the next step after the appropriate pause time
+				if (expired <= DateTime.Now)
+				{
+					// playing the audio takes time... therfore set the `working` flag.
+					// this will make sure that we don't talk over each other
 					working = true;
-
 					PlayNextAudio();
-
 					working = false;
-					lastChange = DateTime.Now;
 				}
 			}
 		}
 
+		/// <summary>
+		/// fowards time to the next audio
+		/// sets the `lastPlayed` time to be 1 sec before expiration...
+		/// </summary>
+		public static void ForwardTimeToPlayNext()
+		{
+			// we simply set the last played time to be one second before autoply time expires
+			// this should fire the `PalyNextAudio` in the `DoTraining` function
+			lock (lockObj)
+			{
+				lastPlayed = DateTime.Now.AddSeconds((App.Data.CurrentTraining.Pause - 1) * -1);
+			}
+		}
+
+		/// <summary>
+		/// Resets the auto playback timer to "start again"
+		/// sets the `lastPalyed` time to the current time (so the `DoTraining` will wait again)
+		/// </summary>
+		public static void ResetAutoPlaybackTimer()
+		{
+			lock (lockObj)
+			{
+				lastPlayed = DateTime.Now;
+			}
+		}
 		public static void Replay(bool rc = false)
 		{
 			try
 			{
 				PlayChime(rc, Play_Short);
 				PlaySound(Data.LastTrainingSound);
-
+				ResetAutoPlaybackTimer();
 			}
 			catch (Exception ex)
 			{
@@ -319,6 +369,7 @@ namespace VocableTrainer
 				{
 					Data.TrainingSound.Clear();
 				}
+				ResetAutoPlaybackTimer();
 			}
 			catch (Exception ex)
 			{

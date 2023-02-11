@@ -69,5 +69,20 @@ namespace VocableTrainer
 		{
 			App.TrainingFlag();
 		}
+
+		private void SwipedLeft(object sender, SwipedEventArgs e)
+		{
+			App.Pause();
+		}
+
+		private void SwipedUp(object sender, SwipedEventArgs e)
+		{
+			Task.Run(App.PlayNextAudio);
+		}
+
+		private void SwipedDown(object sender, SwipedEventArgs e)
+		{
+			App.TrainingFlag();
+		}
 	}
 }

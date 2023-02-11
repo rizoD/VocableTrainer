@@ -38,6 +38,7 @@ namespace VocableTrainer
 			}
 
 			PlayChime.IsToggled = Settings.PlayRcChime;
+			AllwaysPlayChime.IsToggled = Settings.AllwaysPlayChime;
 		}
 
 		private void SettingsPageDetail_OnAppearing(object sender, EventArgs e)
@@ -107,6 +108,19 @@ namespace VocableTrainer
 		private void PlayChime_OnToggled(object sender, ToggledEventArgs e)
 		{
 			Settings.PlayRcChime = e.Value;
+			if (Settings.PlayRcChime)
+			{
+				AllwaysPlayChime.IsToggled = false;
+			}
+		}
+
+		private void AllwaysPlayChime_OnToggled(object sender, ToggledEventArgs e)
+		{
+			Settings.AllwaysPlayChime = e.Value;
+			if (Settings.AllwaysPlayChime)
+			{
+				PlayChime.IsToggled = false;
+			}
 		}
 
 		private void AddLang_OnClicked(object sender, EventArgs e)

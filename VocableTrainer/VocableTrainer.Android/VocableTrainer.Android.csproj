@@ -167,7 +167,11 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\Icon_16.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <AndroidResource Include="Resources\raw\Error_Short.mp3">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+  </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\raw\Flag_Short.mp3">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>

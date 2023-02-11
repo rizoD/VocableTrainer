@@ -56,7 +56,7 @@ namespace VocableTrainer
 				case Keycode.MediaNext:
 					Task.Run(() =>
 					{
-						Thread.Sleep(2000);
+						// Thread.Sleep(2000); this was most certainly here because of the "Forward" announcement of the tozo 6 headphones
 						App.Replay(true);
 					});
 					break;

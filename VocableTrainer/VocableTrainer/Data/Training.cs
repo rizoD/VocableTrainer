@@ -14,6 +14,7 @@ namespace VocableTrainer
 		public event PropertyChangedEventHandler PropertyChanged = delegate { };
 		public bool _autoPlay = false;
 		public bool _PlayAnswer = false;
+		public bool _oneHandMode = false;
 
 		public int _pause = 4;
 		public int _mostRecent = 30;
@@ -22,7 +23,27 @@ namespace VocableTrainer
 		public int Id { get; set; }
 		public int LangId { get; set; }
 
+		public bool NotOneHandMode
+		{
+			get => !_oneHandMode;
+			set
+			{
+				_oneHandMode = !value;
+				PropertyChanged(this, new PropertyChangedEventArgs(nameof(NotOneHandMode)));
+				PropertyChanged(this, new PropertyChangedEventArgs(nameof(OneHandMode)));
 
+			}
+		}
+		public bool OneHandMode
+		{
+			get => _oneHandMode;
+			set
+			{
+				_oneHandMode = value;
+				PropertyChanged(this, new PropertyChangedEventArgs(nameof(NotOneHandMode)));
+				PropertyChanged(this, new PropertyChangedEventArgs(nameof(OneHandMode)));
+			}
+		}
 		public int MostRecent
 		{
 			get => _mostRecent;
@@ -65,7 +86,7 @@ namespace VocableTrainer
 		/// Stores the sorting for next training (if not reset)
 		/// </summary>
 		public byte[] Sorting { get; set; }
-		
+
 
 		/// <summary>
 		/// Saves the previously sorted list to the training so it can be reused after a restart

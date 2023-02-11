@@ -1,7 +1,5 @@
 ﻿using System;
 using Android.Widget;
-using Java.IO;
-using Java.Lang;
 using VocableTrainer.Data;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -96,6 +94,22 @@ namespace VocableTrainer
 		private void FlagBtn_OnClicked(object sender, EventArgs e)
 		{
 			App.Data.CurrentVocable.Flag = Flags.None;
+		}
+
+		private void RecallResetBtn_OnClicked(object sender, EventArgs e)
+		{
+			App.Data.CurrentVocable.RecallScore = 0;
+		}
+
+		private void InputView_OnTextChanged(object sender, TextChangedEventArgs e)
+		{
+			//lets the Entry be empty
+			if (string.IsNullOrEmpty(e.NewTextValue)) return;
+
+			if (!double.TryParse(e.NewTextValue, out double value))
+			{
+				((Entry)sender).Text = e.OldTextValue;
+			}
 		}
 	}
 }

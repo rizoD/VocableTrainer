@@ -32,9 +32,13 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <Label VerticalTextAlignment="Center" Grid.Column="0" Text="Play remote control chime" />
             <Switch x:Name="PlayChime" Grid.Column="1" Toggled="PlayChime_OnToggled"/>
+            <Label VerticalTextAlignment="Center" Grid.Column="2" Text="Allways play chime" />
+            <Switch x:Name="AllwaysPlayChime" Grid.Column="3" Toggled="AllwaysPlayChime_OnToggled"/>
         </Grid>
         <!--<Label>Language</Label>
         <Grid >

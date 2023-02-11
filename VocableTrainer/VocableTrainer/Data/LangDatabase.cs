@@ -11,7 +11,6 @@ namespace VocableTrainer
 
 		public LangDatabase(string dbPath)
 		{
-
 			_database = new SQLiteAsyncConnection(dbPath);
 			_database.CreateTableAsync<Vocable>().Wait();
 			_database.CreateTableAsync<Language>().Wait();

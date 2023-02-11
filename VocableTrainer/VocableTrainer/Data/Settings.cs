@@ -9,6 +9,13 @@ namespace VocableTrainer
 		{
 			get { return CrossSettings.Current; }
 		}
+
+		public static bool AllwaysPlayChime
+		{
+			get => AppSettings.GetValueOrDefault(nameof(AllwaysPlayChime), true);
+			set => AppSettings.AddOrUpdateValue(nameof(AllwaysPlayChime), value);
+		}
+
 		public static bool PlayRcChime
 		{
 			get => AppSettings.GetValueOrDefault(nameof(PlayRcChime), true);

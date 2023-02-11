@@ -37,11 +37,12 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Label Grid.Column="0">Recall Score:</Label>
-                <Label Grid.Column="1" Text="{Binding CurrentVocable.RecallScore}"/>
+                <Entry Grid.Column="1" Text="{Binding CurrentVocable.RecallScore}" Keyboard="Numeric" TextChanged="InputView_OnTextChanged"/>
             </Grid>
+            <Button x:Name="RecallResetBtn" Text="Reset Recall Score" Clicked="RecallResetBtn_OnClicked"/>
             <Button x:Name="FlagBtn" Text="Remove Flags" Clicked="FlagBtn_OnClicked"/>
-                <Button x:Name="SountBtn" Text="Update Sound" Clicked="SoundBtn_OnClicked"/>
-                <Button x:Name="DelBtn" Text="Delete" Clicked="DelBtn_OnClicked" />
+            <Button x:Name="SountBtn" Text="Update Sound" Clicked="SoundBtn_OnClicked"/>
+            <Button x:Name="DelBtn" Text="Delete" Clicked="DelBtn_OnClicked" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

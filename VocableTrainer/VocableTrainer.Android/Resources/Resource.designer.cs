@@ -14,7 +14,7 @@ namespace VocableTrainer.Droid
 {
 	
 	
-	[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Android.Build.Tasks", "1.0.0.0")]
+	[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Android.Build.Tasks", "13.1.0.5")]
 	public partial class Resource
 	{
 		
@@ -9918,13 +9918,16 @@ namespace VocableTrainer.Droid
 		{
 			
 			// aapt resource value: 0x7F0D0000
-			public const int Flag_Short = 2131558400;
+			public const int Error_Short = 2131558400;
 			
 			// aapt resource value: 0x7F0D0001
-			public const int Pause_Short = 2131558401;
+			public const int Flag_Short = 2131558401;
 			
 			// aapt resource value: 0x7F0D0002
-			public const int Play_Short = 2131558402;
+			public const int Pause_Short = 2131558402;
+			
+			// aapt resource value: 0x7F0D0003
+			public const int Play_Short = 2131558403;
 			
 			static Raw()
 			{
