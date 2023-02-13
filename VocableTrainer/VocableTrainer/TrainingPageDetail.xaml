@@ -74,7 +74,7 @@
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
 
-                    <Button x:Name="Prev" Grid.Column="0" Text="Flag" FontSize="18" Clicked="Prev_OnClicked"/>
+                    <Button x:Name="Prev" Grid.Column="0" Text="Prev" FontSize="18" Clicked="Prev_OnClicked"/>
                     <Button x:Name="Pause"  Grid.Column="1" Text="Pause" FontSize="18" Clicked="Pause_OnClicked"/>
                     <Button x:Name="Next"  Grid.Column="2" Text="Next" FontSize="18" Clicked="Next_OnClicked"/>
                 </Grid>

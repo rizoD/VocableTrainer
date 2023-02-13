@@ -48,19 +48,19 @@ namespace VocableTrainer
 		{
 			public static void PlayPause(bool rc)
 			{
-				ExecAction(ControlAction.PlayPause, rc);
+				ExecAction(Settings.PlayPauseAction, rc);
 
 			}
 
 			public static void Next(bool rc)
 			{
-				ExecAction(ControlAction.Next, rc);
+				ExecAction(Settings.NextAction, rc);
 
 			}
 
 			public static void Prev(bool rc)
 			{
-				ExecAction(ControlAction.Wrong, rc);
+				ExecAction(Settings.PrevAction, rc);
 			}
 
 			private static void ExecAction(ControlAction action, bool rc)

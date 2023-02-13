@@ -9,6 +9,24 @@ namespace VocableTrainer
 		{
 			get { return CrossSettings.Current; }
 		}
+		
+		public static ControlAction PrevAction
+		{
+			get => (ControlAction)AppSettings.GetValueOrDefault(nameof(PrevAction), (int)ControlAction.Repeat);
+			set => AppSettings.AddOrUpdateValue(nameof(PrevAction), (int)value);
+		}
+
+		public static ControlAction PlayPauseAction
+		{
+			get => (ControlAction)AppSettings.GetValueOrDefault(nameof(PlayPauseAction), (int)ControlAction.PlayPause);
+			set => AppSettings.AddOrUpdateValue(nameof(PlayPauseAction), (int)value);
+		}
+
+		public static ControlAction NextAction
+		{
+			get => (ControlAction)AppSettings.GetValueOrDefault(nameof(NextAction), (int)ControlAction.Next);
+			set => AppSettings.AddOrUpdateValue(nameof(NextAction), (int)value);
+		}
 
 		public static bool AllwaysPlayChime
 		{

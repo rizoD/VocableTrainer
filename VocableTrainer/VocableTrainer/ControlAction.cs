@@ -4,9 +4,9 @@ using System.Text;
 
 namespace VocableTrainer
 {
-	internal enum ControlAction
+	public enum ControlAction
 	{
-		None,
+		None = 0,
 		PlayPause,
 		Next,
 		Repeat,

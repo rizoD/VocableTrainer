@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:VocableTrainer;assembly=VocableTrainer"
-             xmlns:sk="clr-namespace:Xamarin.Forms.Skeleton;assembly=Xamarin.Forms.Skeleton"
+             xmlns:sk="clr-namespace:Xamarin.Forms.Skeleton;assembly=Xamarin.Forms.Skeleton" xmlns:widget="clr-namespace:Android.Widget;assembly=Mono.Android"
              x:Class="VocableTrainer.SettingsPageDetail"
              Title="Settings"
              Appearing="SettingsPageDetail_OnAppearing">
@@ -39,6 +39,18 @@
             <Switch x:Name="PlayChime" Grid.Column="1" Toggled="PlayChime_OnToggled"/>
             <Label VerticalTextAlignment="Center" Grid.Column="2" Text="Allways play chime" />
             <Switch x:Name="AllwaysPlayChime" Grid.Column="3" Toggled="AllwaysPlayChime_OnToggled"/>
+        </Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label VerticalTextAlignment="Center" Grid.Column="0" Text="Prev Action" />
+            <Picker x:Name="PrevPicker" Grid.Column="1" SelectedIndexChanged="PrevPicker_SelectedIndexChanged" />
+            <Label VerticalTextAlignment="Center" Grid.Column="0" Grid.Row="1" Text="Play Action" />
+            <Picker x:Name="PlayPicker" Grid.Row="1" Grid.Column="1" SelectedIndexChanged="PlayPicker_SelectedIndexChanged" />
+            <Label VerticalTextAlignment="Center" Grid.Column="0" Grid.Row="2" Text="Next Action" />
+            <Picker x:Name="NextPicker" Grid.Row="2" Grid.Column="1" SelectedIndexChanged="NextPicker_SelectedIndexChanged" />
         </Grid>
         <!--<Label>Language</Label>
         <Grid >

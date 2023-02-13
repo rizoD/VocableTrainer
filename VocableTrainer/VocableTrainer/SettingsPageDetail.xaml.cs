@@ -16,6 +16,14 @@ namespace VocableTrainer
 		public SettingsPageDetail()
 		{
 			InitializeComponent();
+
+			foreach (var item in Enum.GetValues(typeof(ControlAction)))
+			{
+				PrevPicker.Items.Add(item.ToString());
+				PlayPicker.Items.Add(item.ToString());
+				NextPicker.Items.Add(item.ToString());
+
+			}
 			Update();
 		}
 
@@ -36,6 +44,10 @@ namespace VocableTrainer
 					App.Data.CurrentLanguage = App.Data.Languages.First();
 				}
 			}
+
+			PrevPicker.SelectedIndex = (int)Settings.PrevAction;
+			PlayPicker.SelectedIndex = (int)Settings.PlayPauseAction;
+			NextPicker.SelectedIndex = (int)Settings.NextAction;
 
 			PlayChime.IsToggled = Settings.PlayRcChime;
 			AllwaysPlayChime.IsToggled = Settings.AllwaysPlayChime;
@@ -123,6 +135,21 @@ namespace VocableTrainer
 			}
 		}
 
+		private void PrevPicker_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			Settings.PrevAction = (ControlAction)PrevPicker.SelectedIndex;
+		}
+
+		private void PlayPicker_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			Settings.PlayPauseAction = (ControlAction)PlayPicker.SelectedIndex;
+		}
+
+		private void NextPicker_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			Settings.NextAction = (ControlAction)NextPicker.SelectedIndex;
+		}
+
 		private void AddLang_OnClicked(object sender, EventArgs e)
 		{
 			App.Data.EditLanguage = new Language();
@@ -134,6 +161,6 @@ namespace VocableTrainer
 			App.Data.EditLanguage = App.Data.CurrentLanguage;
 			Navigation.PushModalAsync(new EditLangPage());
 		}
-
+		
 	}
 }
