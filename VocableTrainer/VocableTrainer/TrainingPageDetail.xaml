@@ -74,7 +74,7 @@
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
 
-                    <Button x:Name="Flag" Grid.Column="0" Text="Flag" FontSize="18" Clicked="Flag_OnClicked"/>
+                    <Button x:Name="Prev" Grid.Column="0" Text="Flag" FontSize="18" Clicked="Prev_OnClicked"/>
                     <Button x:Name="Pause"  Grid.Column="1" Text="Pause" FontSize="18" Clicked="Pause_OnClicked"/>
                     <Button x:Name="Next"  Grid.Column="2" Text="Next" FontSize="18" Clicked="Next_OnClicked"/>
                 </Grid>
@@ -95,7 +95,7 @@
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <Label Grid.Row="0" Text="Swipe:  Up (Next)  Down (Wrong)  Left (Pause)" />
+                <Label Grid.Row="0" Text="Swipe:  Up (Next)  Down (Prev)  Left (Pause)" />
                 <BoxView Grid.Row="1" Color="#494949">
                     <BoxView.GestureRecognizers>
                         <SwipeGestureRecognizer Direction="Left" Swiped="SwipedLeft"/>

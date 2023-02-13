@@ -25,7 +25,7 @@ namespace VocableTrainer
 
 		private void Next_OnClicked(object sender, EventArgs e)
 		{
-			Task.Run(App.PlayNextAudio);
+			App.Controls.Next(false);
 		}
 
 		private void Foreign_OnClicked(object sender, EventArgs e)
@@ -65,9 +65,9 @@ namespace VocableTrainer
 			App.Play();
 		}
 
-		private void Flag_OnClicked(object sender, EventArgs e)
+		private void Prev_OnClicked(object sender, EventArgs e)
 		{
-			App.TrainingFlag();
+			App.Controls.Prev(false);
 		}
 
 		private void SwipedLeft(object sender, SwipedEventArgs e)
@@ -77,12 +77,12 @@ namespace VocableTrainer
 
 		private void SwipedUp(object sender, SwipedEventArgs e)
 		{
-			Task.Run(App.PlayNextAudio);
+			App.Controls.Next(false);
 		}
 
 		private void SwipedDown(object sender, SwipedEventArgs e)
 		{
-			App.TrainingFlag();
+			App.Controls.Prev(false);
 		}
 	}
 }

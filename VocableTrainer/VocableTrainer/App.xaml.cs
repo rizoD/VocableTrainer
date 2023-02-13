@@ -43,6 +43,51 @@ namespace VocableTrainer
 			Task.Run(Data.LoadFile);
 
 		}
+
+		public class Controls
+		{
+			public static void PlayPause(bool rc)
+			{
+				ExecAction(ControlAction.PlayPause, rc);
+
+			}
+
+			public static void Next(bool rc)
+			{
+				ExecAction(ControlAction.Next, rc);
+
+			}
+
+			public static void Prev(bool rc)
+			{
+				ExecAction(ControlAction.Wrong, rc);
+			}
+
+			private static void ExecAction(ControlAction action, bool rc)
+			{
+				switch (action)
+				{
+					case ControlAction.PlayPause:
+						Task.Run(() => App.TogglePlay(rc));
+						break;
+					case ControlAction.Next:
+						Task.Run(() => App.PlayNextAudio());
+						break;
+					case ControlAction.Repeat:
+						Task.Run(() => App.Replay(rc));
+						break;
+					case ControlAction.Flag:
+						Task.Run(() => App.Flag(rc));
+						break;
+					case ControlAction.Wrong:
+						Task.Run(() => App.FlagWrong(rc));
+						break;
+					default:
+						break;
+				}
+			}
+		}
+
 		/// <summary>
 		/// Plays the chime sound given
 		/// 
@@ -86,7 +131,7 @@ namespace VocableTrainer
 		{
 		}
 
-		public static void ResetRecallScore()
+		private static void ResetRecallScore()
 		{
 			try
 			{
@@ -98,7 +143,24 @@ namespace VocableTrainer
 
 			}
 		}
-		public static void TrainingFlag(bool rc = false)
+
+
+		private static void FlagWrong(bool rc = false)
+		{
+			try
+			{
+				PlayChime(rc, Error_Short);
+				ResetRecallScore();
+
+				ForwardTimeToPlayNext(); // if we know that we got it wrong we forward time to play the next sound
+			}
+			catch (Exception ex)
+			{
+
+			}
+		}
+
+		private static void Flag(bool rc = false)
 		{
 			try
 			{
@@ -106,7 +168,7 @@ namespace VocableTrainer
 				// we simply reuse the Flag function to Reset the Recall Score
 				ResetRecallScore();
 
-			    ForwardTimeToPlayNext(); // if we know that we got it wrong we forward time to play the next sound
+				ForwardTimeToPlayNext(); // if we know that we got it wrong we forward time to play the next sound
 				return;
 				// this flaggs the vocalbe (was used to flag "wrong" vocalbes)
 				Data.CurrentVocable.Flag |= Flags.Training;
@@ -167,7 +229,7 @@ namespace VocableTrainer
 			}
 		}
 
-		public static void TimerCallback(object state)
+		private static void TimerCallback(object state)
 		{
 			try
 			{
@@ -222,7 +284,7 @@ namespace VocableTrainer
 			Data.State = PlayState.Pause;
 		}
 
-		public static void Next()
+		private static void Next()
 		{
 			// before we get the next vocable we increase the RecallScore
 			if (Data.CurrentVocable != null)
@@ -342,7 +404,7 @@ namespace VocableTrainer
 			}
 		}
 
-		public static void PlayNextAudio()
+		private static void PlayNextAudio()
 		{
 			try
 			{

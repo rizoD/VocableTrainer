@@ -58,9 +58,9 @@ namespace VocableTrainer.Droid.Notification
 		public RemoteViews BuildRemoteViews(Context context)
 		{
 			RemoteViews expandedView = new RemoteViews(Forms.Context.PackageName, Resource.Layout.NotificaitonLayout);
-			expandedView.SetOnClickPendingIntent(Resource.Id.flag, GetPendingAction(context, ActionReceiver.FlagAction, 1));
+			expandedView.SetOnClickPendingIntent(Resource.Id.flag, GetPendingAction(context, ActionReceiver.PrevAction, 1));
 			expandedView.SetOnClickPendingIntent(Resource.Id.play, GetPendingAction(context, ActionReceiver.PlayAction, 2));
-			expandedView.SetOnClickPendingIntent(Resource.Id.replay, GetPendingAction(context, ActionReceiver.ReplayAction, 3));
+			expandedView.SetOnClickPendingIntent(Resource.Id.replay, GetPendingAction(context, ActionReceiver.NextAction, 3));
 
 			return expandedView;
 		}

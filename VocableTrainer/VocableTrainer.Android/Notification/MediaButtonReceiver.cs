@@ -50,20 +50,20 @@ namespace VocableTrainer
 				case Keycode.MediaPlayPause:
 					Task.Run(() =>
 					{
-						App.TogglePlay(true);
+						App.Controls.PlayPause(true);
 					}); 
 					break;
 				case Keycode.MediaNext:
 					Task.Run(() =>
 					{
 						// Thread.Sleep(2000); this was most certainly here because of the "Forward" announcement of the tozo 6 headphones
-						App.Replay(true);
+						App.Controls.Next(true);
 					});
 					break;
 				case Keycode.MediaPrevious:
 					Task.Run(() =>
 					{
-						App.TrainingFlag(true);
+						App.Controls.Prev(true);
 					});
 					break;
 			}

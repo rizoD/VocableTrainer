@@ -18,25 +18,25 @@ namespace VocableTrainer.Droid.Actions
 	public class ActionReceiver : BroadcastReceiver
 	{
 		public const string IntentFilterID = "{02FE1E93-D1C7-4D66-9D4A-8ACBFB220D03}";
-		public const string FlagAction = "Flag";
+		public const string PrevAction = "Prev";
 		public const string PlayAction = "Play";
-		public const string ReplayAction = "Replay";
+		public const string NextAction = "Next";
 
 		public override void OnReceive(Context context, Intent intent)
 		{
 			Task.Run(() =>
 			{
-				if (intent.HasExtra(FlagAction))
+				if (intent.HasExtra(PrevAction))
 				{
-					App.TrainingFlag(true);
+					App.Controls.Prev(true);
 				}
 				else if (intent.HasExtra(PlayAction))
 				{
-					App.TogglePlay(true);
+					App.Controls.PlayPause(true);
 				}
-				else if (intent.HasExtra(ReplayAction))
+				else if (intent.HasExtra(NextAction))
 				{
-					App.Replay(true);
+					App.Controls.Next(true);
 				}
 			});
 
