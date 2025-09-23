@@ -1,7 +1,6 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
-using Android.Widget;
 using Plugin.FilePicker;
 using Xamarin.Essentials;
 using Xamarin.Forms;

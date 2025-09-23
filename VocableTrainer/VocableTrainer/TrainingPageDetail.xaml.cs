@@ -20,7 +20,8 @@ namespace VocableTrainer
 
 		private void Pause_OnClicked(object sender, EventArgs e)
 		{
-			App.Controls.PlayPause(false);
+			App.Pause();
+			//App.Controls.PlayPause(false);
 		}
 
 		private void Next_OnClicked(object sender, EventArgs e)

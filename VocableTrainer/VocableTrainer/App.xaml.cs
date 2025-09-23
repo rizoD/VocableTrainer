@@ -280,8 +280,10 @@ namespace VocableTrainer
 
 		public static void Pause()
 		{
+			Data.SaveTrainingState();
 			Data.TrainingSound.Clear();
 			Data.State = PlayState.Pause;
+
 		}
 
 		private static void Next()

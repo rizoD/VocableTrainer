@@ -55,7 +55,7 @@
                 <Stepper Grid.Column="2" Minimum="3" Maximum="15" Increment="1"  Value="{Binding CurrentTraining.Pause}"/>
             </Grid>
             <Button x:Name="Restar" Text="Restart" Clicked="Restar_OnClicked"/>
-            <Button x:Name="Resume" Text="Resume" Clicked="Resume_OnClicked" IsEnabled="{Binding Paused}"/>
+            <Button x:Name="Resume" Text="Resume" Clicked="Resume_OnClicked"/>
 
         </StackLayout>
         <Grid IsVisible="{Binding Playing}">

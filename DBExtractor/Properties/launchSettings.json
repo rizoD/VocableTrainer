@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "DBExtractor": {
+      "commandName": "Project",
+      "commandLineArgs": "extract D:\\tmp\\japanisch\\vocab.db3 D:\\tmp\\japanisch\\output.apkg"
+    }
+  }
+}
