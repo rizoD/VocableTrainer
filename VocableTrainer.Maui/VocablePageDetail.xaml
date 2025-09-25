@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VocableTrainer.Maui.VocablePageDetail"
+             Title="VocablePageDetail">
+	<Grid BindingContext="{x:Static local:App.Data}">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>
+
+		<Picker Grid.Row="0"  x:Name="Language" Title="Language" 
+            ItemsSource="{Binding Languages}" 
+            ItemDisplayBinding="{Binding Name}"
+            SelectedItem="{Binding CurrentLanguage}"/>
+
+		<SearchBar Grid.Row="1" Placeholder="Search items.." Text="{Binding SearchText}"/>
+
+		<ListView Grid.Row="2" 
+              x:Name="lvVocables"
+              ItemsSource="{Binding Vocables}"
+              SelectedItem="{Binding CurrentVocable}"
+              ItemSelected="ListView_OnItemSelected">
+			<ListView.ItemTemplate>
+				<DataTemplate>
+					<ViewCell>
+						<!--<ViewCell.ContextActions>
+                                <MenuItem Text="Delete Item" CommandParameter="{Binding .}" />
+                                <MenuItem Text="Edit Item" CommandParameter="{Binding .}" />
+                            </ViewCell.ContextActions>-->
+						<Grid Padding="5">
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition />
+								<ColumnDefinition />
+								<ColumnDefinition />
+							</Grid.ColumnDefinitions>
+							<Label Grid.Column="0" Text="{Binding Foreign}"/>
+							<Label Grid.Column="1" Text="{Binding Detail}"/>
+							<Label Grid.Column="2" Text="{Binding Native}"/>
+						</Grid>
+					</ViewCell>
+				</DataTemplate>
+			</ListView.ItemTemplate>
+		</ListView>
+		<StackLayout Grid.Row="3" Orientation="Horizontal">
+			<Button x:Name="AddBtn" Text="Add New" Clicked="AddBtn_OnClicked"/>
+			<Label>Vocables:</Label>
+			<Label Text="{Binding Vocables.Count}"/>
+		</StackLayout>
+	</Grid>
+</ContentPage>

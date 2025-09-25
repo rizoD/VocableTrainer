@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VocableTrainer.Maui.SettingsPageDetail"
+             Title="SettingsPageDetail"
+			 BindingContext="{x:Static local:App.Data}"
+			 IsBusy="{Binding IsBusy}"
+			 >
+	<StackLayout>
+		<ActivityIndicator 
+         IsRunning="{Binding IsBusy}"
+         IsVisible="{Binding IsBusy}"
+         VerticalOptions="CenterAndExpand"
+         HorizontalOptions="Fill"/>
+		<Label>Vocable database</Label>
+		<StackLayout Orientation="Horizontal">
+			<Button x:Name="ImportBtn" Text="Import" Clicked="ImportBtn_OnClicked" />
+			<Button x:Name="ExportBtn" Text="Export" Clicked="ExportBtn_OnClickedBtn_OnClicked" />
+		</StackLayout>
+
+		<Label>Languages</Label>
+		<StackLayout Orientation="Horizontal">
+			<Button x:Name="EditLang" Text="Edit current" Clicked="EditLang_OnClicked"/>
+			<Button x:Name="AddLang" Text="Add new" Clicked="AddLang_OnClicked" />
+		</StackLayout>
+
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition Width="Auto"/>
+			</Grid.ColumnDefinitions>
+			<Label VerticalTextAlignment="Center" Grid.Column="0" Text="Play remote control chime" />
+			<Switch x:Name="PlayChime" Grid.Column="1" Toggled="PlayChime_OnToggled"/>
+			<Label VerticalTextAlignment="Center" Grid.Column="2" Text="Allways play chime" />
+			<Switch x:Name="AllwaysPlayChime" Grid.Column="3" Toggled="AllwaysPlayChime_OnToggled"/>
+		</Grid>
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition Width="*"/>
+			</Grid.ColumnDefinitions>
+			<Label VerticalTextAlignment="Center" Grid.Column="0" Text="Prev Action" />
+			<Picker x:Name="PrevPicker" Grid.Column="1" SelectedIndexChanged="PrevPicker_SelectedIndexChanged" />
+			<Label VerticalTextAlignment="Center" Grid.Column="0" Grid.Row="1" Text="Play Action" />
+			<Picker x:Name="PlayPicker" Grid.Row="1" Grid.Column="1" SelectedIndexChanged="PlayPicker_SelectedIndexChanged" />
+			<Label VerticalTextAlignment="Center" Grid.Column="0" Grid.Row="2" Text="Next Action" />
+			<Picker x:Name="NextPicker" Grid.Row="2" Grid.Column="1" SelectedIndexChanged="NextPicker_SelectedIndexChanged" />
+		</Grid>
+		<!--<Label>Language</Label>
+     <Grid >
+         <Grid.ColumnDefinitions>
+             <ColumnDefinition Width="*"/>
+             <ColumnDefinition Width="Auto"/>
+         </Grid.ColumnDefinitions>
+         <Picker x:Name="Language" Title="" 
+                 ItemsSource="{Binding Languages}" 
+                 ItemDisplayBinding="{Binding Name}"
+                 SelectedItem="{Binding CurrentLanguage}"
+                 SelectedIndexChanged="Language_OnSelectedIndexChanged"/>
+         <Button Grid.Column="1" x:Name="EditLang" Text="&#9997;" Clicked="EditLang_OnClicked" FontSize="28"/>
+     </Grid>-->
+
+		<Label>Native voice</Label>
+		<Entry x:Name="NativeVoice" TextChanged="NativeVoice_OnTextChanged"/>
+
+	</StackLayout>
+</ContentPage>

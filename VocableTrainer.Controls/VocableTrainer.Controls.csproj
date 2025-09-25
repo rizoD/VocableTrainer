@@ -1,0 +1,62 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+	  <PackageReference Include="Avalonia" Version="11.3.6" />
+	  <PackageReference Include="Google.Apis.Drive.v3" Version="1.70.0.3893" />
+	  <PackageReference Include="sqlite-net-pcl" Version="1.9.172" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="EditLangPage.xaml.cs">
+      <DependentUpon>EditLangPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="SettingsPageDetail.xaml.cs">
+      <DependentUpon>SettingsPageDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="VocablePageDetail.xaml.cs">
+      <DependentUpon>VocablePageDetail.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="EditVocablePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="EditLangPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="TrainingPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="TrainingPageDetail.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="TrainingPageMaster.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="EditVocablePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="TrainingPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="TrainingPageDetail.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="TrainingPageMaster.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+  </ItemGroup>
+</Project>

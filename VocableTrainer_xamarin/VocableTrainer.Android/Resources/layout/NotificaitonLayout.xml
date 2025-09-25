@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:orientation="horizontal"
+    android:id="@+id/NotificaitonLayout">
+    <ImageView
+        android:id="@+id/viewImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:contentDescription="@null"
+        android:src="@drawable/icon_16"
+        android:layout_column="0"
+        android:layout_rowSpan="2"
+        android:layout_row="0"/>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:padding="3px"
+            android:text="Vocable Trainer"
+            android:layout_column="1"
+            android:layout_row="0"/>
+        <LinearLayout
+            android:layout_column="0"
+            android:layout_row="1"
+            android:padding="30px"    
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0px"
+                android:layout_weight=".3"
+                android:text="Flag"
+                android:layout_height="match_parent"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/flag"
+                android:textColor="@android:color/holo_blue_dark" />
+            <TextView
+              android:layout_width="0px"
+              android:layout_weight=".4"
+              android:text="Play/Pause"
+              android:layout_height="match_parent"
+              android:textAppearance="?android:attr/textAppearanceMedium"
+              android:id="@+id/play"
+              android:textColor="@android:color/holo_blue_dark" />
+            <TextView
+              android:layout_width="0px"
+              android:layout_weight=".25"
+              android:text="Replay"
+              android:layout_height="match_parent"
+              android:textAppearance="?android:attr/textAppearanceMedium"
+              android:id="@+id/replay" 
+              android:textColor="@android:color/holo_blue_dark" />
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

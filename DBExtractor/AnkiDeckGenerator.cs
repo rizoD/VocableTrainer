@@ -34,7 +34,7 @@ namespace DBExtractor
 		}
 		public void AddCard(string japanese, string hint, string german, string jpSound, string deSound)
 		{
-			Collection.CreateNote(DeckId, NoteTypeId, japanese, hint, german, $"[sound:{jpSound}.mp3]", $"[sound:{deSound}.mp3]");
+			Collection.CreateNote(DeckId, NoteTypeId, japanese, german, hint, $"[sound:{jpSound}.mp3]", $"[sound:{deSound}.mp3]");
 		}	
 	}
 }
