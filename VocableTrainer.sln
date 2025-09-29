@@ -11,8 +11,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Android", "Android", "{02EA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VocableTrainer.Android.Xamarin", "VocableTrainer_xamarin\VocableTrainer.Android\VocableTrainer.Android.Xamarin.csproj", "{EFE4EE4F-EAB5-4609-BB88-26D41123BCFB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VocableTrainer.Android", "VocableTrainer.Android\VocableTrainer.Android.csproj", "{D486E83F-5E42-2ED2-3D93-2AEA8528B108}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VocableTrainer.Controls", "VocableTrainer.Controls\VocableTrainer.Controls.csproj", "{FFB6BD97-36A4-63FC-F824-70894C70713E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VocableTrainer.Maui", "VocableTrainer.Maui\VocableTrainer.Maui.csproj", "{D681CC3B-93D4-446B-8C8A-D69A4FF89AB4}"
@@ -37,18 +35,13 @@ Global
 		{EFE4EE4F-EAB5-4609-BB88-26D41123BCFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EFE4EE4F-EAB5-4609-BB88-26D41123BCFB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EFE4EE4F-EAB5-4609-BB88-26D41123BCFB}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{D486E83F-5E42-2ED2-3D93-2AEA8528B108}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D486E83F-5E42-2ED2-3D93-2AEA8528B108}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D486E83F-5E42-2ED2-3D93-2AEA8528B108}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{D486E83F-5E42-2ED2-3D93-2AEA8528B108}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D486E83F-5E42-2ED2-3D93-2AEA8528B108}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D486E83F-5E42-2ED2-3D93-2AEA8528B108}.Release|Any CPU.Deploy.0 = Release|Any CPU
 		{FFB6BD97-36A4-63FC-F824-70894C70713E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FFB6BD97-36A4-63FC-F824-70894C70713E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FFB6BD97-36A4-63FC-F824-70894C70713E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FFB6BD97-36A4-63FC-F824-70894C70713E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D681CC3B-93D4-446B-8C8A-D69A4FF89AB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D681CC3B-93D4-446B-8C8A-D69A4FF89AB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D681CC3B-93D4-446B-8C8A-D69A4FF89AB4}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{D681CC3B-93D4-446B-8C8A-D69A4FF89AB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D681CC3B-93D4-446B-8C8A-D69A4FF89AB4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
@@ -57,7 +50,6 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{EFE4EE4F-EAB5-4609-BB88-26D41123BCFB} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
-		{D486E83F-5E42-2ED2-3D93-2AEA8528B108} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{FFB6BD97-36A4-63FC-F824-70894C70713E} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{D681CC3B-93D4-446B-8C8A-D69A4FF89AB4} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection

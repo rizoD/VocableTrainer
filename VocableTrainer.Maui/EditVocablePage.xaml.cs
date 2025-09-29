@@ -4,9 +4,11 @@ namespace VocableTrainer.Maui;
 
 public partial class EditVocablePage : ContentPage
 {
+	public ViewModel Data { get; }
 
 	public EditVocablePage()
 	{
+		Data = App.Data;
 		InitializeComponent();
 		Foreign.Focus();
 		this.Disappearing += OnDisappearing;

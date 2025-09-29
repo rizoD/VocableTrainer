@@ -1,7 +1,6 @@
 ﻿using CommunityToolkit.Maui.Alerts;
 using Google.Apis.Drive.v3;
 using VocableTrainer.Data;
-using VocableTrainer.Maui.sounds;
 
 namespace VocableTrainer.Maui
 {
@@ -16,23 +15,21 @@ namespace VocableTrainer.Maui
 		static string[] Scopes = { DriveService.Scope.DriveReadonly };
 		static string ApplicationName = "VocableTrainer";
 
-
-		// aapt resource value: 0x7F0D0000
-		public const int Error_Short = 2131558400;
-
-		// aapt resource value: 0x7F0D0000
-		public const int Flag_Short = 2131558400;
-
-		// aapt resource value: 0x7F0D0001
-		public const int Pause_Short = 2131558401;
+		public enum Sounds
+		{
+			Error,
+			Flag,
+			Play,
+			Pause
+		}
 
 		// aapt resource value: 0x7F0D0002
-		public const int Play_Short = 2131558402;
+		public const string Play_Short = "Play_Short";
 
-		public App()
+		public App(MainPage mainPage)
 		{
 			InitializeComponent();
-			MainPage = new TrainingPage(); // new MainPage();
+			MainPage = mainPage;
 			Task.Run(Data.LoadFile);
 		}
 
@@ -45,19 +42,19 @@ namespace VocableTrainer.Maui
 		{
 			public static void PlayPause(bool rc)
 			{
-				ExecAction(Settings.PlayPauseAction, rc);
+				ExecAction(SettingsService.Settings.PlayPauseAction, rc);
 
 			}
 
 			public static void Next(bool rc)
 			{
-				ExecAction(Settings.NextAction, rc);
+				ExecAction(SettingsService.Settings.NextAction, rc);
 
 			}
 
 			public static void Prev(bool rc)
 			{
-				ExecAction(Settings.PrevAction, rc);
+				ExecAction(SettingsService.Settings.PrevAction, rc);
 			}
 
 			private static void ExecAction(ControlAction action, bool rc)
@@ -94,11 +91,12 @@ namespace VocableTrainer.Maui
 		/// </summary>
 		/// <param name="rcPlay">this shows if the action was trigger remotely</param>
 		/// <param name="resource">the resource to play</param>
-		private static void PlayChime(bool rcPlay, int resource)
+		private static void PlayChime(bool rcPlay, Sounds resource)
 		{
-			if (rcPlay && Settings.PlayRcChime || Settings.AllwaysPlayChime)
+			if (rcPlay && SettingsService.Settings.PlayRcChime || SettingsService.Settings.AllwaysPlayChime)
 			{
-				SoundService.PlayStream(resource);
+				//TODO: SoundService.PlayStream(resource);
+
 			}
 		}
 
@@ -131,7 +129,7 @@ namespace VocableTrainer.Maui
 		{
 			try
 			{
-				PlayChime(rc, Error_Short);
+				PlayChime(rc, Sounds.Error);
 				ResetRecallScore();
 
 				ForwardTimeToPlayNext(); // if we know that we got it wrong we forward time to play the next sound
@@ -146,7 +144,7 @@ namespace VocableTrainer.Maui
 		{
 			try
 			{
-				PlayChime(rc, Error_Short);
+				PlayChime(rc, Sounds.Error);
 				// we simply reuse the Flag function to Reset the Recall Score
 				ResetRecallScore();
 
@@ -190,18 +188,18 @@ namespace VocableTrainer.Maui
 					{
 						if (Data.State == PlayState.Playing)
 						{
-							PlayChime(rc, Pause_Short);
+							PlayChime(rc, Sounds.Pause);
 							Pause();
 						}
 						else
 						{
-							PlayChime(rc, Play_Short);
+							PlayChime(rc, Sounds.Play);
 							Play();
 						}
 					}
 					else
 					{
-						PlayChime(rc, Play_Short);
+						PlayChime(rc, Sounds.Play);
 						PlayNextAudio();
 					}
 				}
@@ -231,7 +229,7 @@ namespace VocableTrainer.Maui
 			if (App.Data != null &&
 				App.Data.CurrentLanguage != null)
 			{
-				Settings.CurrentLanguage = App.Data.CurrentLanguage.Id;
+				SettingsService.Settings.CurrentLanguage = App.Data.CurrentLanguage.Id;
 				App.Stop();
 				App.Data.LoadVocables();
 			}
@@ -282,7 +280,7 @@ namespace VocableTrainer.Maui
 				// now we can get the next one
 				int i = (Data.Trainings.IndexOf(Data.CurrentVocable) + 1) % Data.Trainings.Count;
 				Data.CurrentVocable = Data.Trainings[i];
-				Settings.LastTraining = Data.CurrentVocable.Id;
+				SettingsService.Settings.LastTraining = Data.CurrentVocable.Id;
 			}
 		}
 		private static bool IsLastTrainingVocable()
@@ -301,7 +299,7 @@ namespace VocableTrainer.Maui
 				}
 
 				Data.CurrentVocable = Data.Trainings[i];
-				Settings.LastTraining = Data.CurrentVocable.Id;
+				SettingsService.Settings.LastTraining = Data.CurrentVocable.Id;
 			}
 		}
 
@@ -378,7 +376,7 @@ namespace VocableTrainer.Maui
 		{
 			try
 			{
-				PlayChime(rc, Play_Short);
+				PlayChime(rc, Sounds.Play);
 				PlaySound(Data.LastTrainingSound);
 				ResetAutoPlaybackTimer();
 			}
@@ -435,19 +433,13 @@ namespace VocableTrainer.Maui
 				{
 					if (tsk.Exception != null)
 					{
-						Device.BeginInvokeOnMainThread(() =>
-						{
-							Data.IsBusy = false;
-							ShowToast($"Application Error: {tsk.Exception.Message}");
-						});
+						Data.IsBusy = false;
+						ShowToast($"Application Error: {tsk.Exception.Message}");
 					}
 					else
 					{
-						Device.BeginInvokeOnMainThread(() =>
-						{
-							Data.IsBusy = false;
-							ending();
-						});
+						Data.IsBusy = false;
+						ending();
 					}
 				}, new object());
 			}

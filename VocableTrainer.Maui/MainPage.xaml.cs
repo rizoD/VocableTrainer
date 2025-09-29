@@ -1,24 +1,28 @@
-﻿namespace VocableTrainer.Maui
+using Microsoft.Extensions.Configuration;
+
+namespace VocableTrainer.Maui;
+
+public partial class MainPage : FlyoutPage
 {
-	public partial class MainPage : ContentPage
+	public MainPage(IConfiguration config)
 	{
-		int count = 0;
+		SettingsService.Load(config);
+		InitializeComponent();
+		//MasterPage.ListView.ItemSelected += ListView_ItemSelected;
+	}
 
-		public MainPage()
-		{
-			InitializeComponent();
-		}
+	private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+	{
+		var item = e.SelectedItem as FlyoutPageMenuItem;
+		if (item == null)
+			return;
 
-		private void OnCounterClicked(object? sender, EventArgs e)
-		{
-			count++;
+		var page = (Page)Activator.CreateInstance(item.TargetType);
+		page.Title = item.Title;
 
-			if (count == 1)
-				CounterBtn.Text = $"Clicked {count} time";
-			else
-				CounterBtn.Text = $"Clicked {count} times";
+		//Detail = new NavigationPage(page);
+		//IsPresented = false;
 
-			SemanticScreenReader.Announce(CounterBtn.Text);
-		}
+		//MasterPage.ListView.SelectedItem = null;
 	}
 }

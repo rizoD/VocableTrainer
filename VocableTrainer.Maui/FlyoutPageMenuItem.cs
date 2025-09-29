@@ -2,11 +2,11 @@
 
 namespace VocableTrainer
 {
-	public class TrainingPageMasterMenuItem
+	public class FlyoutPageMenuItem
 	{
-		public TrainingPageMasterMenuItem()
+		public FlyoutPageMenuItem()
 		{
-			TargetType = typeof(TrainingPageMasterMenuItem);
+			TargetType = typeof(FlyoutPageMenuItem);
 		}
 		public int Id { get; set; }
 		public string Title { get; set; }

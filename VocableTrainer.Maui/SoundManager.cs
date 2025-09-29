@@ -11,7 +11,7 @@ namespace VocableTrainer
 
 		public static Sound CreateSound(Vocable vocable, Sound.Lang type)
 		{
-			string voice = Settings.NativeVoice;
+			string voice = SettingsService.Settings.NativeVoice;
 			string text = vocable.Native;
 			if (type == Sound.Lang.Foreign)
 			{

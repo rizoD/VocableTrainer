@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using VocableTrainer.Data;
+using VocableTrainer.Maui;
 
 namespace VocableTrainer
 {
@@ -215,7 +216,7 @@ namespace VocableTrainer
 		{
 			Task.Run(() =>
 			{
-				vocables = Database.GetVocables(Settings.CurrentLanguage).OrderByDescending(item => item.Id);
+				vocables = Database.GetVocables(SettingsService.Settings.CurrentLanguage).OrderByDescending(item => item.Id);
 				LoadTraining();
 				ApplyFilter(vocables);
 				Trainings = new ObservableCollection<Vocable>(CurrentTraining.ApplySorting(vocables));
@@ -226,7 +227,7 @@ namespace VocableTrainer
 				}
 				else
 				{
-					vocable = vocables.FirstOrDefault(item => item.Id == Settings.LastTraining);
+					vocable = vocables.FirstOrDefault(item => item.Id == SettingsService.Settings.LastTraining);
 					if (vocable != null)
 					{
 						CurrentVocable = vocable;
@@ -241,7 +242,7 @@ namespace VocableTrainer
 
 		private void LoadTraining()
 		{
-			CurrentTraining = Database.GetTraining(Settings.CurrentLanguage);
+			CurrentTraining = Database.GetTraining(SettingsService.Settings.CurrentLanguage);
 			if (CurrentTraining == null)
 			{
 				CurrentTraining = new Training()
@@ -254,7 +255,7 @@ namespace VocableTrainer
 		private void LoadLang()
 		{
 			Languages = new ObservableCollection<Language>(Database.GetLanguages());
-			CurrentLanguage = Languages.FirstOrDefault(item => item.Id == Settings.CurrentLanguage);
+			CurrentLanguage = Languages.FirstOrDefault(item => item.Id == SettingsService.Settings.CurrentLanguage);
 		}
 
 		public void DeleteLang(Language item)
@@ -276,7 +277,7 @@ namespace VocableTrainer
 			LoadLang();
 			if (isNew)
 			{
-				Settings.CurrentLanguage = Languages.LastOrDefault().Id;
+				SettingsService.Settings.CurrentLanguage = Languages.LastOrDefault().Id;
 			}
 		}
 
@@ -364,7 +365,7 @@ namespace VocableTrainer
 
 			Trainings = new ObservableCollection<Vocable>(traininglist);
 			CurrentVocable = Trainings.FirstOrDefault();
-			Settings.LastTraining = CurrentVocable.Id;
+			SettingsService.Settings.LastTraining = CurrentVocable.Id;
 
 		}
 

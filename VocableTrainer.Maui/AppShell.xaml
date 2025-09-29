@@ -13,6 +13,6 @@
 	
 	<ShellContent
       Title="Training"
-      ContentTemplate="{DataTemplate local:Training}"
+      ContentTemplate="{DataTemplate local:TrainingPage}"
       Route="MainPage" />
 </Shell>

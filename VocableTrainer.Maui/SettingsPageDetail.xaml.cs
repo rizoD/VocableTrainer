@@ -3,8 +3,10 @@ using Avalonia.Platform.Storage;
 namespace VocableTrainer.Maui;
 public partial class SettingsPageDetail : ContentPage
 {
+	public ViewModel Data { get; }
 	public SettingsPageDetail()
 	{
+		Data = App.Data;
 		InitializeComponent();
 
 		foreach (var item in Enum.GetValues(typeof(ControlAction)))
@@ -19,7 +21,7 @@ public partial class SettingsPageDetail : ContentPage
 
 	private void Update()
 	{
-		NativeVoice.Text = Settings.NativeVoice;
+		NativeVoice.Text = SettingsService.Settings.NativeVoice;
 		UpdateSelected();
 	}
 
@@ -28,19 +30,19 @@ public partial class SettingsPageDetail : ContentPage
 		if (App.Data.Languages != null && App.Data.Languages.Count > 0)
 		{
 			App.Data.CurrentLanguage =
-				App.Data.Languages.FirstOrDefault(item => item.Id == Settings.CurrentLanguage);
+				App.Data.Languages.FirstOrDefault(item => item.Id == SettingsService.Settings.CurrentLanguage);
 			if (App.Data.CurrentLanguage == null)
 			{
 				App.Data.CurrentLanguage = App.Data.Languages.First();
 			}
 		}
 
-		PrevPicker.SelectedIndex = (int)Settings.PrevAction;
-		PlayPicker.SelectedIndex = (int)Settings.PlayPauseAction;
-		NextPicker.SelectedIndex = (int)Settings.NextAction;
+		PrevPicker.SelectedIndex = (int)SettingsService.Settings.PrevAction;
+		PlayPicker.SelectedIndex = (int)SettingsService.Settings.PlayPauseAction;
+		NextPicker.SelectedIndex = (int)SettingsService.Settings.NextAction;
 
-		PlayChime.IsToggled = Settings.PlayRcChime;
-		AllwaysPlayChime.IsToggled = Settings.AllwaysPlayChime;
+		PlayChime.IsToggled = SettingsService.Settings.PlayRcChime;
+		AllwaysPlayChime.IsToggled = SettingsService.Settings.AllwaysPlayChime;
 	}
 
 	private void SettingsPageDetail_OnAppearing(object sender, EventArgs e)
@@ -50,7 +52,7 @@ public partial class SettingsPageDetail : ContentPage
 
 	private void NativeVoice_OnTextChanged(object sender, TextChangedEventArgs e)
 	{
-		Settings.NativeVoice = e.NewTextValue;
+		SettingsService.Settings.NativeVoice = e.NewTextValue;
 	}
 
 
@@ -116,8 +118,8 @@ public partial class SettingsPageDetail : ContentPage
 
 	private void PlayChime_OnToggled(object sender, ToggledEventArgs e)
 	{
-		Settings.PlayRcChime = e.Value;
-		if (Settings.PlayRcChime)
+		SettingsService.Settings.PlayRcChime = e.Value;
+		if (SettingsService.Settings.PlayRcChime)
 		{
 			AllwaysPlayChime.IsToggled = false;
 		}
@@ -125,8 +127,8 @@ public partial class SettingsPageDetail : ContentPage
 
 	private void AllwaysPlayChime_OnToggled(object sender, ToggledEventArgs e)
 	{
-		Settings.AllwaysPlayChime = e.Value;
-		if (Settings.AllwaysPlayChime)
+		SettingsService.Settings.AllwaysPlayChime = e.Value;
+		if (SettingsService.Settings.AllwaysPlayChime)
 		{
 			PlayChime.IsToggled = false;
 		}
@@ -134,17 +136,17 @@ public partial class SettingsPageDetail : ContentPage
 
 	private void PrevPicker_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		Settings.PrevAction = (ControlAction)PrevPicker.SelectedIndex;
+		SettingsService.Settings.PrevAction = (ControlAction)PrevPicker.SelectedIndex;
 	}
 
 	private void PlayPicker_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		Settings.PlayPauseAction = (ControlAction)PlayPicker.SelectedIndex;
+		SettingsService.Settings.PlayPauseAction = (ControlAction)PlayPicker.SelectedIndex;
 	}
 
 	private void NextPicker_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		Settings.NextAction = (ControlAction)NextPicker.SelectedIndex;
+		SettingsService.Settings.NextAction = (ControlAction)NextPicker.SelectedIndex;
 	}
 
 	private void AddLang_OnClicked(object sender, EventArgs e)

@@ -1,29 +1,81 @@
-using Microsoft.Extensions.Configuration;
-
 namespace VocableTrainer.Maui;
 
 public partial class TrainingPage : ContentPage
 {
-	IConfiguration _configuration;
-	public TrainingPage(IConfiguration config)
+	public TrainingPage()
 	{
-		_configuration = config;
 		InitializeComponent();
-		MasterPage.ListView.ItemSelected += ListView_ItemSelected;
+		if (App.Data.CurrentVocable == null)
+		{
+			App.Data.CurrentVocable = App.Data.Vocables.LastOrDefault();
+		}
 	}
 
-	private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+	private void Pause_OnClicked(object sender, EventArgs e)
 	{
-		var item = e.SelectedItem as TrainingPageMasterMenuItem;
-		if (item == null)
-			return;
+		App.Pause();
+		//App.Controls.PlayPause(false);
+	}
 
-		var page = (Page)Activator.CreateInstance(item.TargetType);
-		page.Title = item.Title;
+	private void Next_OnClicked(object sender, EventArgs e)
+	{
+		App.Controls.Next(false);
+	}
 
-		Detail = new NavigationPage(page);
-		IsPresented = false;
+	private void Foreign_OnClicked(object sender, EventArgs e)
+	{
+		Task.Run(() =>
+		{
+			App.PlaySound(Sound.Lang.Foreign);
+		});
+	}
 
-		MasterPage.ListView.SelectedItem = null;
+	private void Native_OnClicked(object sender, EventArgs e)
+	{
+		Task.Run(() =>
+		{
+			App.PlaySound(Sound.Lang.Native);
+		});
+	}
+
+	private void Edit_OnClicked(object sender, EventArgs e)
+	{
+		//App.TogglePlay();
+		App.Pause();
+		Navigation.PushModalAsync(new EditVocablePage());
+	}
+
+	private async void Restar_OnClicked(object sender, EventArgs e)
+	{
+		bool answer = await DisplayAlert("Question?", "Do you realy want to restart?", "Yes", "No");
+		if (answer)
+		{
+			App.Restart();
+		}
+	}
+
+	private void Resume_OnClicked(object sender, EventArgs e)
+	{
+		App.Play();
+	}
+
+	private void Prev_OnClicked(object sender, EventArgs e)
+	{
+		App.Controls.Prev(false);
+	}
+
+	private void SwipedLeft(object sender, SwipedEventArgs e)
+	{
+		App.Pause();
+	}
+
+	private void SwipedUp(object sender, SwipedEventArgs e)
+	{
+		App.Controls.Next(false);
+	}
+
+	private void SwipedDown(object sender, SwipedEventArgs e)
+	{
+		App.Controls.Prev(false);
 	}
 }

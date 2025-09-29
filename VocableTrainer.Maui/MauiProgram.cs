@@ -18,16 +18,13 @@ namespace VocableTrainer.Maui
 					fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 					fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 				});
-
-			var assembly = Assembly.GetExecutingAssembly();
-			using var stream = assembly.GetManifestResourceStream("VocableTrainer.Maui.appsettings.json");
-
 			var config = new ConfigurationBuilder()
-						.AddJsonStream(stream)
-						.Build();
-
+					.SetBasePath(Directory.GetCurrentDirectory())
+					.AddJsonFile("appsettings.json")
+					.Build();
 
 			builder.Configuration.AddConfiguration(config);
+			builder.Services.AddTransient<MainPage>();
 
 #if DEBUG
 			builder.Logging.AddDebug();

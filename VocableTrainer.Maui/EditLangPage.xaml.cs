@@ -2,8 +2,10 @@ namespace VocableTrainer.Maui;
 
 public partial class EditLangPage : ContentPage
 {
+	public ViewModel Data { get; }	
 	public EditLangPage()
 	{
+		Data = App.Data;
 		InitializeComponent();
 		Disappearing += OnDisappearing;
 		LangText.Focus();
